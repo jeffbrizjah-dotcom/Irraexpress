@@ -421,11 +421,12 @@
     .loader-bar { width:180px; }
 
     /* Nav */
-    .hamburger { display:flex; z-index:1001; }
+    .hamburger { display:flex; z-index:1001; margin-left:auto; }
     .nav-links { display:none; }
     .nav-cta-desktop { display:none !important; }
-    nav { padding:12px 5%; }
+    nav { padding:12px 5%; justify-content:flex-start; }
     nav.scrolled { padding:10px 5%; }
+    nav img[alt="Irra's Express"] { height:80px !important; }
 
     /* Hero */
     .hero { padding-top:80px; text-align:center; }
@@ -434,6 +435,7 @@
     .hero-float-badges { display:none; }
     .hero-buttons { justify-content:center; }
     .hero-dots { bottom:70px; }
+    .hero-title { font-size:clamp(3.5rem,12vw,5.5rem); }
 
     /* About */
     .about-grid { grid-template-columns:1fr; gap:50px; }
@@ -530,9 +532,48 @@
     .specialty-cards { grid-template-columns:1fr; }
     .spec-num { font-size:3.5rem; }
 
-    /* Form */
-    .res-form { padding:24px 20px; }
-    .form-title { font-size:1.3rem; }
+    /* Form reservas mobile */
+    .reservation { padding:40px 4% 60px; }
+    .res-form {
+      padding:28px 20px 32px;
+      border-radius:20px;
+      border:1px solid rgba(245,197,24,0.35);
+      box-shadow:0 20px 60px rgba(0,0,0,0.35);
+    }
+    .form-title {
+      font-size:1.5rem;
+      margin-bottom:22px;
+      padding-bottom:16px;
+      border-bottom:1px solid rgba(245,197,24,0.2);
+    }
+    .form-group { margin-bottom:16px; }
+    .form-group label {
+      font-size:.72rem;
+      letter-spacing:.18em;
+      color:rgba(245,197,24,0.75);
+      margin-bottom:8px;
+    }
+    .form-group input,
+    .form-group select {
+      padding:16px 14px;
+      font-size:1rem;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,0.15);
+      background:rgba(255,255,255,0.07);
+    }
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color:var(--dorado);
+      background:rgba(255,255,255,0.1);
+    }
+    .btn-form {
+      padding:18px;
+      font-size:.85rem;
+      border-radius:12px;
+      margin-top:12px;
+      letter-spacing:.2em;
+      box-shadow:0 8px 24px rgba(0,61,165,0.4);
+    }
   }
 
   /* Móvil muy pequeño */
@@ -543,7 +584,7 @@
     .loader-logo-img { width:120px !important; }
 
     nav img[alt="Irra's Express"] { height:50px !important; }
-    .hero-title { font-size:2.4rem; }
+    .hero-title { font-size:3rem; }
     .section-title { font-size:1.7rem; }
     .rvw-card { width:210px; padding:16px; }
     .about-stats { grid-template-columns:1fr; }
@@ -589,7 +630,7 @@
   <a href="#menu" onclick="closeMobile()">Menú</a>
   <a href="#especialidades" onclick="closeMobile()">Especialidades</a>
   <a href="#galeria" onclick="closeMobile()">Galería</a>
-  <a href="#reservas" onclick="closeMobile()">Pedidos</a>
+  <a href="#reservas" onclick="closeMobile()">Reservas</a>
   <div class="flag-strip" style="position:absolute;bottom:40px;left:5%;right:5%;"><div class="fs-b"></div><div class="fs-w"></div><div class="fs-b2"></div></div>
 </div>
 
@@ -666,10 +707,6 @@
     </div>
   </div>
 
-  <div class="scroll-indicator">
-    <span class="scroll-txt">Descubrir</span>
-    <div class="scroll-line"></div>
-  </div>
 </section>
 
 <!-- FLAG STRIP -->
@@ -1426,7 +1463,7 @@
   <div class="reservation-inner">
     <div class="res-info">
       <div class="section-label reveal">Contáctanos</div>
-      <h2 class="section-title reveal">Haz tu<br><em>Pedido</em></h2>
+      <h2 class="section-title reveal">Haz tu<br><em>Reserva</em></h2>
       <p class="reveal">¿Quieres comer aquí o llevarte tu comida favorita? Escríbenos y te atendemos con el servicio express que nos caracteriza.</p>
       <div class="contact-items reveal">
         <div class="contact-item">
@@ -1488,11 +1525,11 @@
           <option>3–4 personas</option>
           <option>5–6 personas</option>
           <option>7–10 personas</option>
-          <option>Pedido para llevar</option>
+          <option>Reserva para llevar</option>
         </select>
       </div>
       <div class="form-group">
-        <label>Tipo de pedido</label>
+        <label>Tipo de reserva</label>
         <select>
           <option>Comer en el local</option>
           <option>Para llevar 🥡</option>
@@ -1500,7 +1537,7 @@
           <option>Evento especial 🎉</option>
         </select>
       </div>
-      <button class="btn-form" onclick="submitReservation()">Confirmar Pedido 🇸🇻</button>
+      <button class="btn-form" onclick="submitReservation()">Confirmar Reserva 🇸🇻</button>
     </div>
   </div>
 </section>
@@ -1530,7 +1567,7 @@
         <li><a href="#menu">Menú</a></li>
         <li><a href="#especialidades">Especialidades</a></li>
         <li><a href="#galeria">Galería</a></li>
-        <li><a href="#reservas">Pedidos</a></li>
+        <li><a href="#reservas">Reservas</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -1686,10 +1723,10 @@
   // RESERVATION SUBMIT
   function submitReservation(){
     const btn=document.querySelector('.btn-form');
-    btn.textContent='✓ ¡Pedido confirmado! Te contactamos pronto. 🎉';
+    btn.textContent='✓ ¡Reserva confirmada! Te contactamos pronto. 🎉';
     btn.style.background='linear-gradient(135deg,#2DB84B,#1a8c38)';
     btn.style.borderColor='#2DB84B';
-    setTimeout(()=>{ btn.textContent='Confirmar Pedido 🇸🇻'; btn.style.background=''; btn.style.borderColor=''; },5000);
+    setTimeout(()=>{ btn.textContent='Confirmar Reserva 🇸🇻'; btn.style.background=''; btn.style.borderColor=''; },5000);
   }
 </script>
 
