@@ -52,8 +52,8 @@
   .loader-izote-bl { bottom:16px; left:16px; animation:float 3.5s ease-in-out 1.8s infinite; }
   .loader-izote-br { bottom:16px; right:16px; transform:scaleX(-1); animation:float 3.5s ease-in-out 2.7s infinite; }
   @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
-  .loader-logo-wrap { width:200px; height:160px; display:flex; align-items:center; justify-content:center; }
-  .loader-logo-img { width:200px; height:160px; object-fit:contain; filter:drop-shadow(0 4px 24px rgba(245,197,24,0.4)); animation:pulse 1.8s ease-in-out infinite; }
+  .loader-logo-wrap { width:320px; height:260px; display:flex; align-items:center; justify-content:center; }
+  .loader-logo-img { width:320px; height:260px; object-fit:contain; filter:drop-shadow(0 4px 24px rgba(245,197,24,0.4)); animation:pulse 1.8s ease-in-out infinite; }
 
   .loader-bar { width:220px; height:3px; background:rgba(255,255,255,0.1); border-radius:3px; overflow:hidden; }
   .loader-fill { height:100%; background:linear-gradient(90deg,var(--azul),var(--dorado),var(--azul2)); animation:loadFill 1.6s ease-out forwards; }
@@ -61,9 +61,6 @@
   /* Fade-in suave del contenido del loader */
   .loader-inner { display:flex; flex-direction:column; align-items:center; gap:4px; margin-top:12px; animation:fadeUp .5s ease-out both; }
 
-  /* ─── CURSOR ─── */
-  .cursor { width:12px; height:12px; background:var(--dorado); border-radius:50%; position:fixed; top:0; left:0; pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition:transform .1s,width .3s,height .3s; mix-blend-mode:difference; }
-  .cursor-ring { width:40px; height:40px; border:2px solid rgba(245,197,24,0.5); border-radius:50%; position:fixed; top:0; left:0; pointer-events:none; z-index:9998; transform:translate(-50%,-50%); transition:transform .15s ease-out,width .3s,height .3s; }
 
   /* ─── NAV ─── */
   nav { position:fixed; top:0; left:0; right:0; z-index:1000; padding:20px 5%; display:flex; justify-content:flex-start; align-items:center; gap:clamp(16px,2.5vw,36px); transition:all .4s; }
@@ -238,15 +235,93 @@
   .menu-badge { position:absolute; top:16px; right:16px; background:linear-gradient(135deg,var(--azul),var(--azul2)); color:white; font-size:.6rem; letter-spacing:.15em; text-transform:uppercase; padding:6px 12px; border-radius:20px; z-index:2; font-weight:700; box-shadow:0 4px 12px rgba(0,61,165,0.5); border:1px solid var(--dorado); }
 
   /* ─── PARALLAX BANNER ─── */
-  .parallax-banner { height:clamp(350px,55vw,550px); position:relative; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+  .parallax-banner { height:clamp(520px,70vw,720px); position:relative; display:flex; align-items:center; justify-content:center; overflow:hidden; }
   .parallax-bg { position:absolute; inset:-60px; background-image:url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1600&q=80'); background-size:cover; background-position:center; }
-  .parallax-overlay { position:absolute; inset:0; background:linear-gradient(135deg,rgba(0,61,165,0.88),rgba(0,26,110,0.82)); }
-  .parallax-content { position:relative; z-index:2; text-align:center; padding:0 20px; }
-  .parallax-content h2 { font-family:'Playfair Display',serif; font-size:clamp(2rem,6vw,5.5rem); font-weight:900; font-style:italic; color:white; line-height:1; text-shadow:0 4px 30px rgba(0,0,0,0.3); }
-  .parallax-content h2 span { color:var(--dorado); }
-  .parallax-content p { font-family:'Cormorant Garamond',serif; font-size:clamp(1rem,2.5vw,1.6rem); color:rgba(255,255,255,0.9); margin-top:16px; letter-spacing:.08em; }
-  .parallax-pills { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:30px; }
-  .parallax-pill { background:rgba(255,255,255,0.15); border:2px solid rgba(245,197,24,0.6); color:white; padding:8px 20px; border-radius:30px; font-size:.75rem; letter-spacing:.15em; text-transform:uppercase; font-weight:600; backdrop-filter:blur(8px); }
+  .parallax-overlay {
+    position:absolute; inset:0;
+    background:
+      radial-gradient(ellipse at 50% 40%, rgba(0,61,165,0.35) 0%, transparent 65%),
+      linear-gradient(160deg, rgba(0,13,46,0.97) 0%, rgba(0,61,165,0.88) 50%, rgba(0,13,46,0.97) 100%);
+  }
+  /* Glow dorado central */
+  .parallax-banner::before {
+    content:''; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    width:700px; height:400px;
+    background:radial-gradient(ellipse, rgba(245,197,24,0.1) 0%, transparent 70%);
+    pointer-events:none; z-index:1;
+  }
+  /* Esquinas decorativas */
+  .parallax-corner { position:absolute; z-index:3; width:50px; height:50px; }
+  .parallax-corner-tl { top:24px; left:24px; border-top:2px solid rgba(245,197,24,0.6); border-left:2px solid rgba(245,197,24,0.6); }
+  .parallax-corner-tr { top:24px; right:24px; border-top:2px solid rgba(245,197,24,0.6); border-right:2px solid rgba(245,197,24,0.6); }
+  .parallax-corner-bl { bottom:24px; left:24px; border-bottom:2px solid rgba(245,197,24,0.6); border-left:2px solid rgba(245,197,24,0.6); }
+  .parallax-corner-br { bottom:24px; right:24px; border-bottom:2px solid rgba(245,197,24,0.6); border-right:2px solid rgba(245,197,24,0.6); }
+  /* Líneas laterales decorativas */
+  .parallax-deco-line {
+    position:absolute; top:50%; transform:translateY(-50%);
+    width:clamp(40px,8vw,130px); height:1px; z-index:2;
+  }
+  .parallax-deco-line.left  { left:5%; background:linear-gradient(to right, transparent, rgba(245,197,24,0.55)); }
+  .parallax-deco-line.right { right:5%; background:linear-gradient(to left,  transparent, rgba(245,197,24,0.55)); }
+
+  .parallax-content { position:relative; z-index:2; text-align:center; padding:0 clamp(20px,6vw,100px); max-width:1000px; }
+
+  /* Eyebrow */
+  .parallax-eyebrow {
+    display:inline-flex; align-items:center; gap:14px;
+    font-family:'Montserrat',sans-serif; font-size:.68rem; letter-spacing:.38em;
+    text-transform:uppercase; color:var(--dorado); font-weight:700; margin-bottom:18px;
+  }
+  .parallax-eyebrow::before, .parallax-eyebrow::after { content:''; width:36px; height:1px; background:var(--dorado); opacity:.7; }
+
+  /* Comilla decorativa grande */
+  .parallax-big-quote {
+    font-family:'Playfair Display',serif; font-size:clamp(5rem,10vw,9rem);
+    line-height:.5; color:rgba(245,197,24,0.12); display:block;
+    margin-bottom:8px; font-weight:900; font-style:italic;
+  }
+  .parallax-content h2 {
+    font-family:'Playfair Display',serif;
+    font-size:clamp(2rem,5.2vw,5rem);
+    font-weight:900; font-style:italic; color:white; line-height:1.1;
+    text-shadow:0 6px 40px rgba(0,0,0,0.45);
+    margin-bottom:18px;
+  }
+  .parallax-content h2 span { color:var(--dorado); text-shadow:0 0 50px rgba(245,197,24,0.45); }
+  .parallax-content p {
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(1rem,2vw,1.35rem);
+    color:rgba(255,255,255,0.65); margin-bottom:26px; letter-spacing:.18em;
+  }
+  .parallax-pills { display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-bottom:32px; }
+  .parallax-pill {
+    background:rgba(255,255,255,0.07); border:1px solid rgba(245,197,24,0.35);
+    color:rgba(255,255,255,0.9); padding:8px 18px; border-radius:30px;
+    font-family:'Montserrat',sans-serif; font-size:.7rem; letter-spacing:.12em;
+    text-transform:uppercase; font-weight:600; backdrop-filter:blur(8px);
+    transition:all .3s;
+  }
+  .parallax-pill:hover { background:rgba(245,197,24,0.15); border-color:var(--dorado); transform:translateY(-2px); }
+  /* CTA button */
+  .parallax-cta {
+    display:inline-block; text-decoration:none;
+    background:linear-gradient(135deg,var(--dorado),#E8A800);
+    color:var(--oscuro); padding:16px 42px; border-radius:4px;
+    font-family:'Montserrat',sans-serif; font-size:.78rem;
+    font-weight:800; letter-spacing:.22em; text-transform:uppercase;
+    box-shadow:0 8px 32px rgba(245,197,24,0.35);
+    transition:all .35s; margin-bottom:40px; display:inline-block;
+  }
+  .parallax-cta:hover { transform:translateY(-4px); box-shadow:0 18px 45px rgba(245,197,24,0.5); }
+  /* Stats */
+  .parallax-stats {
+    display:flex; gap:clamp(20px,4vw,60px); justify-content:center; align-items:center;
+    padding-top:28px; border-top:1px solid rgba(255,255,255,0.1);
+  }
+  .parallax-stat { text-align:center; }
+  .parallax-stat-num { font-family:'Playfair Display',serif; font-size:clamp(1.5rem,2.5vw,2.2rem); font-weight:900; color:var(--dorado); display:block; }
+  .parallax-stat-lbl { font-size:.6rem; letter-spacing:.2em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-top:2px; display:block; }
+  .parallax-stat-div { width:1px; height:36px; background:rgba(255,255,255,0.12); }
 
   /* ─── SPECIALTY ─── */
   .specialty { padding:clamp(80px,10vw,140px) 5%; background:linear-gradient(180deg,#001A6E18,#000D2E); position:relative; }
@@ -265,7 +340,12 @@
   .spec-num { position:absolute; top:20px; right:24px; font-family:'Playfair Display',serif; font-size:5rem; font-weight:900; color:rgba(245,197,24,0.07); line-height:1; }
 
   /* ─── GALLERY ─── */
-  .gallery { padding:clamp(80px,10vw,140px) 5%; background:var(--crema); color:var(--oscuro); }
+  .gallery { padding:clamp(100px,12vw,160px) 5% clamp(100px,12vw,160px); background:var(--crema); color:var(--oscuro); position:relative; overflow:visible; }
+  /* Olas separadoras */
+  .gallery-wave { position:absolute; left:0; right:0; width:100%; line-height:0; pointer-events:none; z-index:4; }
+  .gallery-wave-top { top:-2px; }
+  .gallery-wave-bot { bottom:-2px; }
+  .gallery-wave svg { display:block; width:100%; height:clamp(70px,10vw,130px); }
   .gallery .section-label { color:var(--azul); }
   .gallery .section-label::before { background:var(--azul); }
   .gallery .section-title { color:var(--oscuro); }
@@ -320,7 +400,7 @@
   }
 
   /* ─── RESERVATION ─── */
-  .reservation { padding:clamp(80px,10vw,140px) 5%; background:var(--crema); color:var(--oscuro); }
+  .reservation { padding:clamp(100px,12vw,160px) 5%; background:var(--crema); color:var(--oscuro); position:relative; overflow:visible; }
   .reservation-inner { max-width:1300px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:clamp(40px,6vw,100px); align-items:center; }
   .res-info .section-label { color:var(--azul); }
   .res-info .section-label::before { background:var(--azul); }
@@ -543,8 +623,8 @@
     .loader-izote-tl, .loader-izote-tr { width:50px !important; height:110px !important; }
     .loader-izote-bl, .loader-izote-br { width:40px !important; height:90px !important; }
     .loader-flag { width:130px !important; height:78px !important; }
-    .loader-logo-img { width:160px !important; height:130px !important; }
-    .loader-logo-wrap { width:160px !important; height:130px !important; }
+    .loader-logo-img { width:260px !important; height:210px !important; }
+    .loader-logo-wrap { width:260px !important; height:210px !important; }
     .loader-bar { width:180px; }
 
     /* Nav */
@@ -602,15 +682,24 @@
     .social-links { justify-content:center; }
 
     /* Parallax */
-    .parallax-pills { gap:8px; }
-    .parallax-pill { font-size:.68rem; padding:6px 14px; }
+    .parallax-banner { height:auto; padding:60px 0; }
+    .parallax-corner { width:32px; height:32px; }
+    .parallax-corner-tl, .parallax-corner-tr { top:16px; }
+    .parallax-corner-bl, .parallax-corner-br { bottom:16px; }
+    .parallax-corner-tl, .parallax-corner-bl { left:16px; }
+    .parallax-corner-tr, .parallax-corner-br { right:16px; }
+    .parallax-deco-line { display:none; }
+    .parallax-big-quote { font-size:5rem; }
+    .parallax-pills { gap:6px; }
+    .parallax-pill { font-size:.65rem; padding:6px 12px; }
+    .parallax-cta { padding:14px 30px; font-size:.72rem; }
+    .parallax-stats { gap:16px; }
+    .parallax-stat-num { font-size:1.3rem; }
 
     /* Secciones padding */
     .about, .specialty, .gallery, .testimonials, .reservation { padding:clamp(50px,8vw,90px) 5%; }
     .menu-section { padding:clamp(50px,8vw,90px) 5%; }
 
-    /* Cursor */
-    .cursor, .cursor-ring { display:none; }
   }
 
   /* Móvil */
@@ -619,8 +708,8 @@
     .loader-izote-tl, .loader-izote-tr { width:38px !important; height:85px !important; }
     .loader-izote-bl, .loader-izote-br { width:32px !important; height:70px !important; }
     .loader-flag { width:110px !important; height:66px !important; }
-    .loader-logo-img { width:140px !important; height:115px !important; }
-    .loader-logo-wrap { width:140px !important; height:115px !important; }
+    .loader-logo-img { width:230px !important; height:185px !important; }
+    .loader-logo-wrap { width:230px !important; height:185px !important; }
 
     /* Nav logo */
     nav img[alt="Irra's Express"] { height:90px !important; }
@@ -709,8 +798,8 @@
     /* Loader - ocultar izotes */
     .loader-izote { display:none !important; }
     .loader-flag { width:100px !important; height:60px !important; }
-    .loader-logo-img { width:120px !important; height:100px !important; }
-    .loader-logo-wrap { width:120px !important; height:100px !important; }
+    .loader-logo-img { width:200px !important; height:160px !important; }
+    .loader-logo-wrap { width:200px !important; height:160px !important; }
 
     nav img[alt="Irra's Express"] { height:75px !important; }
     .hero-title { font-size:3rem; }
@@ -728,13 +817,6 @@
 <div id="loader">
 
 
-  <!-- Bandera El Salvador -->
-  <div class="loader-flag">
-    <div class="lf-top"></div>
-    <div class="lf-mid"></div>
-    <div class="lf-bottom"></div>
-  </div>
-
   <!-- Logo + barra + texto -->
   <div class="loader-inner">
     <div class="loader-logo-wrap">
@@ -744,10 +826,6 @@
     <div class="loader-txt">Cargando sabor salvadoreño…</div>
   </div>
 </div>
-
-<!-- CURSOR -->
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
 
 <!-- PARTICLES -->
 <div class="particles" id="particles"></div>
@@ -801,9 +879,15 @@
   <div class="mm-footer">
     <a href="#reservas" class="mm-cta" onclick="closeMobile()">Reservar Mesa 🍽️</a>
     <div class="mm-socials">
-      <a href="#" class="mm-social">f</a>
-      <a href="#" class="mm-social">ig</a>
-      <a href="#" class="mm-social">in</a>
+      <a href="#" class="mm-social" title="Facebook">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="#" class="mm-social" title="TikTok">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
+      </a>
+      <a href="#" class="mm-social" title="Instagram">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
     </div>
     <div class="flag-strip" style="border-radius:4px;overflow:hidden;height:4px;">
       <div class="fs-b"></div><div class="fs-w"></div><div class="fs-b2"></div>
@@ -881,9 +965,10 @@
     </div>
     <div class="badge">
       <span class="badge-num">Rápido</span>
-      <span class="badge-txt">Express delivery</span>
+      <span class="badge-txt">Cocina Express</span>
     </div>
   </div>
+
 
 </section>
 
@@ -1449,15 +1534,51 @@
 <div class="parallax-banner">
   <div class="parallax-bg" id="parallaxBg"></div>
   <div class="parallax-overlay"></div>
+
+  <!-- Esquinas decorativas -->
+  <div class="parallax-corner parallax-corner-tl"></div>
+  <div class="parallax-corner parallax-corner-tr"></div>
+  <div class="parallax-corner parallax-corner-bl"></div>
+  <div class="parallax-corner parallax-corner-br"></div>
+  <!-- Líneas laterales -->
+  <div class="parallax-deco-line left"></div>
+  <div class="parallax-deco-line right"></div>
+
   <div class="parallax-content reveal-scale">
-    <h2>"Donde cada bocado<br>es un abrazo de <span>El Salvador</span>"</h2>
+    <!-- Eyebrow -->
+    <div class="parallax-eyebrow">🇸🇻 Orgullo Salvadoreño</div>
+    <!-- Comilla decorativa -->
+    <span class="parallax-big-quote">"</span>
+    <!-- Título -->
+    <h2>Donde cada bocado<br>es un abrazo de <span>El Salvador</span>"</h2>
+    <!-- Subtítulo -->
     <p>Ingredientes frescos · Recetas de familia · Servicio express</p>
+    <!-- Pills -->
     <div class="parallax-pills">
       <span class="parallax-pill">🫓 Pupusas</span>
       <span class="parallax-pill">🍗 Pollo Express</span>
       <span class="parallax-pill">🫘 Frijoles</span>
       <span class="parallax-pill">🌽 Yuca Frita</span>
       <span class="parallax-pill">🥤 Horchata</span>
+    </div>
+    <!-- CTA -->
+    <a href="#menu" class="parallax-cta">Ver el Menú Completo →</a>
+    <!-- Stats -->
+    <div class="parallax-stats">
+      <div class="parallax-stat">
+        <span class="parallax-stat-num">4.9 ⭐</span>
+        <span class="parallax-stat-lbl">Valoración</span>
+      </div>
+      <div class="parallax-stat-div"></div>
+      <div class="parallax-stat">
+        <span class="parallax-stat-num">20K+</span>
+        <span class="parallax-stat-lbl">Clientes felices</span>
+      </div>
+      <div class="parallax-stat-div"></div>
+      <div class="parallax-stat">
+        <span class="parallax-stat-num">20+</span>
+        <span class="parallax-stat-lbl">Platos típicos</span>
+      </div>
     </div>
   </div>
 </div>
@@ -1515,6 +1636,30 @@
 
 <!-- GALLERY -->
 <section class="gallery" id="galeria">
+
+  <!-- Ola superior: oscuro → crema (3 capas) -->
+  <div class="gallery-wave gallery-wave-top">
+    <svg viewBox="0 0 1440 130" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Capa trasera – acento azul -->
+      <path d="M0,0 L1440,0 L1440,75
+               C1300,130 1100,40 900,80
+               C700,120 500,40 300,85
+               C150,115 60,55 0,80 Z"
+            fill="rgba(0,61,165,0.45)"/>
+      <!-- Capa media -->
+      <path d="M0,0 L1440,0 L1440,60
+               C1250,115 1000,25 780,68
+               C560,111 320,28 120,72
+               C60,88 20,70 0,68 Z"
+            fill="rgba(0,26,110,0.65)"/>
+      <!-- Capa frontal sólida -->
+      <path d="M0,0 L1440,0 L1440,45
+               C1200,100 950,10 720,55
+               C490,100 240,12 0,52 Z"
+            fill="#000D2E"/>
+    </svg>
+  </div>
+
   <div style="max-width:1300px;margin:0 auto;">
     <div class="section-label reveal">Nuestro Espacio</div>
     <h2 class="section-title reveal">Galería de<br><em>Sabores</em></h2>
@@ -1545,6 +1690,30 @@
       </div>
     </div>
   </div>
+
+  <!-- Ola inferior: crema → oscuro (3 capas) -->
+  <div class="gallery-wave gallery-wave-bot">
+    <svg viewBox="0 0 1440 130" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Capa trasera – acento azul -->
+      <path d="M0,130 L1440,130 L1440,55
+               C1300,0 1100,90 900,50
+               C700,10 500,90 300,45
+               C150,15 60,75 0,50 Z"
+            fill="rgba(0,61,165,0.45)"/>
+      <!-- Capa media -->
+      <path d="M0,130 L1440,130 L1440,70
+               C1250,15 1000,105 780,62
+               C560,19 320,102 120,58
+               C60,42 20,60 0,62 Z"
+            fill="rgba(0,26,110,0.65)"/>
+      <!-- Capa frontal sólida -->
+      <path d="M0,130 L1440,130 L1440,85
+               C1200,30 950,120 720,75
+               C490,30 240,118 0,78 Z"
+            fill="#000D2E"/>
+    </svg>
+  </div>
+
 </section>
 
 <!-- TESTIMONIALS / REVIEWS -->
@@ -1638,6 +1807,27 @@
 
 <!-- RESERVATION -->
 <section class="reservation" id="reservas">
+
+  <!-- Ola superior: oscuro → crema (3 capas) -->
+  <div class="gallery-wave gallery-wave-top">
+    <svg viewBox="0 0 1440 130" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,0 L1440,0 L1440,75
+               C1300,130 1100,40 900,80
+               C700,120 500,40 300,85
+               C150,115 60,55 0,80 Z"
+            fill="rgba(0,61,165,0.45)"/>
+      <path d="M0,0 L1440,0 L1440,60
+               C1250,115 1000,25 780,68
+               C560,111 320,28 120,72
+               C60,88 20,70 0,68 Z"
+            fill="rgba(0,26,110,0.65)"/>
+      <path d="M0,0 L1440,0 L1440,45
+               C1200,100 950,10 720,55
+               C490,100 240,12 0,52 Z"
+            fill="#000D2E"/>
+    </svg>
+  </div>
+
   <div class="reservation-inner">
     <div class="res-info">
       <div class="section-label reveal">Contáctanos</div>
@@ -1718,6 +1908,27 @@
       <button class="btn-form" onclick="submitReservation()">Confirmar Reserva 🇸🇻</button>
     </div>
   </div>
+
+  <!-- Ola inferior: crema → oscuro (3 capas) -->
+  <div class="gallery-wave gallery-wave-bot">
+    <svg viewBox="0 0 1440 130" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,130 L1440,130 L1440,55
+               C1300,0 1100,90 900,50
+               C700,10 500,90 300,45
+               C150,15 60,75 0,50 Z"
+            fill="rgba(0,61,165,0.45)"/>
+      <path d="M0,130 L1440,130 L1440,70
+               C1250,15 1000,105 780,62
+               C560,19 320,102 120,58
+               C60,42 20,60 0,62 Z"
+            fill="rgba(0,26,110,0.65)"/>
+      <path d="M0,130 L1440,130 L1440,85
+               C1200,30 950,120 720,75
+               C490,30 240,118 0,78 Z"
+            fill="#000D2E"/>
+    </svg>
+  </div>
+
 </section>
 
 <!-- FLAG STRIP -->
@@ -1732,10 +1943,26 @@
       </a>
       <p>Sabor salvadoreño auténtico con el servicio rápido que mereces. Una familia, una pasión, una tradición.</p>
       <div class="social-links">
-        <a href="#" class="social-link">f</a>
-        <a href="#" class="social-link">in</a>
-        <a href="#" class="social-link">ig</a>
-        <a href="#" class="social-link">▶</a>
+        <!-- Facebook -->
+        <a href="#" class="social-link" title="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </a>
+        <!-- TikTok -->
+        <a href="#" class="social-link" title="TikTok">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/>
+          </svg>
+        </a>
+        <!-- Instagram -->
+        <a href="#" class="social-link" title="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
       </div>
     </div>
     <div class="footer-col">
@@ -1779,25 +2006,6 @@
   // LOADER
   window.addEventListener('load', () => {
     setTimeout(() => { document.getElementById('loader').classList.add('hidden'); }, 2000);
-  });
-
-  // CURSOR
-  const cursor = document.getElementById('cursor');
-  const ring = document.getElementById('cursorRing');
-  let mx=0,my=0,rx=0,ry=0;
-  document.addEventListener('mousemove', e => {
-    mx=e.clientX; my=e.clientY;
-    cursor.style.left=mx+'px'; cursor.style.top=my+'px';
-  });
-  function animateRing(){
-    rx+=(mx-rx)*.12; ry+=(my-ry)*.12;
-    ring.style.left=rx+'px'; ring.style.top=ry+'px';
-    requestAnimationFrame(animateRing);
-  }
-  animateRing();
-  document.querySelectorAll('a,button,.menu-card,.spec-card,.gal-item').forEach(el=>{
-    el.addEventListener('mouseenter',()=>{ cursor.style.width='20px'; cursor.style.height='20px'; ring.style.width='60px'; ring.style.height='60px'; });
-    el.addEventListener('mouseleave',()=>{ cursor.style.width='12px'; cursor.style.height='12px'; ring.style.width='40px'; ring.style.height='40px'; });
   });
 
   // NAV
