@@ -63,9 +63,19 @@
 
 
   /* ─── NAV ─── */
-  nav { position:fixed; top:0; left:0; right:0; z-index:1000; padding:20px 5%; display:flex; justify-content:flex-start; align-items:center; gap:clamp(16px,2.5vw,36px); transition:all .4s; }
+  nav { position:fixed; top:0; left:0; right:0; z-index:1000; padding:20px 5%; display:flex; justify-content:flex-start; align-items:center; gap:clamp(16px,2.5vw,36px); transition:all .4s;
+    background:linear-gradient(135deg, #0a2a6e 0%, #1a4fa8 25%, #2563c7 45%, #1a4fa8 65%, #0d3380 85%, #0a2a6e 100%);
+    border-bottom:1px solid rgba(100,160,255,0.25);
+    box-shadow:0 2px 30px rgba(0,30,100,0.5), inset 0 1px 0 rgba(150,200,255,0.15);
+  }
   .nav-links { display:flex; gap:clamp(16px,2vw,28px); list-style:none; margin-right:auto; }
-  nav.scrolled { background:rgba(0,13,46,0.97); backdrop-filter:blur(20px); padding:14px 5%; border-bottom:2px solid var(--dorado); }
+  nav.scrolled {
+    background:linear-gradient(135deg, #071e52 0%, #163d8a 22%, #1f55b5 42%, #163d8a 62%, #0a2a6e 82%, #071e52 100%);
+    backdrop-filter:blur(20px);
+    padding:14px 5%;
+    border-bottom:2px solid var(--dorado);
+    box-shadow:0 4px 40px rgba(0,20,80,0.7), inset 0 1px 0 rgba(150,200,255,0.2);
+  }
   .logo { font-family:'Playfair Display',serif; font-size:clamp(1.1rem,2.5vw,1.5rem); color:var(--blanco); text-decoration:none; letter-spacing:.03em; display:flex; align-items:center; gap:10px; }
   .logo-irras { color:var(--blanco); font-weight:900; }
   .logo-irras span { color:var(--naranja); }
