@@ -133,7 +133,16 @@
     font-size:clamp(3rem,9vw,8rem);
     font-weight:900; line-height:.95; margin-bottom:30px;
     opacity:0; transform:translateY(30px); animation:fadeUp .9s .5s forwards;
+    position:relative; overflow:hidden;
   }
+  .hero-title::after {
+    content:'';
+    position:absolute; top:-10%; left:-120%; width:60%; height:120%;
+    background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.18) 50%,transparent 65%);
+    animation:heroSweep 1s 1.6s forwards;
+    pointer-events:none;
+  }
+  @keyframes heroSweep { to { left:160%; } }
   .hero-title em { font-style:italic; color:var(--dorado); display:block; }
   .hero-title span { color:var(--naranja); -webkit-text-stroke:1px var(--naranja); }
   .hero-subtitle {
@@ -905,7 +914,6 @@
       <img src="IMG_1286.PNG" alt="Irra's Express" class="loader-logo-img">
     </div>
     <div class="loader-bar"><div class="loader-fill"></div></div>
-    <div class="loader-txt">Cargando sabor salvadoreño…</div>
   </div>
 </div>
 
@@ -1008,7 +1016,7 @@
 <h1 class="hero-title">
       El Sabor<br>
       <em>que te hace</em>
-      <span>volver</span>
+      <span style="color:#003da5;-webkit-text-stroke:1px #003da5">volver</span>
     </h1>
     <p class="hero-subtitle">
       Lo mejor de la cocina salvadoreña con el servicio rápido que necesitas.
