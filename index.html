@@ -221,7 +221,7 @@
   .about-img-secondary { position:absolute; bottom:-30px; right:-30px; width:48%; aspect-ratio:1; border-radius:8px; overflow:hidden; border:4px solid var(--oscuro); box-shadow:10px 10px 30px rgba(0,0,0,0.5); }
   .about-img-secondary img { width:100%; height:100%; object-fit:cover; display:block; }
   .about-flag { position:absolute; top:-20px; left:-20px; background:linear-gradient(135deg,var(--azul),var(--azul2)); padding:20px; border-radius:8px; text-align:center; box-shadow:0 10px 30px rgba(0,0,0,0.4); border:2px solid var(--dorado); }
-  .about-flag-emoji { font-size:2rem; display:block; }
+  .about-flag-emoji { display:flex; justify-content:center; margin-bottom:2px; }
   .about-flag-txt { font-size:.6rem; letter-spacing:.15em; text-transform:uppercase; margin-top:4px; font-weight:700; color:var(--dorado); }
   .about-text p { font-family:'Cormorant Garamond',serif; font-size:clamp(1rem,1.8vw,1.25rem); line-height:1.9; color:rgba(232,240,255,0.8); margin-bottom:20px; }
   .about-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:40px; }
@@ -469,7 +469,7 @@
   .footer-hours li span { color:rgba(232,240,255,0.7); }
   .footer-bottom { border-top:1px solid rgba(255,255,255,0.06); padding-top:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; max-width:1300px; margin:0 auto; }
   .footer-bottom p { font-size:.72rem; color:rgba(232,240,255,0.25); }
-  .footer-flag { font-size:1.5rem; }
+  .footer-flag { display:inline-flex; align-items:center; }
 
   /* ─── MODAL CONFIRMACIÓN RESERVA ─── */
   .res-modal-overlay {
@@ -1067,7 +1067,24 @@
         <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=80" alt="Platos frescos" loading="lazy">
       </div>
       <div class="about-flag">
-        <span class="about-flag-emoji">🇸🇻</span>
+        <span class="about-flag-emoji">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="56" height="37" style="border-radius:4px;display:block;box-shadow:0 3px 10px rgba(0,0,0,0.35);">
+            <rect width="900" height="200" y="0"   fill="#003DA5"/>
+            <rect width="900" height="200" y="200" fill="#FFFFFF"/>
+            <rect width="900" height="200" y="400" fill="#003DA5"/>
+            <!-- Escudo simplificado -->
+            <ellipse cx="450" cy="300" rx="90" ry="82" fill="#3a9e3a"/>
+            <!-- Volcanes (3) -->
+            <polygon points="450,240 410,310 490,310" fill="#2a6e2a"/>
+            <polygon points="405,255 373,310 437,310" fill="#347534"/>
+            <polygon points="495,255 463,310 527,310" fill="#347534"/>
+            <!-- Arcoíris -->
+            <path d="M368,295 Q450,225 532,295" fill="none" stroke="#F5C518" stroke-width="7" stroke-linecap="round"/>
+            <!-- Laurel exterior -->
+            <ellipse cx="450" cy="300" rx="90" ry="82" fill="none" stroke="#FFFFFF" stroke-width="5"/>
+            <ellipse cx="450" cy="300" rx="90" ry="82" fill="none" stroke="rgba(0,61,165,0.35)" stroke-width="2"/>
+          </svg>
+        </span>
         <div class="about-flag-txt">Orgullo salvadoreño</div>
       </div>
     </div>
@@ -1627,7 +1644,7 @@
 
   <div class="parallax-content reveal-scale">
     <!-- Eyebrow -->
-    <div class="parallax-eyebrow">🇸🇻 Orgullo Salvadoreño</div>
+    <div class="parallax-eyebrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="22" height="15" style="border-radius:2px;vertical-align:middle;margin-right:6px;box-shadow:0 1px 4px rgba(0,0,0,0.3);display:inline-block;"><rect width="900" height="200" y="0" fill="#003DA5"/><rect width="900" height="200" y="200" fill="#FFFFFF"/><rect width="900" height="200" y="400" fill="#003DA5"/></svg>Orgullo Salvadoreño</div>
     <!-- Comilla decorativa -->
     <span class="parallax-big-quote">"</span>
     <!-- Título -->
@@ -2082,7 +2099,7 @@
   </div>
   <div class="footer-bottom">
     <p>© 2025 Irra's Express. Todos los derechos reservados.</p>
-    <span class="footer-flag">🇸🇻</span>
+    <span class="footer-flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="30" height="20" style="border-radius:3px;box-shadow:0 1px 5px rgba(0,0,0,0.4);display:block;"><rect width="900" height="200" y="0" fill="#003DA5"/><rect width="900" height="200" y="200" fill="#FFFFFF"/><rect width="900" height="200" y="400" fill="#003DA5"/><ellipse cx="450" cy="300" rx="90" ry="82" fill="#3a9e3a"/><polygon points="450,240 410,310 490,310" fill="#2a6e2a"/><path d="M368,295 Q450,225 532,295" fill="none" stroke="#F5C518" stroke-width="7"/><ellipse cx="450" cy="300" rx="90" ry="82" fill="none" stroke="#FFFFFF" stroke-width="5"/></svg></span>
     <p>Hecho con ❤️ y sazón salvadoreña</p>
   </div>
 </footer>
