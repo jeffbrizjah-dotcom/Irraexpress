@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Irra's Express</title>
 <link rel="preload" as="image" href="IMG_1286.PNG">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  (function(){ emailjs.init({ publicKey: "TU_PUBLIC_KEY" }); })();
+</script>
 <link rel="shortcut icon" type="image/png" href="IMG_1286.PNG">
 <link rel="icon" type="image/png" sizes="32x32" href="IMG_1286.PNG">
 <link rel="icon" type="image/png" sizes="16x16" href="IMG_1286.PNG">
@@ -457,6 +461,78 @@
   .footer-bottom { border-top:1px solid rgba(255,255,255,0.06); padding-top:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; max-width:1300px; margin:0 auto; }
   .footer-bottom p { font-size:.72rem; color:rgba(232,240,255,0.25); }
   .footer-flag { font-size:1.5rem; }
+
+  /* ─── MODAL CONFIRMACIÓN RESERVA ─── */
+  .res-modal-overlay {
+    position:fixed; inset:0; z-index:9999;
+    background:rgba(0,13,46,0.92); backdrop-filter:blur(10px);
+    display:flex; align-items:center; justify-content:center;
+    padding:20px; opacity:0; visibility:hidden;
+    transition:opacity .4s, visibility .4s;
+  }
+  .res-modal-overlay.show { opacity:1; visibility:visible; }
+  .res-modal {
+    background:linear-gradient(160deg,#000D2E,#001A6E);
+    border:1px solid rgba(245,197,24,0.35);
+    border-radius:24px; padding:40px 36px; max-width:460px; width:100%;
+    text-align:center; position:relative;
+    box-shadow:0 40px 80px rgba(0,0,0,0.6);
+    animation:modalIn .45s cubic-bezier(.34,1.56,.64,1) both;
+  }
+  @keyframes modalIn { from{transform:scale(.85) translateY(30px);opacity:0} to{transform:scale(1) translateY(0);opacity:1} }
+  .res-modal-close {
+    position:absolute; top:16px; right:16px;
+    width:34px; height:34px; border-radius:50%;
+    border:1px solid rgba(255,255,255,0.15); background:rgba(255,255,255,0.05);
+    color:rgba(255,255,255,0.5); font-size:1.1rem; cursor:pointer;
+    display:flex; align-items:center; justify-content:center; transition:all .3s;
+  }
+  .res-modal-close:hover { background:rgba(255,255,255,0.15); color:white; }
+  .res-modal-logo { width:130px; height:auto; margin:0 auto 16px; display:block; }
+  .res-modal-check {
+    width:68px; height:68px; background:linear-gradient(135deg,#2DB84B,#1a8c38);
+    border-radius:50%; display:flex; align-items:center; justify-content:center;
+    margin:0 auto 20px; font-size:2rem;
+    box-shadow:0 8px 30px rgba(45,184,75,0.4);
+    animation:checkPop .5s .3s cubic-bezier(.34,1.56,.64,1) both;
+  }
+  @keyframes checkPop { from{transform:scale(0)} to{transform:scale(1)} }
+  .res-modal-title {
+    font-family:'Playfair Display',serif; font-size:1.6rem;
+    font-weight:900; color:var(--blanco); margin-bottom:8px;
+  }
+  .res-modal-sub {
+    font-family:'Cormorant Garamond',serif; font-size:1.1rem;
+    color:rgba(232,240,255,0.65); margin-bottom:24px; line-height:1.6;
+  }
+  .res-modal-details {
+    background:rgba(255,255,255,0.05); border:1px solid rgba(245,197,24,0.2);
+    border-radius:12px; padding:18px 20px; margin-bottom:24px; text-align:left;
+  }
+  .res-modal-details p {
+    font-size:.82rem; color:rgba(232,240,255,0.75);
+    margin-bottom:8px; display:flex; gap:10px; align-items:flex-start;
+  }
+  .res-modal-details p:last-child { margin-bottom:0; }
+  .res-modal-details strong { color:var(--dorado); min-width:16px; }
+  .res-modal-btns { display:flex; flex-direction:column; gap:10px; }
+  .res-modal-btn-wa {
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    background:linear-gradient(135deg,#25D366,#1aab52);
+    color:white; padding:14px 20px; border-radius:10px;
+    font-family:'Montserrat',sans-serif; font-size:.78rem;
+    font-weight:700; letter-spacing:.15em; text-transform:uppercase;
+    text-decoration:none; transition:all .3s;
+    box-shadow:0 6px 20px rgba(37,211,102,0.35);
+  }
+  .res-modal-btn-wa:hover { transform:translateY(-3px); box-shadow:0 10px 28px rgba(37,211,102,0.5); }
+  .res-modal-btn-close {
+    background:transparent; border:1px solid rgba(255,255,255,0.15);
+    color:rgba(232,240,255,0.55); padding:12px 20px; border-radius:10px;
+    font-family:'Montserrat',sans-serif; font-size:.75rem;
+    font-weight:600; letter-spacing:.1em; cursor:pointer; transition:all .3s;
+  }
+  .res-modal-btn-close:hover { border-color:rgba(255,255,255,0.35); color:white; }
 
   /* ─── SCROLL REVEAL ─── */
   .reveal { opacity:0; transform:translateY(60px); transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1); }
@@ -1866,26 +1942,26 @@
       <div class="form-row">
         <div class="form-group">
           <label>Nombre</label>
-          <input type="text" placeholder="Tu nombre">
+          <input type="text" id="res-nombre" placeholder="Tu nombre">
         </div>
         <div class="form-group">
           <label>Teléfono</label>
-          <input type="tel" placeholder="+503 0000 0000">
+          <input type="tel" id="res-telefono" placeholder="+503 0000 0000">
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
           <label>Fecha</label>
-          <input type="date">
+          <input type="date" id="res-fecha">
         </div>
         <div class="form-group">
           <label>Hora</label>
-          <input type="time" value="12:00">
+          <input type="time" id="res-hora" value="12:00">
         </div>
       </div>
       <div class="form-group">
         <label>Número de personas</label>
-        <select>
+        <select id="res-personas">
           <option>1–2 personas</option>
           <option>3–4 personas</option>
           <option>5–6 personas</option>
@@ -1895,12 +1971,16 @@
       </div>
       <div class="form-group">
         <label>Tipo de reserva</label>
-        <select>
+        <select id="res-tipo">
           <option>Comer en el local</option>
           <option>Para llevar 🥡</option>
           <option>Delivery a domicilio 🛵</option>
           <option>Evento especial 🎉</option>
         </select>
+      </div>
+      <div class="form-group">
+        <label>Email (para confirmación)</label>
+        <input type="email" id="res-email" placeholder="tucorreo@email.com">
       </div>
       <button class="btn-form" onclick="submitReservation()">Confirmar Reserva 🇸🇻</button>
     </div>
@@ -2105,12 +2185,101 @@
 
   // RESERVATION SUBMIT
   function submitReservation(){
-    const btn=document.querySelector('.btn-form');
-    btn.textContent='✓ ¡Reserva confirmada! Te contactamos pronto. 🎉';
-    btn.style.background='linear-gradient(135deg,#2DB84B,#1a8c38)';
-    btn.style.borderColor='#2DB84B';
-    setTimeout(()=>{ btn.textContent='Confirmar Reserva 🇸🇻'; btn.style.background=''; btn.style.borderColor=''; },5000);
+    const nombre   = document.getElementById('res-nombre').value.trim();
+    const telefono = document.getElementById('res-telefono').value.trim();
+    const email    = document.getElementById('res-email').value.trim();
+    const fecha    = document.getElementById('res-fecha').value;
+    const hora     = document.getElementById('res-hora').value;
+    const personas = document.getElementById('res-personas').value;
+    const tipo     = document.getElementById('res-tipo').value;
+
+    if(!nombre || !fecha || !hora){
+      alert('Por favor completa al menos tu nombre, fecha y hora 😊');
+      return;
+    }
+
+    // Fecha legible
+    const fechaObj = new Date(fecha + 'T12:00:00');
+    const fechaStr = fechaObj.toLocaleDateString('es-ES',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+
+    // ── 1. WhatsApp al RESTAURANTE ──────────────────────────────
+    const msgRestaurante =
+`🍽️ *NUEVA RESERVA — Irra's Express*
+
+👤 *Nombre:* ${nombre}
+📞 *Teléfono:* ${telefono || '—'}
+📧 *Email:* ${email || '—'}
+📅 *Fecha:* ${fechaStr}
+🕐 *Hora:* ${hora}
+👥 *Personas:* ${personas}
+📋 *Tipo:* ${tipo}
+
+_Enviado desde irraexpress.vercel.app_`;
+
+    window.open('https://wa.me/34675048731?text=' + encodeURIComponent(msgRestaurante), '_blank');
+
+    // ── 2. Email de confirmación al CLIENTE via EmailJS ─────────
+    if(email){
+      emailjs.send('TU_SERVICE_ID', 'TU_TEMPLATE_ID', {
+        to_name    : nombre,
+        to_email   : email,
+        res_fecha  : fechaStr,
+        res_hora   : hora,
+        res_personas: personas,
+        res_tipo   : tipo,
+        res_telefono: telefono || '—'
+      }).catch(err => console.warn('EmailJS:', err));
+    }
+
+    // ── 3. Modal de confirmación con botón WhatsApp al cliente ──
+    const msgCliente =
+`✅ *¡Reserva confirmada en Irra's Express!* 🇸🇻
+
+Hola ${nombre}, tu reserva está confirmada:
+
+📅 *Fecha:* ${fechaStr}
+🕐 *Hora:* ${hora}
+👥 *Personas:* ${personas}
+📋 *Tipo:* ${tipo}
+
+¡Te esperamos con el mejor sabor salvadoreño! 🍽️
+_irraexpress.vercel.app_`;
+
+    // Rellenar detalles en el modal
+    document.getElementById('resModalDetails').innerHTML = `
+      <p><strong>👤</strong> ${nombre}</p>
+      <p><strong>📅</strong> ${fechaStr}</p>
+      <p><strong>🕐</strong> ${hora}</p>
+      <p><strong>👥</strong> ${personas}</p>
+      <p><strong>📋</strong> ${tipo}</p>
+      ${email ? `<p><strong>📧</strong> Confirmación enviada a ${email}</p>` : ''}
+    `;
+
+    // Configurar botón WhatsApp cliente (guarda en su propio WA)
+    const telLimpio = telefono.replace(/\D/g,'');
+    const waClienteUrl = telLimpio
+      ? 'https://wa.me/' + telLimpio + '?text=' + encodeURIComponent(msgCliente)
+      : 'https://wa.me/?text=' + encodeURIComponent(msgCliente);
+    document.getElementById('resModalWaBtn').href = waClienteUrl;
+
+    // Mostrar modal
+    document.getElementById('resModal').classList.add('show');
+
+    // Reset botón
+    const btn = document.querySelector('.btn-form');
+    btn.textContent = '✓ ¡Reserva enviada! 🎉';
+    btn.style.background = 'linear-gradient(135deg,#2DB84B,#1a8c38)';
+    btn.style.borderColor = '#2DB84B';
+    setTimeout(()=>{ btn.textContent='Confirmar Reserva 🇸🇻'; btn.style.background=''; btn.style.borderColor=''; }, 4000);
   }
+
+  function closeResModal(){
+    document.getElementById('resModal').classList.remove('show');
+  }
+  // Cerrar modal al clic fuera
+  document.getElementById('resModal').addEventListener('click', function(e){
+    if(e.target === this) closeResModal();
+  });
 </script>
 
 <!-- IZOTES GUARDADOS - para usar donde se necesiten, copiar el SVG deseado -->
@@ -2135,6 +2304,25 @@
     <circle cx="25" cy="94" r="2" fill="#F5C518"/>
   </svg>
 </template>
+
+<!-- MODAL CONFIRMACIÓN RESERVA -->
+<div class="res-modal-overlay" id="resModal">
+  <div class="res-modal">
+    <button class="res-modal-close" onclick="closeResModal()">✕</button>
+    <img src="IMG_1286.PNG" alt="Irra's Express" class="res-modal-logo">
+    <div class="res-modal-check">✓</div>
+    <div class="res-modal-title">¡Reserva Confirmada!</div>
+    <div class="res-modal-sub">Gracias por elegirnos. Te esperamos con el mejor sabor salvadoreño 🇸🇻</div>
+    <div class="res-modal-details" id="resModalDetails"></div>
+    <div class="res-modal-btns">
+      <a href="#" id="resModalWaBtn" class="res-modal-btn-wa" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Guardar confirmación en WhatsApp
+      </a>
+      <button class="res-modal-btn-close" onclick="closeResModal()">Cerrar</button>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
