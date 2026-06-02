@@ -735,45 +735,13 @@
     nav img[alt="Irra's Express"] { height:110px !important; }
 
     /* Hero */
-    .hero { padding-top:0; text-align:center; min-height:100svh; display:flex; align-items:center; }
-    .hero-overlay {
-      background:
-        linear-gradient(to top, rgba(0,13,46,0.97) 0%, rgba(0,13,46,0.6) 40%, rgba(0,13,46,0.25) 100%),
-        linear-gradient(to bottom, rgba(0,13,46,0.7) 0%, transparent 30%);
-    }
-    .hero-content { margin-left:0; max-width:100%; padding:120px 6% 100px; display:flex; flex-direction:column; align-items:center; }
+    .hero { padding-top:80px; text-align:center; }
+    .hero-content { margin-left:0; max-width:100%; padding:0 6%; }
     .hero-strip { display:none; }
     .hero-float-badges { display:none; }
-    .hero-buttons { justify-content:center; flex-direction:column; align-items:center; gap:12px; width:100%; max-width:340px; margin:0 auto; }
-    .hero-buttons .btn-primary, .hero-buttons .btn-secondary { width:100%; text-align:center; padding:16px 24px; font-size:.78rem; }
-    .hero-dots { display:flex; bottom:24px; }
-    .hero-title { font-size:clamp(3.2rem,13vw,5rem); margin-bottom:16px; }
-    .hero-subtitle { font-size:1rem; margin-bottom:32px; max-width:320px; }
-    .hero-tag { font-size:.65rem; padding:8px 16px; margin-bottom:20px; opacity:1 !important; transform:none !important; animation:none !important; }
-
-    /* Hero mobile rating bar */
-    .hero-mobile-bar {
-      display:flex; align-items:center; justify-content:center;
-      gap:16px; margin-top:28px;
-      padding:12px 20px;
-      background:rgba(0,13,46,0.6);
-      border:1px solid rgba(245,197,24,0.25);
-      border-radius:50px;
-      backdrop-filter:blur(12px);
-      width:fit-content; margin-left:auto; margin-right:auto;
-    }
-    .hero-mobile-bar .hmb-item { display:flex; flex-direction:column; align-items:center; gap:2px; }
-    .hero-mobile-bar .hmb-val { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:900; color:var(--dorado); line-height:1; }
-    .hero-mobile-bar .hmb-lbl { font-size:.55rem; letter-spacing:.12em; text-transform:uppercase; color:rgba(232,240,255,0.5); }
-    .hero-mobile-bar .hmb-div { width:1px; height:28px; background:rgba(255,255,255,0.12); }
-    /* location pill */
-    .hero-mobile-loc {
-      display:inline-flex; align-items:center; gap:6px;
-      background:rgba(0,61,165,0.5); border:1px solid rgba(245,197,24,0.3);
-      border-radius:30px; padding:6px 14px; margin-bottom:18px;
-      font-size:.65rem; letter-spacing:.1em; color:rgba(232,240,255,0.85);
-      backdrop-filter:blur(8px);
-    }
+    .hero-buttons { justify-content:center; }
+    .hero-dots { display:none; }
+    .hero-title { font-size:clamp(3.5rem,12vw,5.5rem); }
 
     /* About */
     .about-grid { grid-template-columns:1fr; gap:50px; }
@@ -1047,12 +1015,10 @@
   </div>
 
   <div class="hero-content">
-    <div class="hero-mobile-loc">📍 Puente de Vallecas, Madrid</div>
-    <div class="hero-tag">🇸🇻 Cocina Salvadoreña Auténtica</div>
     <h1 class="hero-title">
       El Sabor<br>
       <em>que te hace</em>
-      <span style="color:var(--naranja);-webkit-text-stroke:0px">volver</span>
+      <span style="color:#003da5;-webkit-text-stroke:1px #003da5">volver</span>
     </h1>
     <p class="hero-subtitle">
       Lo mejor de la cocina salvadoreña con el servicio rápido que necesitas.
@@ -1061,15 +1027,6 @@
     <div class="hero-buttons">
       <a href="#menu" class="btn-primary">Ver el Menú 🍽️</a>
       <a href="#reservas" class="btn-secondary">Reserva Ya</a>
-    </div>
-    <div class="hero-mobile-bar">
-      <div class="hmb-item"><span class="hmb-val">4.5⭐</span><span class="hmb-lbl">Google</span></div>
-      <div class="hmb-div"></div>
-      <div class="hmb-item"><span class="hmb-val">122</span><span class="hmb-lbl">Reseñas</span></div>
-      <div class="hmb-div"></div>
-      <div class="hmb-item"><span class="hmb-val">85+</span><span class="hmb-lbl">Platos</span></div>
-      <div class="hmb-div"></div>
-      <div class="hmb-item"><span class="hmb-val">⚡</span><span class="hmb-lbl">Express</span></div>
     </div>
   </div>
   <div class="hero-strip">
