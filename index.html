@@ -238,6 +238,13 @@
   .menu-tabs { display:flex; gap:6px; flex-wrap:wrap; margin:40px 0 50px; }
   .tab-btn { background:rgba(255,255,255,0.05); border:2px solid rgba(255,255,255,0.18); color:rgba(232,240,255,0.8); padding:10px 24px; font-family:'Montserrat',sans-serif; font-size:.75rem; letter-spacing:.15em; text-transform:uppercase; cursor:pointer; transition:all .3s; border-radius:3px; font-weight:600; backdrop-filter:blur(8px); }
   .tab-btn.active, .tab-btn:hover { background:var(--azul); border-color:var(--dorado); color:white; transform:translateY(-2px); box-shadow:0 8px 20px rgba(0,61,165,0.4); }
+  .menu-subtabs { display:flex; gap:6px; flex-wrap:wrap; margin:-30px 0 40px; padding:14px 18px; background:rgba(245,197,24,0.06); border:1px solid rgba(245,197,24,0.2); border-radius:8px; }
+  .subtab-btn { background:rgba(245,197,24,0.08); border:1px solid rgba(245,197,24,0.3); color:rgba(232,240,255,0.75); padding:7px 18px; font-family:'Montserrat',sans-serif; font-size:.7rem; letter-spacing:.15em; text-transform:uppercase; cursor:pointer; transition:all .3s; border-radius:20px; font-weight:600; }
+  .subtab-btn.active, .subtab-btn:hover { background:var(--dorado); border-color:var(--dorado); color:var(--oscuro); font-weight:700; }
+  .pupusa-prices { display:flex; flex-direction:column; gap:3px; }
+  .pupusa-prices .pp-item { display:flex; align-items:center; gap:6px; }
+  .pupusa-prices .pp-label { font-family:'Montserrat',sans-serif; font-size:.58rem; letter-spacing:.15em; text-transform:uppercase; color:rgba(232,240,255,0.45); min-width:52px; }
+  .pupusa-prices .pp-val { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:900; color:var(--dorado); text-shadow:0 0 20px rgba(245,197,24,0.4); }
   .menu-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr)); gap:24px; max-width:1300px; }
   .menu-card { background:rgba(0,26,110,0.45); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); border:1px solid rgba(245,197,24,0.2); border-radius:12px; overflow:hidden; transition:transform .4s cubic-bezier(.34,1.56,.64,1),box-shadow .4s,border-color .4s; position:relative; cursor:pointer; }
   .menu-card:hover { transform:translateY(-10px) scale(1.02); box-shadow:0 30px 60px rgba(0,0,0,0.5); border-color:rgba(245,197,24,0.7); }
@@ -1122,107 +1129,589 @@
     <div class="menu-tabs reveal">
       <button class="tab-btn active" onclick="filterMenu('todos',this)">Todos</button>
       <button class="tab-btn" onclick="filterMenu('pupusas',this)">Pupusas</button>
-      <button class="tab-btn" onclick="filterMenu('platos',this)">Principales</button>
+      <button class="tab-btn" onclick="filterMenu('principales',this)">Principales</button>
       <button class="tab-btn" onclick="filterMenu('entrantes',this)">Entrantes</button>
+      <button class="tab-btn" onclick="filterMenu('mexicanos',this)">Mexicanos</button>
+      <button class="tab-btn" onclick="filterMenu('desayuno',this)">Desayuno</button>
       <button class="tab-btn" onclick="filterMenu('bebidas',this)">Bebidas</button>
+      <button class="tab-btn" onclick="filterMenu('bebidas-calientes',this)">Bebidas Calientes</button>
+      <button class="tab-btn" onclick="filterMenu('cervezas-tercio',this)">Cervezas Tercio</button>
+      <button class="tab-btn" onclick="filterMenu('cervezas-grifo',this)">Cervezas de Grifo</button>
+      <button class="tab-btn" onclick="filterMenu('zumos',this)">Zumos Naturales</button>
+      <button class="tab-btn" onclick="filterMenu('batidos',this)">Batidos</button>
       <button class="tab-btn" onclick="filterMenu('postres',this)">Postres</button>
+      <button class="tab-btn" onclick="filterMenu('oferta-especial',this)">⭐ Oferta Especial</button>
+    </div>
+
+    <!-- SUB-TABS PUPUSAS -->
+    <div class="menu-subtabs reveal" id="pupusaSubtabs" style="display:none;">
+      <button class="subtab-btn active" onclick="filterSubMenu('todas',this)">Todas</button>
+      <button class="subtab-btn" onclick="filterSubMenu('tipicas',this)">Típicas</button>
+      <button class="subtab-btn" onclick="filterSubMenu('veganas',this)">Veganas</button>
+      <button class="subtab-btn" onclick="filterSubMenu('vegetarianas',this)">Vegetarianas</button>
+      <button class="subtab-btn" onclick="filterSubMenu('carnivotas',this)">Carnívoras</button>
     </div>
     <div class="menu-grid" id="menuGrid">
 
-      <div class="menu-card reveal" data-cat="pupusas">
-        <div class="menu-badge">⭐ Favorita</div>
+      <!-- PUPUSAS TÍPICAS -->
+      <div class="menu-card reveal" data-cat="pupusas" data-subcat="tipicas">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Frijol con Queso" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Frijol con Queso</div>
+          <div class="menu-card-footer">
+            <div class="pupusa-prices">
+              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+            </div>
+            <span class="menu-tag">Típicas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="pupusas" data-subcat="tipicas">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Chicharrón con Queso" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Chicharrón con Queso</div>
+          <div class="menu-card-footer">
+            <div class="pupusa-prices">
+              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+            </div>
+            <span class="menu-tag">Típicas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="pupusas" data-subcat="tipicas">
         <div class="menu-card-img">
           <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Revuelta" loading="lazy">
         </div>
         <div class="menu-card-body">
-          <div class="menu-card-name">Pupusa Revuelta</div>
-          <div class="menu-card-desc">Chicharrón molido, queso y frijoles refritos. Servida con curtido y salsa roja. La más pedida.</div>
+          <div class="menu-card-name">Revuelta</div>
           <div class="menu-card-footer">
-            <span class="menu-price">2,50€</span>
-            <span class="menu-tag">Típica</span>
+            <div class="pupusa-prices">
+              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+            </div>
+            <span class="menu-tag">Típicas</span>
           </div>
         </div>
       </div>
 
-      <div class="menu-card reveal" data-cat="pupusas">
+      <div class="menu-card reveal" data-cat="pupusas" data-subcat="tipicas">
         <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80" alt="Pupusa de Queso" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa de Queso" loading="lazy">
         </div>
         <div class="menu-card-body">
-          <div class="menu-card-name">Pupusa de Queso</div>
-          <div class="menu-card-desc">Masa de maíz con queso blanco fundido. También disponible con loroco, chipilin o jalapeño.</div>
+          <div class="menu-card-name">Queso</div>
           <div class="menu-card-footer">
-            <span class="menu-price">2,50€</span>
-            <span class="menu-tag">Vegetariana</span>
+            <div class="pupusa-prices">
+              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+            </div>
+            <span class="menu-tag">Típicas</span>
           </div>
         </div>
       </div>
 
-      <div class="menu-card reveal" data-cat="pupusas">
-        <div class="menu-badge">🔥 Especial</div>
+      <div class="menu-card reveal" data-cat="pupusas" data-subcat="tipicas">
         <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1625944525533-473f1a3d54e7?w=600&q=80" alt="Pupusa Loca" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Doble Queso" loading="lazy">
         </div>
         <div class="menu-card-body">
-          <div class="menu-card-name">Pupusa Loca</div>
-          <div class="menu-card-desc">Nuestra pupusa especial tamaño grande con relleno extra y combinación de sabores únicos.</div>
+          <div class="menu-card-name">Doble Queso</div>
           <div class="menu-card-footer">
-            <span class="menu-price">5,00€</span>
-            <span class="menu-tag">Especial</span>
+            <div class="pupusa-prices">
+              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+            </div>
+            <span class="menu-tag">Típicas</span>
           </div>
         </div>
       </div>
 
-      <div class="menu-card reveal" data-cat="platos">
-        <div class="menu-badge">🏆 Chef Recomienda</div>
+      <!-- PUPUSAS VEGANAS -->
+      <div class="menu-card reveal" data-cat="pupusas" data-subcat="veganas">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Solo Loroco" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Solo Loroco</div>
+          <div class="menu-card-footer">
+            <div class="pupusa-prices">
+              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+            </div>
+            <span class="menu-tag">Veganas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="pupusas" data-subcat="veganas">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Solo Chipilin" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Solo Chipilin</div>
+          <div class="menu-card-footer">
+            <div class="pupusa-prices">
+              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+            </div>
+            <span class="menu-tag">Veganas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="pupusas" data-subcat="veganas">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Solo Calabacín" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Solo Calabacín</div>
+          <div class="menu-card-footer">
+            <div class="pupusa-prices">
+              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+            </div>
+            <span class="menu-tag">Veganas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="pupusas" data-subcat="veganas">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Solo Zanahoria" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Solo Zanahoria</div>
+          <div class="menu-card-footer">
+            <div class="pupusa-prices">
+              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+            </div>
+            <span class="menu-tag">Veganas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="pupusas" data-subcat="veganas">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Solo Frijol" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Solo Frijol</div>
+          <div class="menu-card-footer">
+            <div class="pupusa-prices">
+              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+            </div>
+            <span class="menu-tag">Veganas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="pupusas" data-subcat="veganas">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Solo Espinaca" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Solo Espinaca</div>
+          <div class="menu-card-footer">
+            <div class="pupusa-prices">
+              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+            </div>
+            <span class="menu-tag">Veganas</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PUPUSAS VEGETARIANAS -->
+      <div class="menu-card reveal" data-cat="pupusas" data-subcat="vegetarianas">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Loroco Queso" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Loroco Queso</div>
+          <div class="menu-card-footer">
+            <div class="pupusa-prices">
+              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+            </div>
+            <span class="menu-tag">Vegetarianas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="pupusas" data-subcat="vegetarianas">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Chipilin Queso" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Chipilin Queso</div>
+          <div class="menu-card-footer">
+            <div class="pupusa-prices">
+              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+            </div>
+            <span class="menu-tag">Vegetarianas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="pupusas" data-subcat="vegetarianas">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Calabacín Queso" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Calabacín Queso</div>
+          <div class="menu-card-footer">
+            <div class="pupusa-prices">
+              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+            </div>
+            <span class="menu-tag">Vegetarianas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="pupusas" data-subcat="vegetarianas">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Champiñon Queso" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Champiñón Queso</div>
+          <div class="menu-card-footer">
+            <div class="pupusa-prices">
+              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+            </div>
+            <span class="menu-tag">Vegetarianas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="pupusas" data-subcat="vegetarianas">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Ajo Queso" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Ajo Queso</div>
+          <div class="menu-card-footer">
+            <div class="pupusa-prices">
+              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+            </div>
+            <span class="menu-tag">Vegetarianas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="pupusas" data-subcat="vegetarianas">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Jalapeño Queso" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Jalapeño Queso</div>
+          <div class="menu-card-footer">
+            <div class="pupusa-prices">
+              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+            </div>
+            <span class="menu-tag">Vegetarianas</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PUPUSAS CARNÍVORAS -->
+      <div class="menu-card reveal" data-cat="pupusas" data-subcat="carnivotas">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Pollo Queso" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Pollo Queso</div>
+          <div class="menu-card-footer">
+            <div class="pupusa-prices">
+              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+            </div>
+            <span class="menu-tag">Carnívoras</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="pupusas" data-subcat="carnivotas">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Jamón Queso" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Jamón Queso</div>
+          <div class="menu-card-footer">
+            <div class="pupusa-prices">
+              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+            </div>
+            <span class="menu-tag">Carnívoras</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="pupusas" data-subcat="carnivotas">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Gambas Queso" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Gambas Queso</div>
+          <div class="menu-card-footer">
+            <div class="pupusa-prices">
+              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+            </div>
+            <span class="menu-tag">Carnívoras</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="pupusas" data-subcat="carnivotas">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Cochinita Queso" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Cochinita Queso</div>
+          <div class="menu-card-footer">
+            <div class="pupusa-prices">
+              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+            </div>
+            <span class="menu-tag">Carnívoras</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="pupusas" data-subcat="carnivotas">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Ternera con Queso" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Ternera con Queso</div>
+          <div class="menu-card-footer">
+            <div class="pupusa-prices">
+              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+            </div>
+            <span class="menu-tag">Carnívoras</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="pupusas" data-subcat="carnivotas">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Solo Chicharrón" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Solo Chicharrón</div>
+          <div class="menu-card-footer">
+            <div class="pupusa-prices">
+              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+            </div>
+            <span class="menu-tag">Carnívoras</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="pupusas" data-subcat="carnivotas">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Solo Cochinita" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Solo Cochinita</div>
+          <div class="menu-card-footer">
+            <div class="pupusa-prices">
+              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+            </div>
+            <span class="menu-tag">Carnívoras</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="pupusas" data-subcat="carnivotas">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Solo Ternera" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Solo Ternera</div>
+          <div class="menu-card-footer">
+            <div class="pupusa-prices">
+              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+            </div>
+            <span class="menu-tag">Carnívoras</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="pupusas" data-subcat="carnivotas">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Solo Gambas" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Solo Gambas</div>
+          <div class="menu-card-footer">
+            <div class="pupusa-prices">
+              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+            </div>
+            <span class="menu-tag">Carnívoras</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="pupusas" data-subcat="carnivotas">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Solo Jamón" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Solo Jamón</div>
+          <div class="menu-card-footer">
+            <div class="pupusa-prices">
+              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+            </div>
+            <span class="menu-tag">Carnívoras</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="principales">
         <div class="menu-card-img">
           <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=600&q=80" alt="Carne Asada" loading="lazy">
         </div>
         <div class="menu-card-body">
           <div class="menu-card-name">Carne Asada</div>
-          <div class="menu-card-desc">Jugosa carne asada al estilo salvadoreño con arroz, frijoles, ensalada y tortillas.</div>
           <div class="menu-card-footer">
             <span class="menu-price">15,00€</span>
-            <span class="menu-tag">Principal</span>
+            <span class="menu-tag">Principales</span>
           </div>
         </div>
       </div>
 
-      <div class="menu-card reveal" data-cat="platos">
+      <div class="menu-card reveal" data-cat="principales">
         <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80" alt="Sopa de Pata" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80" alt="Pollo Chuco" loading="lazy">
         </div>
         <div class="menu-card-body">
-          <div class="menu-card-name">Sopa de Pata</div>
-          <div class="menu-card-desc">Sopa tradicional salvadoreña cocinada a fuego lento con verduras frescas y especias del hogar.</div>
+          <div class="menu-card-name">Pollo Chuco</div>
           <div class="menu-card-footer">
             <span class="menu-price">15,00€</span>
-            <span class="menu-tag">Tradicional</span>
+            <span class="menu-tag">Principales</span>
           </div>
         </div>
       </div>
 
-      <div class="menu-card reveal" data-cat="platos">
+      <div class="menu-card reveal" data-cat="principales">
         <div class="menu-card-img">
           <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="Pollo Estilo Campero" loading="lazy">
         </div>
         <div class="menu-card-body">
           <div class="menu-card-name">Pollo Estilo Campero</div>
-          <div class="menu-card-desc">Pollo crujiente al estilo campero, servido con arroz, frijoles y ensalada fresca.</div>
           <div class="menu-card-footer">
             <span class="menu-price">15,00€</span>
-            <span class="menu-tag">Principal</span>
+            <span class="menu-tag">Principales</span>
           </div>
         </div>
       </div>
 
-      <div class="menu-card reveal" data-cat="platos">
+      <div class="menu-card reveal" data-cat="principales">
         <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80" alt="Desayuno Típico" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80" alt="Sopa de Res" loading="lazy">
         </div>
         <div class="menu-card-body">
-          <div class="menu-card-name">Desayuno Típico</div>
-          <div class="menu-card-desc">Huevos, frijoles, queso, plátano frito, crema y tortillas. El desayuno salvadoreño completo.</div>
+          <div class="menu-card-name">Sopa de Res</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">15,00€</span>
+            <span class="menu-tag">Principales</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="principales">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80" alt="Sopa de Pata" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Sopa de Pata</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">15,00€</span>
+            <span class="menu-tag">Principales</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="principales">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="Pechuga de Pollo a la Plancha" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Pechuga de Pollo a la Plancha</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">13,00€</span>
+            <span class="menu-tag">Principales</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="principales">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=600&q=80" alt="Dorada Frita con Arroz, Ensalada o Tajada" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Dorada Frita con Arroz, Ensalada o Tajada</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">15,00€</span>
+            <span class="menu-tag">Principales</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="principales">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80" alt="Bisteck Encebollado" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Bisteck Encebollado</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">15,00€</span>
+            <span class="menu-tag">Principales</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="principales">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80" alt="Carne Mechada con Arroz" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Carne Mechada con Arroz</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">15,00€</span>
+            <span class="menu-tag">Principales</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="desayuno">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600&q=80" alt="Desayuno Típico" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Típico</div>
           <div class="menu-card-footer">
             <span class="menu-price">12,00€</span>
             <span class="menu-tag">Desayuno</span>
@@ -1230,97 +1719,12 @@
         </div>
       </div>
 
-      <div class="menu-card reveal" data-cat="platos">
-        <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80" alt="Pollo Chuco" loading="lazy">
-        </div>
-        <div class="menu-card-body">
-          <div class="menu-card-name">Pollo Chuco</div>
-          <div class="menu-card-desc">Pollo al estilo salvadoreño con su salsa especial, arroz, frijoles y ensalada. Sabor único.</div>
-          <div class="menu-card-footer">
-            <span class="menu-price">15,00€</span>
-            <span class="menu-tag">Principal</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="menu-card reveal" data-cat="platos">
-        <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80" alt="Sopa de Res" loading="lazy">
-        </div>
-        <div class="menu-card-body">
-          <div class="menu-card-name">Sopa de Res</div>
-          <div class="menu-card-desc">Caldo de res con verduras frescas y hierbas aromáticas. Reconfortante y llena de sabor.</div>
-          <div class="menu-card-footer">
-            <span class="menu-price">15,00€</span>
-            <span class="menu-tag">Principal</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="menu-card reveal" data-cat="platos">
-        <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="Pechuga a la Plancha" loading="lazy">
-        </div>
-        <div class="menu-card-body">
-          <div class="menu-card-name">Pechuga de Pollo a la Plancha</div>
-          <div class="menu-card-desc">Pechuga jugosa a la plancha con arroz, frijoles y ensalada fresca. Opción ligera y sabrosa.</div>
-          <div class="menu-card-footer">
-            <span class="menu-price">13,00€</span>
-            <span class="menu-tag">Principal</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="menu-card reveal" data-cat="platos">
-        <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=600&q=80" alt="Dorada Frita" loading="lazy">
-        </div>
-        <div class="menu-card-body">
-          <div class="menu-card-name">Dorada Frita con Arroz</div>
-          <div class="menu-card-desc">Dorada entera frita crujiente, acompañada de arroz y ensalada o tajadas. Mar en tu mesa.</div>
-          <div class="menu-card-footer">
-            <span class="menu-price">15,00€</span>
-            <span class="menu-tag">Principal</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="menu-card reveal" data-cat="platos">
-        <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80" alt="Bisteck Encebollado" loading="lazy">
-        </div>
-        <div class="menu-card-body">
-          <div class="menu-card-name">Bisteck Encebollado</div>
-          <div class="menu-card-desc">Filete de res con cebolla caramelizada al estilo salvadoreño, con arroz y frijoles.</div>
-          <div class="menu-card-footer">
-            <span class="menu-price">15,00€</span>
-            <span class="menu-tag">Principal</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="menu-card reveal" data-cat="platos">
-        <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80" alt="Carne Mechada" loading="lazy">
-        </div>
-        <div class="menu-card-body">
-          <div class="menu-card-name">Carne Mechada con Arroz</div>
-          <div class="menu-card-desc">Carne deshebrada en salsa criolla servida con arroz blanco. Receta de la abuela.</div>
-          <div class="menu-card-footer">
-            <span class="menu-price">15,00€</span>
-            <span class="menu-tag">Principal</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="menu-card reveal" data-cat="platos">
+      <div class="menu-card reveal" data-cat="desayuno">
         <div class="menu-card-img">
           <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="Desayuno Ranchero" loading="lazy">
         </div>
         <div class="menu-card-body">
-          <div class="menu-card-name">Desayuno Ranchero</div>
-          <div class="menu-card-desc">Huevos rancheros con salsa, frijoles, queso, plátano frito y tortillas recién hechas.</div>
+          <div class="menu-card-name">Ranchero</div>
           <div class="menu-card-footer">
             <span class="menu-price">10,00€</span>
             <span class="menu-tag">Desayuno</span>
@@ -1328,13 +1732,12 @@
         </div>
       </div>
 
-      <div class="menu-card reveal" data-cat="platos">
+      <div class="menu-card reveal" data-cat="desayuno">
         <div class="menu-card-img">
           <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80" alt="Desayuno Tradicional" loading="lazy">
         </div>
         <div class="menu-card-body">
-          <div class="menu-card-name">Desayuno Tradicional</div>
-          <div class="menu-card-desc">El desayuno sencillo y nutritivo de cada día: frijoles, huevo, queso y tortillas.</div>
+          <div class="menu-card-name">Tradicional</div>
           <div class="menu-card-footer">
             <span class="menu-price">7,50€</span>
             <span class="menu-tag">Desayuno</span>
@@ -1342,116 +1745,15 @@
         </div>
       </div>
 
-      <div class="menu-card reveal" data-cat="platos">
-        <div class="menu-badge">🌮 Mexicanos</div>
-        <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1625944525533-473f1a3d54e7?w=600&q=80" alt="Nachos Mexicanos" loading="lazy">
-        </div>
-        <div class="menu-card-body">
-          <div class="menu-card-name">Nachos Mexicanos</div>
-          <div class="menu-card-desc">Nachos crujientes con queso fundido, guacamole, jalapeños y salsa. Para compartir.</div>
-          <div class="menu-card-footer">
-            <span class="menu-price">15,00€</span>
-            <span class="menu-tag">Mexicano</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="menu-card reveal" data-cat="platos">
-        <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=600&q=80" alt="Taquitos Mexicanos" loading="lazy">
-        </div>
-        <div class="menu-card-body">
-          <div class="menu-card-name">Taquitos Mexicanos (3 uds)</div>
-          <div class="menu-card-desc">Tres taquitos crujientes rellenos de carne sazonada con especias mexicanas. Irresistibles.</div>
-          <div class="menu-card-footer">
-            <span class="menu-price">10,00€</span>
-            <span class="menu-tag">Mexicano</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="menu-card reveal" data-cat="platos">
-        <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80" alt="Quesadilla Mexicana" loading="lazy">
-        </div>
-        <div class="menu-card-body">
-          <div class="menu-card-name">Quesadilla Mexicana</div>
-          <div class="menu-card-desc">Tortilla de harina con queso fundido y rellenos a elegir. Crujiente y cremosa a la vez.</div>
-          <div class="menu-card-footer">
-            <span class="menu-price">8,00€</span>
-            <span class="menu-tag">Mexicano</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="menu-card reveal" data-cat="platos">
-        <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="Burrito Mexicano" loading="lazy">
-        </div>
-        <div class="menu-card-body">
-          <div class="menu-card-name">Burrito Mexicano</div>
-          <div class="menu-card-desc">Tortilla grande rellena de carne, arroz, frijoles, queso y salsa. Contundente y sabroso.</div>
-          <div class="menu-card-footer">
-            <span class="menu-price">10,00€</span>
-            <span class="menu-tag">Mexicano</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="menu-card reveal" data-cat="entrantes">
-        <div class="menu-badge">⭐ Popular</div>
-        <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80" alt="Yuca con Chicharrón" loading="lazy">
-        </div>
-        <div class="menu-card-body">
-          <div class="menu-card-name">Yuca con Chicharrón</div>
-          <div class="menu-card-desc">Yuca frita dorada con chicharrón crujiente y curtido de repollo. Irresistible.</div>
-          <div class="menu-card-footer">
-            <span class="menu-price">15,00€</span>
-            <span class="menu-tag">Entrante</span>
-          </div>
-        </div>
-      </div>
-
       <div class="menu-card reveal" data-cat="entrantes">
         <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Baleada Tradicional" loading="lazy">
-        </div>
-        <div class="menu-card-body">
-          <div class="menu-card-name">Baleada Tradicional</div>
-          <div class="menu-card-desc">Tortilla de harina con frijoles, mantequilla y queso. También disponible con pollo, carne o cochinita.</div>
-          <div class="menu-card-footer">
-            <span class="menu-price">7,50€</span>
-            <span class="menu-tag">Entrante</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="menu-card reveal" data-cat="entrantes">
-        <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="Empanada Especialidad" loading="lazy">
-        </div>
-        <div class="menu-card-body">
-          <div class="menu-card-name">Empanada Especialidad</div>
-          <div class="menu-card-desc">Empanada rellena de la casa, crujiente por fuera y jugosa por dentro. Nuestra especialidad.</div>
-          <div class="menu-card-footer">
-            <span class="menu-price">3,00€</span>
-            <span class="menu-tag">Entrante</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="menu-card reveal" data-cat="entrantes">
-        <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Nachos Guanacos" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80" alt="Nachos Guanacos" loading="lazy">
         </div>
         <div class="menu-card-body">
           <div class="menu-card-name">Nachos Guanacos</div>
-          <div class="menu-card-desc">Nachos estilo salvadoreño con frijoles, queso, crema y jalapeños. El aperitivo perfecto.</div>
           <div class="menu-card-footer">
             <span class="menu-price">15,00€</span>
-            <span class="menu-tag">Entrante</span>
+            <span class="menu-tag">Entrantes</span>
           </div>
         </div>
       </div>
@@ -1462,10 +1764,9 @@
         </div>
         <div class="menu-card-body">
           <div class="menu-card-name">Enchiladas de Carne</div>
-          <div class="menu-card-desc">Tortillas bañadas en salsa roja con carne desmenuzada, queso y crema. Clásico salvadoreño.</div>
           <div class="menu-card-footer">
             <span class="menu-price">5,00€</span>
-            <span class="menu-tag">Entrante</span>
+            <span class="menu-tag">Entrantes</span>
           </div>
         </div>
       </div>
@@ -1476,10 +1777,22 @@
         </div>
         <div class="menu-card-body">
           <div class="menu-card-name">Enchiladas de Pollo</div>
-          <div class="menu-card-desc">Tortillas en salsa roja con pollo deshebrado, queso rallado y crema fresca por encima.</div>
           <div class="menu-card-footer">
             <span class="menu-price">5,00€</span>
-            <span class="menu-tag">Entrante</span>
+            <span class="menu-tag">Entrantes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="entrantes">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Yuca con Chicharrón" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Yuca con Chicharrón</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">15,00€</span>
+            <span class="menu-tag">Entrantes</span>
           </div>
         </div>
       </div>
@@ -1490,10 +1803,9 @@
         </div>
         <div class="menu-card-body">
           <div class="menu-card-name">Salchipapa con Pollo</div>
-          <div class="menu-card-desc">Patatas fritas con salchicha y trozos de pollo. Un clásico de la calle con salsas de la casa.</div>
           <div class="menu-card-footer">
             <span class="menu-price">10,00€</span>
-            <span class="menu-tag">Entrante</span>
+            <span class="menu-tag">Entrantes</span>
           </div>
         </div>
       </div>
@@ -1504,38 +1816,48 @@
         </div>
         <div class="menu-card-body">
           <div class="menu-card-name">Pastelitos de Carne</div>
-          <div class="menu-card-desc">Pastelitos fritos rellenos de carne molida sazonada. Crujientes por fuera y jugosos por dentro.</div>
           <div class="menu-card-footer">
             <span class="menu-price">9,00€</span>
-            <span class="menu-tag">Entrante</span>
+            <span class="menu-tag">Entrantes</span>
           </div>
         </div>
       </div>
 
       <div class="menu-card reveal" data-cat="entrantes">
         <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=600&q=80" alt="Baleada Pollo Carne Cochinita" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Baleada Tradicional" loading="lazy">
         </div>
         <div class="menu-card-body">
-          <div class="menu-card-name">Baleada Pollo / Carne / Cochinita</div>
-          <div class="menu-card-desc">Tortilla de harina con frijoles, mantequilla, queso y tu elección de pollo, carne o cochinita.</div>
+          <div class="menu-card-name">Baleada Tradicional</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">7,50€</span>
+            <span class="menu-tag">Entrantes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="entrantes">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=600&q=80" alt="Baleada de Pollo, Carne o Cochinita" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Baleada de Pollo, Carne o Cochinita</div>
           <div class="menu-card-footer">
             <span class="menu-price">8,50€</span>
-            <span class="menu-tag">Entrante</span>
+            <span class="menu-tag">Entrantes</span>
           </div>
         </div>
       </div>
 
       <div class="menu-card reveal" data-cat="entrantes">
         <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="Tamal de Elote" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="Tamal de Elote, Pollo o Pisque" loading="lazy">
         </div>
         <div class="menu-card-body">
-          <div class="menu-card-name">Tamal de Elote, Pollo y Pisque</div>
-          <div class="menu-card-desc">Tamal tradicional de masa de elote con pollo y pisque. Envuelto en hoja y cocido al vapor.</div>
+          <div class="menu-card-name">Tamal de Elote, Pollo o Pisque</div>
           <div class="menu-card-footer">
             <span class="menu-price">5,00€</span>
-            <span class="menu-tag">Entrante</span>
+            <span class="menu-tag">Entrantes</span>
           </div>
         </div>
       </div>
@@ -1546,10 +1868,22 @@
         </div>
         <div class="menu-card-body">
           <div class="menu-card-name">Taquitos Flauta</div>
-          <div class="menu-card-desc">Taquitos enrollados y fritos hasta dorar, rellenos de carne. Con guacamole y crema.</div>
           <div class="menu-card-footer">
             <span class="menu-price">12,00€</span>
-            <span class="menu-tag">Entrante</span>
+            <span class="menu-tag">Entrantes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="entrantes">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="Empanada Especialidad" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Empanada Especialidad</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">3,00€</span>
+            <span class="menu-tag">Entrantes</span>
           </div>
         </div>
       </div>
@@ -1560,38 +1894,412 @@
         </div>
         <div class="menu-card-body">
           <div class="menu-card-name">Papa Rellena</div>
-          <div class="menu-card-desc">Bola de puré de papa rellena de carne sazonada, frita hasta quedar dorada y crujiente.</div>
           <div class="menu-card-footer">
             <span class="menu-price">5,00€</span>
-            <span class="menu-tag">Entrante</span>
+            <span class="menu-tag">Entrantes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="mexicanos">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80" alt="Nachos Mexicanos" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Nachos Mexicanos</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">15,00€</span>
+            <span class="menu-tag">Mexicanos</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="mexicanos">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1625944525533-473f1a3d54e7?w=600&q=80" alt="Taquitos Mexicanos x3" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Taquitos Mexicanos x 3 Unidades</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">10,00€</span>
+            <span class="menu-tag">Mexicanos</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="mexicanos">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80" alt="Quesadilla Mexicana" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Quesadilla Mexicana</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">8,00€</span>
+            <span class="menu-tag">Mexicanos</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="mexicanos">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="Burrito Mexicano" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Burrito Mexicano</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">10,00€</span>
+            <span class="menu-tag">Mexicanos</span>
           </div>
         </div>
       </div>
 
       <div class="menu-card reveal" data-cat="bebidas">
         <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&q=80" alt="Zumo de Horchata" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1554866585-cd94860890b7?w=600&q=80" alt="Coca Cola" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Coca Cola</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">2,75€</span>
+            <span class="menu-tag">Bebidas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="bebidas">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=600&q=80" alt="Aquarius" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Aquarius</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">2,75€</span>
+            <span class="menu-tag">Bebidas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="bebidas">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&q=80" alt="Nestea" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Nestea</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">2,75€</span>
+            <span class="menu-tag">Bebidas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="bebidas">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1554866585-cd94860890b7?w=600&q=80" alt="Sprite" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Sprite</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">2,75€</span>
+            <span class="menu-tag">Bebidas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="bebidas">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1554866585-cd94860890b7?w=600&q=80" alt="Fanta" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Fanta</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">2,75€</span>
+            <span class="menu-tag">Bebidas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="bebidas">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=600&q=80" alt="Agua con Gas y Sin Gas" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Agua con Gas y Sin Gas</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">2,75€</span>
+            <span class="menu-tag">Bebidas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="bebidas">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=600&q=80" alt="Refrescos Internacionales" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Refrescos Internacionales</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">4,50€</span>
+            <span class="menu-tag">Bebidas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="bebidas">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1570696516188-ade861b84a49?w=600&q=80" alt="Michelada" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Michelada</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">7,00€</span>
+            <span class="menu-tag">Bebidas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="bebidas">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1621263764928-df1444c5e859?w=600&q=80" alt="Limonada" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Limonada</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">5,00€</span>
+            <span class="menu-tag">Bebidas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="bebidas-calientes">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80" alt="Café Variedad" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Café Variedad</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">1,90€</span>
+            <span class="menu-tag">Bebidas Calientes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="bebidas-calientes">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1563822249366-3efb23b8e0c9?w=600&q=80" alt="Infusiones" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Infusiones</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">1,90€</span>
+            <span class="menu-tag">Bebidas Calientes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="bebidas-calientes">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?w=600&q=80" alt="Leche Caliente" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Leche Caliente</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">2,25€</span>
+            <span class="menu-tag">Bebidas Calientes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="bebidas-calientes">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?w=600&q=80" alt="Colacao" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Colacao</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">2,25€</span>
+            <span class="menu-tag">Bebidas Calientes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="cervezas-tercio">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1608270586620-248524c67de9?w=600&q=80" alt="Mahou, Estrella Galicia, Corona..." loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Mahou, Estrella Galicia, Corona, entre otras</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">3,50€</span>
+            <span class="menu-tag">Cervezas Tercio</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="cervezas-tercio">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1559526324-593bc073d938?w=600&q=80" alt="Cerveza Internacional" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Cerveza Internacional</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">4,50€</span>
+            <span class="menu-tag">Cervezas Tercio</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="cervezas-grifo">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1566633806827-5c4a9a71fb5c?w=600&q=80" alt="Jarra" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Jarra</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">4,75€</span>
+            <span class="menu-tag">Cervezas de Grifo</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="cervezas-grifo">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1566633806827-5c4a9a71fb5c?w=600&q=80" alt="Doble" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Doble</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">3,50€</span>
+            <span class="menu-tag">Cervezas de Grifo</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="cervezas-grifo">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1608270586620-248524c67de9?w=600&q=80" alt="Cañita" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Cañita</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">2,00€</span>
+            <span class="menu-tag">Cervezas de Grifo</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="zumos">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=600&q=80" alt="Mora" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Mora</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">3,75€</span>
+            <span class="menu-tag">Zumos Naturales</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="zumos">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=600&q=80" alt="Tamarindo" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Tamarindo</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">3,75€</span>
+            <span class="menu-tag">Zumos Naturales</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="zumos">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1546173159-315724a31696?w=600&q=80" alt="Maracuyá" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Maracuyá</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">3,75€</span>
+            <span class="menu-tag">Zumos Naturales</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="zumos">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&q=80" alt="Horchata" loading="lazy">
         </div>
         <div class="menu-card-body">
           <div class="menu-card-name">Horchata</div>
-          <div class="menu-card-desc">Zumo natural artesanal. También disponible de mora, tamarindo, maracuyá y cebada.</div>
           <div class="menu-card-footer">
             <span class="menu-price">4,75€</span>
-            <span class="menu-tag">Zumo Natural</span>
+            <span class="menu-tag">Zumos Naturales</span>
           </div>
         </div>
       </div>
 
-      <div class="menu-card reveal" data-cat="bebidas">
+      <div class="menu-card reveal" data-cat="zumos">
         <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80" alt="Batido de Banano" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=600&q=80" alt="Cebada" loading="lazy">
         </div>
         <div class="menu-card-body">
-          <div class="menu-card-name">Batido en Leche</div>
-          <div class="menu-card-desc">Batidos cremosos: banano, fresa, mora o guanábana en leche. Frescos y naturales.</div>
+          <div class="menu-card-name">Cebada</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">4,75€</span>
+            <span class="menu-tag">Zumos Naturales</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="batidos">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=600&q=80" alt="Banano en Leche" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Banano en Leche</div>
           <div class="menu-card-footer">
             <span class="menu-price">4,95€</span>
-            <span class="menu-tag">Batido</span>
+            <span class="menu-tag">Batidos</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="batidos">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1619158401201-8fa8d36c9ed8?w=600&q=80" alt="Fresa en Leche" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Fresa en Leche</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">4,95€</span>
+            <span class="menu-tag">Batidos</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="batidos">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=600&q=80" alt="Mora en Leche" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Mora en Leche</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">4,95€</span>
+            <span class="menu-tag">Batidos</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-cat="batidos">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80" alt="Guanábana en Leche" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">Guanábana en Leche</div>
+          <div class="menu-card-footer">
+            <span class="menu-price">4,95€</span>
+            <span class="menu-tag">Batidos</span>
           </div>
         </div>
       </div>
@@ -1602,10 +2310,9 @@
         </div>
         <div class="menu-card-body">
           <div class="menu-card-name">Tres Leches</div>
-          <div class="menu-card-desc">El postre más querido: bizcocho empapado en tres leches, suave y cremoso. Irresistible.</div>
           <div class="menu-card-footer">
             <span class="menu-price">3,50€</span>
-            <span class="menu-tag">Postre</span>
+            <span class="menu-tag">Postres</span>
           </div>
         </div>
       </div>
@@ -1616,10 +2323,24 @@
         </div>
         <div class="menu-card-body">
           <div class="menu-card-name">Selva Negra</div>
-          <div class="menu-card-desc">Tarta de chocolate con cerezas y nata. El toque europeo en nuestra carta de postres.</div>
           <div class="menu-card-footer">
             <span class="menu-price">3,50€</span>
-            <span class="menu-tag">Postre</span>
+            <span class="menu-tag">Postres</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- OFERTA ESPECIAL -->
+      <div class="menu-card reveal" data-cat="oferta-especial">
+        <div class="menu-badge">⭐ Oferta</div>
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="3 Pupusas + Oferta Especial" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-name">3 Pupusas + <em style="color:var(--dorado);font-style:normal;">(info pendiente)</em></div>
+          <div class="menu-card-footer">
+            <span class="menu-price">10,00€</span>
+            <span class="menu-tag">Oferta Especial</span>
           </div>
         </div>
       </div>
@@ -2156,8 +2877,29 @@
   function filterMenu(cat, btn){
     document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
     btn.classList.add('active');
+    // Mostrar u ocultar sub-tabs de pupusas
+    const subtabs = document.getElementById('pupusaSubtabs');
+    if(cat === 'pupusas'){
+      subtabs.style.display = 'flex';
+      // Resetear sub-tab a "Todas"
+      document.querySelectorAll('.subtab-btn').forEach(b=>b.classList.remove('active'));
+      subtabs.querySelector('.subtab-btn').classList.add('active');
+    } else {
+      subtabs.style.display = 'none';
+    }
     document.querySelectorAll('.menu-card').forEach(card=>{
       const show = cat==='todos' || card.dataset.cat===cat;
+      card.style.display = show ? '' : 'none';
+      if(show){ card.style.animation='none'; setTimeout(()=>card.style.animation='',10); }
+    });
+  }
+
+  // SUB-FILTRO PUPUSAS
+  function filterSubMenu(subcat, btn){
+    document.querySelectorAll('.subtab-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.menu-card[data-cat="pupusas"]').forEach(card=>{
+      const show = subcat==='todas' || card.dataset.subcat===subcat;
       card.style.display = show ? '' : 'none';
       if(show){ card.style.animation='none'; setTimeout(()=>card.style.animation='',10); }
     });
