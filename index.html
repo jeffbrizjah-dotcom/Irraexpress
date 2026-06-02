@@ -241,6 +241,9 @@
   .menu-subtabs { display:flex; gap:6px; flex-wrap:wrap; margin:-30px 0 40px; padding:14px 18px; background:rgba(245,197,24,0.06); border:1px solid rgba(245,197,24,0.2); border-radius:8px; }
   .subtab-btn { background:rgba(245,197,24,0.08); border:1px solid rgba(245,197,24,0.3); color:rgba(232,240,255,0.75); padding:7px 18px; font-family:'Montserrat',sans-serif; font-size:.7rem; letter-spacing:.15em; text-transform:uppercase; cursor:pointer; transition:all .3s; border-radius:20px; font-weight:600; }
   .subtab-btn.active, .subtab-btn:hover { background:var(--dorado); border-color:var(--dorado); color:var(--oscuro); font-weight:700; }
+  .ver-todos-btn { background:transparent; border:2px solid var(--dorado); color:var(--dorado); padding:14px 40px; font-family:'Montserrat',sans-serif; font-size:.78rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; cursor:pointer; border-radius:4px; transition:all .3s; }
+  .ver-todos-btn:hover { background:var(--dorado); color:var(--oscuro); transform:translateY(-3px); box-shadow:0 12px 30px rgba(245,197,24,0.35); }
+  .ver-todos-count { background:rgba(245,197,24,0.15); border:1px solid rgba(245,197,24,0.4); padding:2px 10px; border-radius:20px; font-size:.72rem; }
   .pupusa-prices { display:flex; flex-direction:column; gap:3px; }
   .pupusa-prices .pp-item { display:flex; align-items:center; gap:6px; }
   .pupusa-prices .pp-label { font-family:'Montserrat',sans-serif; font-size:.58rem; letter-spacing:.15em; text-transform:uppercase; color:rgba(232,240,255,0.45); min-width:52px; }
@@ -1127,8 +1130,8 @@
     <div class="section-label reveal">Nuestra Carta</div>
     <h2 class="section-title reveal">El mejor menú<br><em>salvadoreño</em></h2>
     <div class="menu-tabs reveal">
-      <button class="tab-btn active" onclick="filterMenu('todos',this)">Todos</button>
-      <button class="tab-btn" onclick="filterMenu('pupusas',this)">Pupusas</button>
+      <button class="tab-btn" onclick="filterMenu('todos',this)">Todos</button>
+      <button class="tab-btn active" onclick="filterMenu('pupusas',this)">Pupusas</button>
       <button class="tab-btn" onclick="filterMenu('principales',this)">Principales</button>
       <button class="tab-btn" onclick="filterMenu('entrantes',this)">Entrantes</button>
       <button class="tab-btn" onclick="filterMenu('mexicanos',this)">Mexicanos</button>
@@ -2346,6 +2349,14 @@
       </div>
 
     </div>
+
+    <!-- BOTÓN VER TODOS -->
+    <div id="verTodosBtn" style="display:none; justify-content:center; margin-top:36px;">
+      <button class="ver-todos-btn" onclick="verTodosPlatos()">
+        Ver todos los platos &nbsp;<span class="ver-todos-count"></span>
+      </button>
+    </div>
+
   </div>
 </section>
 
@@ -2874,24 +2885,47 @@
   });
 
   // MENU FILTER
+  const PREVIEW_LIMIT = 4;
+
   function filterMenu(cat, btn){
     document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
     btn.classList.add('active');
-    // Mostrar u ocultar sub-tabs de pupusas
+
+    // Sub-tabs pupusas
     const subtabs = document.getElementById('pupusaSubtabs');
     if(cat === 'pupusas'){
       subtabs.style.display = 'flex';
-      // Resetear sub-tab a "Todas"
       document.querySelectorAll('.subtab-btn').forEach(b=>b.classList.remove('active'));
       subtabs.querySelector('.subtab-btn').classList.add('active');
     } else {
       subtabs.style.display = 'none';
     }
-    document.querySelectorAll('.menu-card').forEach(card=>{
-      const show = cat==='todos' || card.dataset.cat===cat;
-      card.style.display = show ? '' : 'none';
-      if(show){ card.style.animation='none'; setTimeout(()=>card.style.animation='',10); }
+
+    // Filtrar tarjetas
+    const allCards = document.querySelectorAll('.menu-card');
+    let matchCount = 0;
+    allCards.forEach(card => {
+      const matches = cat === 'todos' || card.dataset.cat === cat;
+      if(matches){
+        matchCount++;
+        const isPupusas = cat === 'pupusas';
+        const overLimit = !isPupusas && matchCount > PREVIEW_LIMIT;
+        card.style.display = overLimit ? 'none' : '';
+        if(!overLimit){ card.style.animation='none'; setTimeout(()=>card.style.animation='',10); }
+      } else {
+        card.style.display = 'none';
+      }
     });
+
+    // Botón ver todos
+    const verBtn = document.getElementById('verTodosBtn');
+    if(cat !== 'pupusas' && matchCount > PREVIEW_LIMIT){
+      verBtn.style.display = 'flex';
+      verBtn.querySelector('.ver-todos-count').textContent = matchCount + ' platos';
+      verBtn.dataset.cat = cat;
+    } else {
+      verBtn.style.display = 'none';
+    }
   }
 
   // SUB-FILTRO PUPUSAS
@@ -2904,6 +2938,43 @@
       if(show){ card.style.animation='none'; setTimeout(()=>card.style.animation='',10); }
     });
   }
+
+  // VER TODOS LOS PLATOS
+  function verTodosPlatos(){
+    const verBtn = document.getElementById('verTodosBtn');
+    const cat = verBtn.dataset.cat;
+    document.querySelectorAll('.menu-card').forEach(card=>{
+      if(card.dataset.cat === cat){
+        card.style.display = '';
+        card.style.animation='none';
+        setTimeout(()=>card.style.animation='',10);
+      }
+    });
+    verBtn.style.display = 'none';
+  }
+
+  // IMÁGENES VARIADAS PARA PUPUSAS
+  (function variarImagenesPupusas(){
+    const imgs = [
+      'https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80',
+      'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80',
+      'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80',
+      'https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80',
+      'https://images.unsplash.com/photo-1625944525533-473f1a3d54e7?w=600&q=80',
+      'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80',
+      'https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=600&q=80',
+      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80',
+    ];
+    document.querySelectorAll('.menu-card[data-cat="pupusas"] .menu-card-img img').forEach((img,i)=>{
+      img.src = imgs[i % imgs.length];
+    });
+  })();
+
+  // INICIALIZAR CON PUPUSAS ACTIVO
+  (function initMenu(){
+    const pupusasBtn = document.querySelector('.tab-btn.active');
+    if(pupusasBtn) filterMenu('pupusas', pupusasBtn);
+  })();
 
   // PARTICLES
   const pc = document.getElementById('particles');
