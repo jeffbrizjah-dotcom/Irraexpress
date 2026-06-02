@@ -5,15 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Irra's Express</title>
 <link rel="preload" as="image" href="IMG_1286.PNG">
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>
-  (function(){ emailjs.init({ publicKey: "TU_PUBLIC_KEY" }); })();
-</script>
 <link rel="shortcut icon" type="image/png" href="IMG_1286.PNG">
 <link rel="icon" type="image/png" sizes="32x32" href="IMG_1286.PNG">
 <link rel="icon" type="image/png" sizes="16x16" href="IMG_1286.PNG">
 <link rel="icon" type="image/png" sizes="192x192" href="IMG_1286.PNG">
 <link rel="apple-touch-icon" sizes="180x180" href="IMG_1286.PNG">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -65,10 +63,8 @@
   /* Fade-in suave del contenido del loader */
   .loader-inner { display:flex; flex-direction:column; align-items:center; gap:4px; margin-top:12px; animation:fadeUp .5s ease-out both; }
 
-
   /* ─── NAV ─── */
   nav { position:fixed; top:0; left:0; right:0; z-index:1000; padding:20px 5%; display:flex; justify-content:flex-start; align-items:center; gap:clamp(16px,2.5vw,36px); transition:all .4s; }
-  .nav-links { display:flex; gap:clamp(16px,2vw,28px); list-style:none; margin-right:auto; }
   nav.scrolled {
     background:linear-gradient(135deg, #071e52 0%, #163d8a 22%, #1f55b5 42%, #163d8a 62%, #0a2a6e 82%, #071e52 100%);
     backdrop-filter:blur(20px);
@@ -81,7 +77,7 @@
   .logo-irras span { color:var(--naranja); }
   .logo-express { color:var(--dorado); font-size:.7em; font-family:'Montserrat',sans-serif; font-weight:700; letter-spacing:.25em; text-transform:uppercase; }
   .logo-icon { font-size:1.6em; }
-  .nav-links { display:flex; gap:clamp(20px,3vw,40px); list-style:none; }
+  .nav-links { display:flex; gap:clamp(20px,3vw,40px); list-style:none; margin-right:auto; }
   .nav-links a { color:var(--texto); text-decoration:none; font-size:.8rem; font-weight:500; letter-spacing:.15em; text-transform:uppercase; position:relative; transition:color .3s; }
   .nav-links a::after { content:''; position:absolute; bottom:-4px; left:0; right:0; height:2px; background:var(--dorado); transform:scaleX(0); transform-origin:left; transition:transform .3s; }
   .nav-links a:hover { color:var(--dorado); }
@@ -241,6 +237,8 @@
   .menu-subtabs { display:flex; gap:6px; flex-wrap:wrap; margin:-30px 0 40px; padding:14px 18px; background:rgba(245,197,24,0.06); border:1px solid rgba(245,197,24,0.2); border-radius:8px; }
   .subtab-btn { background:rgba(245,197,24,0.08); border:1px solid rgba(245,197,24,0.3); color:rgba(232,240,255,0.75); padding:7px 18px; font-family:'Montserrat',sans-serif; font-size:.7rem; letter-spacing:.15em; text-transform:uppercase; cursor:pointer; transition:all .3s; border-radius:20px; font-weight:600; }
   .subtab-btn.active, .subtab-btn:hover { background:var(--dorado); border-color:var(--dorado); color:var(--oscuro); font-weight:700; }
+  .hero-mobile-bar { display:none; }
+  .hero-mobile-loc { display:none; }
   .ver-todos-btn { background:transparent; border:2px solid var(--dorado); color:var(--dorado); padding:14px 40px; font-family:'Montserrat',sans-serif; font-size:.78rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; cursor:pointer; border-radius:4px; transition:all .3s; }
   .ver-todos-btn:hover { background:var(--dorado); color:var(--oscuro); transform:translateY(-3px); box-shadow:0 12px 30px rgba(245,197,24,0.35); }
   .ver-todos-count { background:rgba(245,197,24,0.15); border:1px solid rgba(245,197,24,0.4); padding:2px 10px; border-radius:20px; font-size:.72rem; }
@@ -737,13 +735,45 @@
     nav img[alt="Irra's Express"] { height:110px !important; }
 
     /* Hero */
-    .hero { padding-top:80px; text-align:center; }
-    .hero-content { margin-left:0; max-width:100%; padding:0 6%; }
+    .hero { padding-top:0; text-align:center; min-height:100svh; display:flex; align-items:center; }
+    .hero-overlay {
+      background:
+        linear-gradient(to top, rgba(0,13,46,0.97) 0%, rgba(0,13,46,0.6) 40%, rgba(0,13,46,0.25) 100%),
+        linear-gradient(to bottom, rgba(0,13,46,0.7) 0%, transparent 30%);
+    }
+    .hero-content { margin-left:0; max-width:100%; padding:120px 6% 100px; display:flex; flex-direction:column; align-items:center; }
     .hero-strip { display:none; }
     .hero-float-badges { display:none; }
-    .hero-buttons { justify-content:center; }
-    .hero-dots { display:none; }
-    .hero-title { font-size:clamp(3.5rem,12vw,5.5rem); }
+    .hero-buttons { justify-content:center; flex-direction:column; align-items:center; gap:12px; width:100%; max-width:340px; margin:0 auto; }
+    .hero-buttons .btn-primary, .hero-buttons .btn-secondary { width:100%; text-align:center; padding:16px 24px; font-size:.78rem; }
+    .hero-dots { display:flex; bottom:24px; }
+    .hero-title { font-size:clamp(3.2rem,13vw,5rem); margin-bottom:16px; }
+    .hero-subtitle { font-size:1rem; margin-bottom:32px; max-width:320px; }
+    .hero-tag { font-size:.65rem; padding:8px 16px; margin-bottom:20px; opacity:1 !important; transform:none !important; animation:none !important; }
+
+    /* Hero mobile rating bar */
+    .hero-mobile-bar {
+      display:flex; align-items:center; justify-content:center;
+      gap:16px; margin-top:28px;
+      padding:12px 20px;
+      background:rgba(0,13,46,0.6);
+      border:1px solid rgba(245,197,24,0.25);
+      border-radius:50px;
+      backdrop-filter:blur(12px);
+      width:fit-content; margin-left:auto; margin-right:auto;
+    }
+    .hero-mobile-bar .hmb-item { display:flex; flex-direction:column; align-items:center; gap:2px; }
+    .hero-mobile-bar .hmb-val { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:900; color:var(--dorado); line-height:1; }
+    .hero-mobile-bar .hmb-lbl { font-size:.55rem; letter-spacing:.12em; text-transform:uppercase; color:rgba(232,240,255,0.5); }
+    .hero-mobile-bar .hmb-div { width:1px; height:28px; background:rgba(255,255,255,0.12); }
+    /* location pill */
+    .hero-mobile-loc {
+      display:inline-flex; align-items:center; gap:6px;
+      background:rgba(0,61,165,0.5); border:1px solid rgba(245,197,24,0.3);
+      border-radius:30px; padding:6px 14px; margin-bottom:18px;
+      font-size:.65rem; letter-spacing:.1em; color:rgba(232,240,255,0.85);
+      backdrop-filter:blur(8px);
+    }
 
     /* About */
     .about-grid { grid-template-columns:1fr; gap:50px; }
@@ -881,11 +911,9 @@
     }
     .form-group input:focus,
     .form-group select:focus {
-      border-color:var(--dorado);
       background:rgba(255,255,255,0.1);
     }
     .btn-form {
-      padding:18px;
       font-size:.85rem;
       border-radius:12px;
       margin-top:12px;
@@ -916,12 +944,10 @@
 
 <!-- LOADER -->
 <div id="loader">
-
-
   <!-- Logo + barra + texto -->
   <div class="loader-inner">
     <div class="loader-logo-wrap">
-      <img src="IMG_1286.PNG" alt="Irra's Express" class="loader-logo-img">
+      <img src="IMG_1286.PNG" alt="Irra's Express" class="loader-logo-img" fetchpriority="high">
     </div>
     <div class="loader-bar"><div class="loader-fill"></div></div>
   </div>
@@ -935,8 +961,6 @@
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-
-
   <!-- Nav items -->
   <nav class="mm-nav">
     <a href="#inicio" class="mm-item" onclick="closeMobile()">
@@ -1023,10 +1047,12 @@
   </div>
 
   <div class="hero-content">
-<h1 class="hero-title">
+    <div class="hero-mobile-loc">📍 Puente de Vallecas, Madrid</div>
+    <div class="hero-tag">🇸🇻 Cocina Salvadoreña Auténtica</div>
+    <h1 class="hero-title">
       El Sabor<br>
       <em>que te hace</em>
-      <span style="color:#003da5;-webkit-text-stroke:1px #003da5">volver</span>
+      <span style="color:var(--naranja);-webkit-text-stroke:0px">volver</span>
     </h1>
     <p class="hero-subtitle">
       Lo mejor de la cocina salvadoreña con el servicio rápido que necesitas.
@@ -1036,8 +1062,16 @@
       <a href="#menu" class="btn-primary">Ver el Menú 🍽️</a>
       <a href="#reservas" class="btn-secondary">Reserva Ya</a>
     </div>
+    <div class="hero-mobile-bar">
+      <div class="hmb-item"><span class="hmb-val">4.5⭐</span><span class="hmb-lbl">Google</span></div>
+      <div class="hmb-div"></div>
+      <div class="hmb-item"><span class="hmb-val">122</span><span class="hmb-lbl">Reseñas</span></div>
+      <div class="hmb-div"></div>
+      <div class="hmb-item"><span class="hmb-val">85+</span><span class="hmb-lbl">Platos</span></div>
+      <div class="hmb-div"></div>
+      <div class="hmb-item"><span class="hmb-val">⚡</span><span class="hmb-lbl">Express</span></div>
+    </div>
   </div>
-
   <div class="hero-strip">
     <div class="hero-strip-img" data-label="Pupusas Artesanales"></div>
     <div class="hero-strip-img" data-label="Pollo Frito Crujiente"></div>
@@ -1059,8 +1093,6 @@
       <span class="badge-txt">Cocina Express</span>
     </div>
   </div>
-
-
 </section>
 
 <!-- FLAG STRIP -->
@@ -2560,7 +2592,7 @@
       <div class="rvw-stars">★★★★★</div>
       <p class="rvw-label">Basado en <strong>200+</strong> reseñas<br>en Google</p>
       <div class="rvw-google-row">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" loading="lazy">
         <span>Google Reviews</span>
       </div>
       <a href="https://maps.app.goo.gl/Gq9myTSypGxKxAjL9" target="_blank" rel="noopener noreferrer" class="rvw-btn">⭐ Deja tu reseña</a>
@@ -2682,7 +2714,7 @@
           <div class="contact-icon">⏰</div>
           <div>
             <div class="contact-label">Horario</div>
-            <div class="contact-val">Lun–Dom: 7:00 – 21:00</div>
+            <div class="contact-val">Mar–Vie: 9:00–23:30 · Sáb–Dom: 10:00–0:00 · Lun: 12:00–23:30</div>
           </div>
         </div>
         <div class="contact-item">
@@ -2769,7 +2801,7 @@
   <div class="footer-grid">
     <div class="footer-brand">
       <a href="#inicio" class="logo">
-        <img src="IMG_1286.PNG" alt="Irra's Express" style="height:110px;width:auto;object-fit:contain;">
+        <img src="IMG_1286.PNG" alt="Irra's Express" style="height:110px;width:auto;object-fit:contain;" loading="lazy">
       </a>
       <p>Sabor salvadoreño auténtico con el servicio rápido que mereces. Una familia, una pasión, una tradición.</p>
       <div class="social-links">
@@ -2818,10 +2850,13 @@
     <div class="footer-col">
       <h4>Horario</h4>
       <ul class="footer-hours">
-        <li>Lunes <span>7–21h</span></li>
-        <li>Mar–Vie <span>7–21h</span></li>
-        <li>Sábado <span>7–22h</span></li>
-        <li>Domingo <span>8–20h</span></li>
+        <li>Martes <span>9:00–23:30</span></li>
+        <li>Miércoles <span>9:00–23:30</span></li>
+        <li>Jueves <span>9:00–23:30</span></li>
+        <li>Viernes <span>9:00–23:30</span></li>
+        <li>Sábado <span>10:00–0:00</span></li>
+        <li>Domingo <span>10:00–0:00</span></li>
+        <li>Lunes <span>12:00–23:30</span></li>
       </ul>
     </div>
   </div>
@@ -3050,20 +3085,6 @@ _Enviado desde irraexpress.vercel.app_`;
 
     window.open('https://wa.me/34675048731?text=' + encodeURIComponent(msgRestaurante), '_blank');
 
-    // ── 2. Modal de confirmación ──
-    const msgCliente =
-`✅ *¡Reserva confirmada en Irra's Express!*
-
-Hola ${nombre}, tu reserva está confirmada:
-
-\u{1F4C5} *Fecha:* ${fechaStr}
-⏰ *Hora:* ${hora}
-\u{1F465} *Personas:* ${personas}
-\u{1F4CB} *Tipo:* ${tipo}
-
-¡Te esperamos con el mejor sabor salvadoreño! ⭐
-_irraexpress.vercel.app_`;
-
     // Rellenar detalles en el modal
     document.getElementById('resModalDetails').innerHTML = `
       <p><strong>👤</strong> ${nombre}</p>
@@ -3072,13 +3093,6 @@ _irraexpress.vercel.app_`;
       <p><strong>👥</strong> ${personas}</p>
       <p><strong>📋</strong> ${tipo}</p>
     `;
-
-    // Configurar botón WhatsApp cliente (guarda en su propio WA)
-    const telLimpio = telefono.replace(/\D/g,'');
-    const waClienteUrl = telLimpio
-      ? 'https://wa.me/' + telLimpio + '?text=' + encodeURIComponent(msgCliente)
-      : 'https://wa.me/?text=' + encodeURIComponent(msgCliente);
-    document.getElementById('resModalWaBtn').href = waClienteUrl;
 
     // Mostrar modal
     document.getElementById('resModal').classList.add('show');
@@ -3100,34 +3114,11 @@ _irraexpress.vercel.app_`;
   });
 </script>
 
-<!-- IZOTES GUARDADOS - para usar donde se necesiten, copiar el SVG deseado -->
-<template id="izotes-guardados">
-  <svg class="izote" viewBox="0 0 50 130" xmlns="http://www.w3.org/2000/svg">
-    <path d="M25 130 Q8 108 6 85" stroke="#2d7a2d" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-    <path d="M25 130 Q42 108 44 85" stroke="#2d7a2d" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-    <line x1="25" y1="115" x2="25" y2="6" stroke="#3d8a3d" stroke-width="2" stroke-linecap="round"/>
-    <ellipse cx="25" cy="14" rx="7" ry="11" fill="white" opacity="0.95"/>
-    <ellipse cx="13" cy="25" rx="6" ry="10" fill="white" opacity="0.9" transform="rotate(-22 13 25)"/>
-    <ellipse cx="37" cy="25" rx="6" ry="10" fill="white" opacity="0.9" transform="rotate(22 37 25)"/>
-    <ellipse cx="25" cy="44" rx="6" ry="10" fill="white" opacity="0.92"/>
-    <ellipse cx="12" cy="55" rx="5.5" ry="9" fill="white" opacity="0.88" transform="rotate(-20 12 55)"/>
-    <ellipse cx="38" cy="55" rx="5.5" ry="9" fill="white" opacity="0.88" transform="rotate(20 38 55)"/>
-    <ellipse cx="25" cy="72" rx="5.5" ry="9" fill="white" opacity="0.9"/>
-    <ellipse cx="13" cy="82" rx="5" ry="8" fill="white" opacity="0.84" transform="rotate(-18 13 82)"/>
-    <ellipse cx="37" cy="82" rx="5" ry="8" fill="white" opacity="0.84" transform="rotate(18 37 82)"/>
-    <ellipse cx="25" cy="97" rx="5" ry="8" fill="white" opacity="0.8"/>
-    <circle cx="25" cy="11" r="2.5" fill="#F5C518"/>
-    <circle cx="25" cy="41" r="2" fill="#F5C518"/>
-    <circle cx="25" cy="69" r="2" fill="#F5C518"/>
-    <circle cx="25" cy="94" r="2" fill="#F5C518"/>
-  </svg>
-</template>
-
 <!-- MODAL CONFIRMACIÓN RESERVA -->
 <div class="res-modal-overlay" id="resModal">
   <div class="res-modal">
     <button class="res-modal-close" onclick="closeResModal()">✕</button>
-    <img src="IMG_1286.PNG" alt="Irra's Express" class="res-modal-logo">
+    <img src="IMG_1286.PNG" alt="Irra's Express" class="res-modal-logo" loading="lazy">
     <div class="res-modal-check">✓</div>
     <div class="res-modal-title">¡Reserva Enviada!</div>
     <div class="res-modal-sub">En breves te confirmaremos tu reserva vía WhatsApp</div>
