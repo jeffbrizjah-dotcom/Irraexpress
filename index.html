@@ -32,7 +32,7 @@
   html { scroll-behavior:smooth; overflow-x:hidden; background:var(--oscuro); }
   body { font-family:'Montserrat',sans-serif; background:var(--oscuro); color:var(--texto); overflow-x:hidden; }
 
-  /* ─── LOADER ─── */
+  /* â”€â”€â”€ LOADER â”€â”€â”€ */
   #loader {
     position:fixed; inset:0; background:var(--oscuro); z-index:9999;
     display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0;
@@ -63,7 +63,7 @@
   /* Fade-in suave del contenido del loader */
   .loader-inner { display:flex; flex-direction:column; align-items:center; gap:4px; margin-top:12px; animation:fadeUp .5s ease-out both; }
 
-  /* ─── NAV ─── */
+  /* â”€â”€â”€ NAV â”€â”€â”€ */
   nav { position:fixed; top:0; left:0; right:0; z-index:1000; padding:10px 5%; display:flex; justify-content:flex-start; align-items:center; gap:clamp(16px,2.5vw,36px); transition:all .4s; }
   nav.scrolled {
     background:linear-gradient(135deg, #071e52 0%, #163d8a 22%, #1f55b5 42%, #163d8a 62%, #0a2a6e 82%, #071e52 100%);
@@ -90,7 +90,7 @@
   .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; }
   .hamburger span { width:26px; height:2px; background:var(--texto); transition:all .3s; display:block; }
 
-  /* ─── HERO ─── */
+  /* â”€â”€â”€ HERO â”€â”€â”€ */
   .hero { min-height:100vh; position:relative; display:flex; align-items:center; overflow:hidden; }
   .hero-slides { position:absolute; inset:0; z-index:0; }
   .hero-slide {
@@ -194,21 +194,21 @@
   .scroll-line { width:2px; height:50px; background:linear-gradient(to bottom,var(--dorado),transparent); animation:scrollPulse 2s ease-in-out infinite; }
   .scroll-txt { font-size:.6rem; letter-spacing:.3em; text-transform:uppercase; color:var(--dorado); }
 
-  /* ─── SECTION BASE ─── */
+  /* â”€â”€â”€ SECTION BASE â”€â”€â”€ */
   section { position:relative; overflow:hidden; }
   .section-label { font-size:.68rem; letter-spacing:.35em; text-transform:uppercase; color:var(--dorado); margin-bottom:16px; display:flex; align-items:center; gap:12px; }
   .section-label::before { content:''; width:40px; height:2px; background:var(--dorado); }
   .section-title { font-family:'Playfair Display',serif; font-size:clamp(2.2rem,5vw,4rem); font-weight:700; line-height:1.1; margin-bottom:20px; }
   .section-title em { font-style:italic; color:var(--dorado); }
 
-  /* ─── BANNER STRIP (bandera El Salvador: azul/blanco/azul) ─── */
+  /* â”€â”€â”€ BANNER STRIP (bandera El Salvador: azul/blanco/azul) â”€â”€â”€ */
   .flag-strip { display:flex; height:6px; }
   .flag-strip div { flex:1; }
   .flag-strip .fs-b  { background:var(--azul); }
   .flag-strip .fs-w  { background:var(--blanco); flex:1; }
   .flag-strip .fs-b2 { background:var(--azul); }
 
-  /* ─── ABOUT ─── */
+  /* â”€â”€â”€ ABOUT â”€â”€â”€ */
   .about { padding:clamp(80px,10vw,140px) 5%; background:linear-gradient(180deg,#000D2E,#001A6E22); }
   .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(40px,6vw,100px); align-items:center; max-width:1300px; margin:0 auto; }
   .about-visual { position:relative; }
@@ -225,7 +225,7 @@
   .stat-num { font-family:'Playfair Display',serif; font-size:clamp(1.8rem,3vw,2.5rem); font-weight:900; color:var(--dorado); display:block; }
   .stat-txt { font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:rgba(232,240,255,0.5); }
 
-  /* ─── MENU ─── */
+  /* â”€â”€â”€ MENU â”€â”€â”€ */
   .menu-section { padding:clamp(80px,10vw,140px) 5%; background:linear-gradient(135deg,#000D2E 0%,#001A6E 40%,#000D2E 100%); color:var(--texto); position:relative; }
   .menu-section::before { content:''; position:absolute; inset:0; background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1600&q=30'); background-size:cover; background-position:center; opacity:0.1; pointer-events:none; }
   .menu-section .section-label { color:var(--dorado); }
@@ -261,7 +261,7 @@
   .menu-tag { font-size:.62rem; letter-spacing:.15em; text-transform:uppercase; background:rgba(245,197,24,0.1); border:1px solid rgba(245,197,24,0.35); color:var(--dorado); padding:5px 12px; border-radius:20px; font-weight:600; }
   .menu-badge { position:absolute; top:16px; right:16px; background:linear-gradient(135deg,var(--azul),var(--azul2)); color:white; font-size:.6rem; letter-spacing:.15em; text-transform:uppercase; padding:6px 12px; border-radius:20px; z-index:2; font-weight:700; box-shadow:0 4px 12px rgba(0,61,165,0.5); border:1px solid var(--dorado); }
 
-  /* ─── PARALLAX BANNER ─── */
+  /* â”€â”€â”€ PARALLAX BANNER â”€â”€â”€ */
   .parallax-banner { height:clamp(520px,70vw,720px); position:relative; display:flex; align-items:center; justify-content:center; overflow:hidden; }
   .parallax-bg { position:absolute; inset:-60px; background-image:url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1600&q=80'); background-size:cover; background-position:center; }
   .parallax-overlay {
@@ -283,7 +283,7 @@
   .parallax-corner-tr { top:24px; right:24px; border-top:2px solid rgba(245,197,24,0.6); border-right:2px solid rgba(245,197,24,0.6); }
   .parallax-corner-bl { bottom:24px; left:24px; border-bottom:2px solid rgba(245,197,24,0.6); border-left:2px solid rgba(245,197,24,0.6); }
   .parallax-corner-br { bottom:24px; right:24px; border-bottom:2px solid rgba(245,197,24,0.6); border-right:2px solid rgba(245,197,24,0.6); }
-  /* Líneas laterales decorativas */
+  /* LÃ­neas laterales decorativas */
   .parallax-deco-line {
     position:absolute; top:50%; transform:translateY(-50%);
     width:clamp(40px,8vw,130px); height:1px; z-index:2;
@@ -350,7 +350,7 @@
   .parallax-stat-lbl { font-size:.6rem; letter-spacing:.2em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-top:2px; display:block; }
   .parallax-stat-div { width:1px; height:36px; background:rgba(255,255,255,0.12); }
 
-  /* ─── SPECIALTY ─── */
+  /* â”€â”€â”€ SPECIALTY â”€â”€â”€ */
   .specialty { padding:clamp(80px,10vw,140px) 5%; background:linear-gradient(180deg,#001A6E18,#000D2E); position:relative; }
   .specialty::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 50%,rgba(0,61,165,0.15),transparent 70%); }
   .specialty-inner { max-width:1300px; margin:0 auto; position:relative; }
@@ -366,7 +366,7 @@
   .spec-desc { font-family:'Cormorant Garamond',serif; font-size:clamp(.95rem,1.5vw,1.1rem); line-height:1.8; color:rgba(232,240,255,0.6); }
   .spec-num { position:absolute; top:20px; right:24px; font-family:'Playfair Display',serif; font-size:5rem; font-weight:900; color:rgba(245,197,24,0.07); line-height:1; }
 
-  /* ─── GALLERY ─── */
+  /* â”€â”€â”€ GALLERY â”€â”€â”€ */
   .gallery { padding:clamp(100px,12vw,160px) 5% clamp(100px,12vw,160px); background:var(--crema); color:var(--oscuro); position:relative; overflow:visible; }
   /* Olas separadoras */
   .gallery-wave { position:absolute; left:0; right:0; width:100%; line-height:0; pointer-events:none; z-index:4; }
@@ -389,7 +389,7 @@
   .gal-overlay span { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:white; }
   .gal-overlay small { font-size:.7rem; letter-spacing:.15em; text-transform:uppercase; color:var(--dorado); }
 
-  /* ─── REVIEWS CAROUSEL ─── */
+  /* â”€â”€â”€ REVIEWS CAROUSEL â”€â”€â”€ */
   .testimonials { padding:clamp(80px,10vw,140px) 5%; background:linear-gradient(180deg,#000D2E,#001A6E18); }
   .testimonials-header { text-align:center; margin-bottom:60px; }
   .reviews-widget { display:flex; gap:40px; align-items:center; max-width:1300px; margin:0 auto; }
@@ -426,7 +426,7 @@
     .rvw-carousel-outer { width:100%; }
   }
 
-  /* ─── RESERVATION ─── */
+  /* â”€â”€â”€ RESERVATION â”€â”€â”€ */
   .reservation { padding:clamp(100px,12vw,160px) 5%; background:var(--crema); color:var(--oscuro); position:relative; overflow:visible; }
   .reservation-inner { max-width:1300px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:clamp(40px,6vw,100px); align-items:center; }
   .res-info .section-label { color:var(--azul); }
@@ -447,7 +447,7 @@
   .form-group input, .form-group select { width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:var(--blanco); padding:14px 16px; font-family:'Montserrat',sans-serif; font-size:.85rem; border-radius:8px; outline:none; transition:border-color .3s; }
   .form-group input:focus, .form-group select:focus { border-color:var(--dorado); background:rgba(255,255,255,0.08); }
   .form-group select option { background:var(--oscuro); }
-  /* Date & time inputs — iOS necesita color-scheme:dark para mostrar texto blanco */
+  /* Date & time inputs â€” iOS necesita color-scheme:dark para mostrar texto blanco */
   .form-group input[type="date"],
   .form-group input[type="time"] {
     color-scheme: dark;
@@ -461,7 +461,7 @@
   .btn-form { width:100%; background:linear-gradient(135deg,var(--azul),var(--azul2)); color:white; border:2px solid var(--dorado); padding:18px; font-family:'Montserrat',sans-serif; font-size:.8rem; letter-spacing:.25em; text-transform:uppercase; font-weight:700; cursor:pointer; transition:all .3s; margin-top:8px; border-radius:8px; }
   .btn-form:hover { transform:translateY(-3px); box-shadow:0 15px 40px rgba(0,61,165,0.5); background:var(--dorado); color:var(--oscuro); border-color:var(--dorado); }
 
-  /* ─── FOOTER ─── */
+  /* â”€â”€â”€ FOOTER â”€â”€â”€ */
   footer { background:#00081E; padding:clamp(50px,7vw,90px) 5% 30px; border-top:3px solid var(--dorado); }
   .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:clamp(30px,4vw,60px); max-width:1300px; margin:0 auto; margin-bottom:50px; }
   .footer-brand .logo { font-size:1.4rem; margin-bottom:16px; display:inline-flex; }
@@ -479,7 +479,7 @@
   .footer-bottom p { font-size:.72rem; color:rgba(232,240,255,0.25); }
   .footer-flag { display:inline-flex; align-items:center; }
 
-  /* ─── MODAL CONFIRMACIÓN RESERVA ─── */
+  /* â”€â”€â”€ MODAL CONFIRMACIÃ“N RESERVA â”€â”€â”€ */
   .res-modal-overlay {
     position:fixed; inset:0; z-index:9999;
     background:rgba(0,13,46,0.92); backdrop-filter:blur(10px);
@@ -551,7 +551,7 @@
   }
   .res-modal-btn-close:hover { border-color:rgba(255,255,255,0.35); color:white; }
 
-  /* ─── SCROLL REVEAL ─── */
+  /* â”€â”€â”€ SCROLL REVEAL â”€â”€â”€ */
   .reveal { opacity:0; transform:translateY(60px); transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1); }
   .reveal.visible { opacity:1; transform:translateY(0); }
   .reveal-left { opacity:0; transform:translateX(-70px); transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1); }
@@ -563,12 +563,12 @@
   .reveal-rotate { opacity:0; transform:rotate(-5deg) scale(.9); transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1); }
   .reveal-rotate.visible { opacity:1; transform:rotate(0) scale(1); }
 
-  /* ─── PARTICLES ─── */
+  /* â”€â”€â”€ PARTICLES â”€â”€â”€ */
   .particles { position:fixed; inset:0; pointer-events:none; overflow:hidden; z-index:1; }
   .particle { position:absolute; border-radius:50%; opacity:0; animation:particleFloat linear infinite; }
   @keyframes particleFloat { 0%{opacity:0;transform:translateY(0) rotate(0)} 10%{opacity:.7} 90%{opacity:.7} 100%{opacity:0;transform:translateY(-100vh) rotate(720deg)} }
 
-  /* ─── ANIMATIONS ─── */
+  /* â”€â”€â”€ ANIMATIONS â”€â”€â”€ */
   @keyframes fadeUp { to{opacity:1;transform:translateY(0)} }
   @keyframes slideInRight { to{opacity:1} }
   @keyframes scrollPulse { 0%,100%{opacity:.3;height:30px} 50%{opacity:1;height:50px} }
@@ -576,12 +576,12 @@
   @keyframes loadFill { from{width:0} to{width:100%} }
   @keyframes kenBurns { 0%{transform:scale(1.05) translate(0,0)} 100%{transform:scale(1.12) translate(-2%,-1%)} }
 
-  /* ─── FLOATING FOOD EMOJIS ─── */
+  /* â”€â”€â”€ FLOATING FOOD EMOJIS â”€â”€â”€ */
   .food-floaters { position:fixed; inset:0; pointer-events:none; z-index:0; overflow:hidden; }
   .food-floater { position:absolute; font-size:2rem; opacity:0; animation:floaterAnim linear infinite; }
   @keyframes floaterAnim { 0%{opacity:0;transform:translateY(100vh) rotate(0)} 5%{opacity:.1} 95%{opacity:.1} 100%{opacity:0;transform:translateY(-20vh) rotate(360deg)} }
 
-  /* ─── MOBILE MENU ─── */
+  /* â”€â”€â”€ MOBILE MENU â”€â”€â”€ */
   .mobile-menu {
     position:fixed; top:0; left:0; right:0; bottom:0; z-index:999;
     display:flex; flex-direction:column;
@@ -597,7 +597,7 @@
   }
   .mobile-menu.open { transform:translateX(0); }
 
-  /* Header del menú */
+  /* Header del menÃº */
   .mm-header {
     display:flex; align-items:center; justify-content:space-between;
     padding:18px 24px;
@@ -666,7 +666,7 @@
   .mobile-menu.open .mm-item:nth-child(5){animation-delay:.25s}
   @keyframes mmSlideIn { from{opacity:0;transform:translateX(30px)} to{opacity:1;transform:translateX(0)} }
 
-  /* Footer del menú */
+  /* Footer del menÃº */
   .mm-footer {
     padding:20px 32px 36px;
     border-top:1px solid rgba(245,197,24,0.15);
@@ -693,9 +693,9 @@
   }
   .mm-social:hover { border-color:var(--dorado); color:var(--dorado); background:rgba(245,197,24,0.08); }
 
-  /* ─── RESPONSIVE ─── */
+  /* â”€â”€â”€ RESPONSIVE â”€â”€â”€ */
 
-  /* Laptop pequeño / tablet grande */
+  /* Laptop pequeÃ±o / tablet grande */
   @media (max-width:1200px) {
     .hero-strip { width:min(300px,30vw); }
     .footer-grid { grid-template-columns:1.5fr 1fr 1fr 1fr; gap:30px; }
@@ -716,7 +716,7 @@
     .about-grid { gap:40px; }
   }
 
-  /* Tablet pequeña / móvil grande */
+  /* Tablet pequeÃ±a / mÃ³vil grande */
   @media (max-width:768px) {
     /* Loader */
     .loader-izote-tl, .loader-izote-tr { width:50px !important; height:110px !important; }
@@ -749,7 +749,7 @@
     .about-img-secondary { bottom:-20px; right:-10px; }
     .about-stats { grid-template-columns:1fr 1fr; }
 
-    /* Menú */
+    /* MenÃº */
     .menu-grid { grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr)); }
     .menu-tabs { gap:4px; }
     .tab-btn { padding:8px 16px; font-size:.7rem; }
@@ -801,9 +801,9 @@
 
   }
 
-  /* Móvil */
+  /* MÃ³vil */
   @media (max-width:480px) {
-    /* Loader - izotes más pequeños */
+    /* Loader - izotes mÃ¡s pequeÃ±os */
     .loader-izote-tl, .loader-izote-tr { width:38px !important; height:85px !important; }
     .loader-izote-bl, .loader-izote-br { width:32px !important; height:70px !important; }
     .loader-flag { width:110px !important; height:66px !important; }
@@ -822,7 +822,7 @@
     .about-stats { grid-template-columns:1fr 1fr; }
     .about-visual { max-width:100%; }
 
-    /* Menú */
+    /* MenÃº */
     .menu-grid { grid-template-columns:1fr; }
     .menu-card-img { height:200px; }
 
@@ -890,7 +890,7 @@
     }
   }
 
-  /* Móvil muy pequeño */
+  /* MÃ³vil muy pequeÃ±o */
   @media (max-width:360px) {
     /* Loader - ocultar izotes */
     .loader-izote { display:none !important; }
@@ -934,33 +934,33 @@
     <a href="#inicio" class="mm-item" onclick="closeMobile()">
       <span class="mm-num">01</span>
       <span class="mm-label">Inicio</span>
-      <span class="mm-arrow">→</span>
+      <span class="mm-arrow">â†’</span>
     </a>
     <a href="#menu" class="mm-item" onclick="closeMobile()">
       <span class="mm-num">02</span>
-      <span class="mm-label">Menú</span>
-      <span class="mm-arrow">→</span>
+      <span class="mm-label">MenÃº</span>
+      <span class="mm-arrow">â†’</span>
     </a>
     <a href="#especialidades" class="mm-item" onclick="closeMobile()">
       <span class="mm-num">03</span>
       <span class="mm-label">Especialidades</span>
-      <span class="mm-arrow">→</span>
+      <span class="mm-arrow">â†’</span>
     </a>
     <a href="#galeria" class="mm-item" onclick="closeMobile()">
       <span class="mm-num">04</span>
-      <span class="mm-label">Galería</span>
-      <span class="mm-arrow">→</span>
+      <span class="mm-label">GalerÃ­a</span>
+      <span class="mm-arrow">â†’</span>
     </a>
     <a href="#reservas" class="mm-item" onclick="closeMobile()">
       <span class="mm-num">05</span>
       <span class="mm-label">Reservas</span>
-      <span class="mm-arrow">→</span>
+      <span class="mm-arrow">â†’</span>
     </a>
   </nav>
 
   <!-- Footer -->
   <div class="mm-footer">
-    <a href="#reservas" class="mm-cta" onclick="closeMobile()">Reservar Mesa 🍽️</a>
+    <a href="#reservas" class="mm-cta" onclick="closeMobile()">Reservar Mesa ðŸ½ï¸</a>
     <div class="mm-socials">
       <a href="https://www.facebook.com/share/1DFG7Xggor/?mibextid=wwXIfr" class="mm-social" title="Facebook" target="_blank" rel="noopener noreferrer">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -986,12 +986,12 @@
   </a>
   <ul class="nav-links">
     <li><a href="#inicio">Inicio</a></li>
-    <li><a href="#menu">Menú</a></li>
+    <li><a href="#menu">MenÃº</a></li>
     <li><a href="#especialidades">Especialidades</a></li>
-    <li><a href="#galeria">Galería</a></li>
+    <li><a href="#galeria">GalerÃ­a</a></li>
     <li><a href="#nosotros">Nosotros</a></li>
   </ul>
-  <a href="#reservas" class="nav-cta nav-cta-desktop" style="margin-left:auto;">Reservar 🍽️</a>
+  <a href="#reservas" class="nav-cta nav-cta-desktop" style="margin-left:auto;">Reservar ðŸ½ï¸</a>
   <div class="hamburger" id="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
   </div>
@@ -1021,32 +1021,32 @@
       <span style="color:#003da5;-webkit-text-stroke:1px #003da5">volver</span>
     </h1>
     <p class="hero-subtitle">
-      Lo mejor de la cocina salvadoreña con el servicio rápido que necesitas.
+      Lo mejor de la cocina salvadoreÃ±a con el servicio rÃ¡pido que necesitas.
       Ingredientes frescos, recetas de casa y el calor de El Salvador en cada bocado.
     </p>
     <div class="hero-buttons">
-      <a href="#menu" class="btn-primary">Ver el Menú 🍽️</a>
+      <a href="#menu" class="btn-primary">Ver el MenÃº ðŸ½ï¸</a>
       <a href="#reservas" class="btn-secondary">Reserva Ya</a>
     </div>
   </div>
   <div class="hero-strip">
     <div class="hero-strip-img" data-label="Pupusas Artesanales"></div>
     <div class="hero-strip-img" data-label="Pollo Frito Crujiente"></div>
-    <div class="hero-strip-img" data-label="Platos del Día"></div>
-    <div class="hero-strip-img" data-label="Sabor Salvadoreño"></div>
+    <div class="hero-strip-img" data-label="Platos del DÃ­a"></div>
+    <div class="hero-strip-img" data-label="Sabor SalvadoreÃ±o"></div>
   </div>
 
   <div class="hero-float-badges">
     <div class="badge">
       <span class="badge-num">4.9</span>
-      <span class="badge-txt">⭐ Rating</span>
+      <span class="badge-txt">â­ Rating</span>
     </div>
     <div class="badge">
       <span class="badge-num">20+</span>
-      <span class="badge-txt">Platos típicos</span>
+      <span class="badge-txt">Platos tÃ­picos</span>
     </div>
     <div class="badge">
-      <span class="badge-num">Rápido</span>
+      <span class="badge-num">RÃ¡pido</span>
       <span class="badge-txt">Cocina Express</span>
     </div>
   </div>
@@ -1077,21 +1077,21 @@
             <polygon points="450,240 410,310 490,310" fill="#2a6e2a"/>
             <polygon points="405,255 373,310 437,310" fill="#347534"/>
             <polygon points="495,255 463,310 527,310" fill="#347534"/>
-            <!-- Arcoíris -->
+            <!-- ArcoÃ­ris -->
             <path d="M368,295 Q450,225 532,295" fill="none" stroke="#F5C518" stroke-width="7" stroke-linecap="round"/>
             <!-- Laurel exterior -->
             <ellipse cx="450" cy="300" rx="90" ry="82" fill="none" stroke="#FFFFFF" stroke-width="5"/>
             <ellipse cx="450" cy="300" rx="90" ry="82" fill="none" stroke="rgba(0,61,165,0.35)" stroke-width="2"/>
           </svg>
         </span>
-        <div class="about-flag-txt">Orgullo salvadoreño</div>
+        <div class="about-flag-txt">Orgullo salvadoreÃ±o</div>
       </div>
     </div>
     <div class="about-text reveal-right">
       <div class="section-label">Nuestra Historia</div>
       <h2 class="section-title">Hecho con amor<br><em>desde El Salvador</em></h2>
-      <p>Irra's Express nació del sueño de una familia salvadoreña con pasión por la buena comida y el servicio rápido. Cada plato lleva el sabor auténtico de nuestra tierra.</p>
-      <p>Usamos ingredientes frescos seleccionados diariamente y las recetas originales que han pasado de generación en generación, para traerte lo mejor de El Salvador.</p>
+      <p>Irra's Express naciÃ³ del sueÃ±o de una familia salvadoreÃ±a con pasiÃ³n por la buena comida y el servicio rÃ¡pido. Cada plato lleva el sabor autÃ©ntico de nuestra tierra.</p>
+      <p>Usamos ingredientes frescos seleccionados diariamente y las recetas originales que han pasado de generaciÃ³n en generaciÃ³n, para traerte lo mejor de El Salvador.</p>
       <div class="about-stats">
         <div class="stat reveal">
           <span class="stat-num">100%</span>
@@ -1103,7 +1103,7 @@
         </div>
         <div class="stat reveal" style="transition-delay:.2s">
           <span class="stat-num">20+</span>
-          <span class="stat-txt">Platos típicos</span>
+          <span class="stat-txt">Platos tÃ­picos</span>
         </div>
       </div>
     </div>
@@ -1117,7 +1117,7 @@
 <section class="menu-section" id="menu">
   <div style="max-width:1300px;margin:0 auto;">
     <div class="section-label reveal">Nuestra Carta</div>
-    <h2 class="section-title reveal">El mejor menú<br><em>salvadoreño</em></h2>
+    <h2 class="section-title reveal">El mejor menÃº<br><em>salvadoreÃ±o</em></h2>
     <div class="menu-tabs reveal">
       <button class="tab-btn" onclick="filterMenu('todos',this)">Todos</button>
       <button class="tab-btn active" onclick="filterMenu('pupusas',this)">Pupusas</button>
@@ -1132,20 +1132,20 @@
       <button class="tab-btn" onclick="filterMenu('zumos',this)">Zumos Naturales</button>
       <button class="tab-btn" onclick="filterMenu('batidos',this)">Batidos</button>
       <button class="tab-btn" onclick="filterMenu('postres',this)">Postres</button>
-      <button class="tab-btn" onclick="filterMenu('oferta-especial',this)">⭐ Oferta Especial</button>
+      <button class="tab-btn" onclick="filterMenu('oferta-especial',this)">â­ Oferta Especial</button>
     </div>
 
     <!-- SUB-TABS PUPUSAS -->
     <div class="menu-subtabs reveal" id="pupusaSubtabs" style="display:none;">
       <button class="subtab-btn active" onclick="filterSubMenu('todas',this)">Todas</button>
-      <button class="subtab-btn" onclick="filterSubMenu('tipicas',this)">Típicas</button>
+      <button class="subtab-btn" onclick="filterSubMenu('tipicas',this)">TÃ­picas</button>
       <button class="subtab-btn" onclick="filterSubMenu('veganas',this)">Veganas</button>
       <button class="subtab-btn" onclick="filterSubMenu('vegetarianas',this)">Vegetarianas</button>
-      <button class="subtab-btn" onclick="filterSubMenu('carnivotas',this)">Carnívoras</button>
+      <button class="subtab-btn" onclick="filterSubMenu('carnivotas',this)">CarnÃ­voras</button>
     </div>
     <div class="menu-grid" id="menuGrid">
 
-      <!-- PUPUSAS TÍPICAS -->
+      <!-- PUPUSAS TÃPICAS -->
       <div class="menu-card reveal" data-cat="pupusas" data-subcat="tipicas">
         <div class="menu-card-img">
           <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Frijol con Queso" loading="lazy">
@@ -1154,26 +1154,26 @@
           <div class="menu-card-name">Frijol con Queso</div>
           <div class="menu-card-footer">
             <div class="pupusa-prices">
-              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
-              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+              <div class="pp-item"><span class="pp-label">PequeÃ±a</span><span class="pp-val">2,50â‚¬</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00â‚¬</span></div>
             </div>
-            <span class="menu-tag">Típicas</span>
+            <span class="menu-tag">TÃ­picas</span>
           </div>
         </div>
       </div>
 
       <div class="menu-card reveal" data-cat="pupusas" data-subcat="tipicas">
         <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Chicharrón con Queso" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa ChicharrÃ³n con Queso" loading="lazy">
         </div>
         <div class="menu-card-body">
-          <div class="menu-card-name">Chicharrón con Queso</div>
+          <div class="menu-card-name">ChicharrÃ³n con Queso</div>
           <div class="menu-card-footer">
             <div class="pupusa-prices">
-              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
-              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+              <div class="pp-item"><span class="pp-label">PequeÃ±a</span><span class="pp-val">2,50â‚¬</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00â‚¬</span></div>
             </div>
-            <span class="menu-tag">Típicas</span>
+            <span class="menu-tag">TÃ­picas</span>
           </div>
         </div>
       </div>
@@ -1186,10 +1186,10 @@
           <div class="menu-card-name">Revuelta</div>
           <div class="menu-card-footer">
             <div class="pupusa-prices">
-              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
-              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+              <div class="pp-item"><span class="pp-label">PequeÃ±a</span><span class="pp-val">2,50â‚¬</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00â‚¬</span></div>
             </div>
-            <span class="menu-tag">Típicas</span>
+            <span class="menu-tag">TÃ­picas</span>
           </div>
         </div>
       </div>
@@ -1202,10 +1202,10 @@
           <div class="menu-card-name">Queso</div>
           <div class="menu-card-footer">
             <div class="pupusa-prices">
-              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
-              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+              <div class="pp-item"><span class="pp-label">PequeÃ±a</span><span class="pp-val">2,50â‚¬</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00â‚¬</span></div>
             </div>
-            <span class="menu-tag">Típicas</span>
+            <span class="menu-tag">TÃ­picas</span>
           </div>
         </div>
       </div>
@@ -1218,10 +1218,10 @@
           <div class="menu-card-name">Doble Queso</div>
           <div class="menu-card-footer">
             <div class="pupusa-prices">
-              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
-              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+              <div class="pp-item"><span class="pp-label">PequeÃ±a</span><span class="pp-val">2,50â‚¬</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00â‚¬</span></div>
             </div>
-            <span class="menu-tag">Típicas</span>
+            <span class="menu-tag">TÃ­picas</span>
           </div>
         </div>
       </div>
@@ -1235,8 +1235,8 @@
           <div class="menu-card-name">Solo Loroco</div>
           <div class="menu-card-footer">
             <div class="pupusa-prices">
-              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
-              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+              <div class="pp-item"><span class="pp-label">PequeÃ±a</span><span class="pp-val">2,50â‚¬</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00â‚¬</span></div>
             </div>
             <span class="menu-tag">Veganas</span>
           </div>
@@ -1251,8 +1251,8 @@
           <div class="menu-card-name">Solo Chipilin</div>
           <div class="menu-card-footer">
             <div class="pupusa-prices">
-              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
-              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+              <div class="pp-item"><span class="pp-label">PequeÃ±a</span><span class="pp-val">2,50â‚¬</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00â‚¬</span></div>
             </div>
             <span class="menu-tag">Veganas</span>
           </div>
@@ -1261,14 +1261,14 @@
 
       <div class="menu-card reveal" data-cat="pupusas" data-subcat="veganas">
         <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Solo Calabacín" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Solo CalabacÃ­n" loading="lazy">
         </div>
         <div class="menu-card-body">
-          <div class="menu-card-name">Solo Calabacín</div>
+          <div class="menu-card-name">Solo CalabacÃ­n</div>
           <div class="menu-card-footer">
             <div class="pupusa-prices">
-              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
-              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+              <div class="pp-item"><span class="pp-label">PequeÃ±a</span><span class="pp-val">2,50â‚¬</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00â‚¬</span></div>
             </div>
             <span class="menu-tag">Veganas</span>
           </div>
@@ -1283,8 +1283,8 @@
           <div class="menu-card-name">Solo Zanahoria</div>
           <div class="menu-card-footer">
             <div class="pupusa-prices">
-              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
-              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+              <div class="pp-item"><span class="pp-label">PequeÃ±a</span><span class="pp-val">2,50â‚¬</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00â‚¬</span></div>
             </div>
             <span class="menu-tag">Veganas</span>
           </div>
@@ -1299,8 +1299,8 @@
           <div class="menu-card-name">Solo Frijol</div>
           <div class="menu-card-footer">
             <div class="pupusa-prices">
-              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
-              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+              <div class="pp-item"><span class="pp-label">PequeÃ±a</span><span class="pp-val">2,50â‚¬</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00â‚¬</span></div>
             </div>
             <span class="menu-tag">Veganas</span>
           </div>
@@ -1315,8 +1315,8 @@
           <div class="menu-card-name">Solo Espinaca</div>
           <div class="menu-card-footer">
             <div class="pupusa-prices">
-              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
-              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+              <div class="pp-item"><span class="pp-label">PequeÃ±a</span><span class="pp-val">2,50â‚¬</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00â‚¬</span></div>
             </div>
             <span class="menu-tag">Veganas</span>
           </div>
@@ -1332,8 +1332,8 @@
           <div class="menu-card-name">Loroco Queso</div>
           <div class="menu-card-footer">
             <div class="pupusa-prices">
-              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
-              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+              <div class="pp-item"><span class="pp-label">PequeÃ±a</span><span class="pp-val">2,50â‚¬</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00â‚¬</span></div>
             </div>
             <span class="menu-tag">Vegetarianas</span>
           </div>
@@ -1348,8 +1348,8 @@
           <div class="menu-card-name">Chipilin Queso</div>
           <div class="menu-card-footer">
             <div class="pupusa-prices">
-              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
-              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+              <div class="pp-item"><span class="pp-label">PequeÃ±a</span><span class="pp-val">2,50â‚¬</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00â‚¬</span></div>
             </div>
             <span class="menu-tag">Vegetarianas</span>
           </div>
@@ -1358,14 +1358,14 @@
 
       <div class="menu-card reveal" data-cat="pupusas" data-subcat="vegetarianas">
         <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Calabacín Queso" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa CalabacÃ­n Queso" loading="lazy">
         </div>
         <div class="menu-card-body">
-          <div class="menu-card-name">Calabacín Queso</div>
+          <div class="menu-card-name">CalabacÃ­n Queso</div>
           <div class="menu-card-footer">
             <div class="pupusa-prices">
-              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
-              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+              <div class="pp-item"><span class="pp-label">PequeÃ±a</span><span class="pp-val">2,50â‚¬</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00â‚¬</span></div>
             </div>
             <span class="menu-tag">Vegetarianas</span>
           </div>
@@ -1374,14 +1374,14 @@
 
       <div class="menu-card reveal" data-cat="pupusas" data-subcat="vegetarianas">
         <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Champiñon Queso" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa ChampiÃ±on Queso" loading="lazy">
         </div>
         <div class="menu-card-body">
-          <div class="menu-card-name">Champiñón Queso</div>
+          <div class="menu-card-name">ChampiÃ±Ã³n Queso</div>
           <div class="menu-card-footer">
             <div class="pupusa-prices">
-              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
-              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+              <div class="pp-item"><span class="pp-label">PequeÃ±a</span><span class="pp-val">2,50â‚¬</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00â‚¬</span></div>
             </div>
             <span class="menu-tag">Vegetarianas</span>
           </div>
@@ -1396,8 +1396,8 @@
           <div class="menu-card-name">Ajo Queso</div>
           <div class="menu-card-footer">
             <div class="pupusa-prices">
-              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
-              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+              <div class="pp-item"><span class="pp-label">PequeÃ±a</span><span class="pp-val">2,50â‚¬</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00â‚¬</span></div>
             </div>
             <span class="menu-tag">Vegetarianas</span>
           </div>
@@ -1406,21 +1406,21 @@
 
       <div class="menu-card reveal" data-cat="pupusas" data-subcat="vegetarianas">
         <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Jalapeño Queso" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa JalapeÃ±o Queso" loading="lazy">
         </div>
         <div class="menu-card-body">
-          <div class="menu-card-name">Jalapeño Queso</div>
+          <div class="menu-card-name">JalapeÃ±o Queso</div>
           <div class="menu-card-footer">
             <div class="pupusa-prices">
-              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
-              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+              <div class="pp-item"><span class="pp-label">PequeÃ±a</span><span class="pp-val">2,50â‚¬</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00â‚¬</span></div>
             </div>
             <span class="menu-tag">Vegetarianas</span>
           </div>
         </div>
       </div>
 
-      <!-- PUPUSAS CARNÍVORAS -->
+      <!-- PUPUSAS CARNÃVORAS -->
       <div class="menu-card reveal" data-cat="pupusas" data-subcat="carnivotas">
         <div class="menu-card-img">
           <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Pollo Queso" loading="lazy">
@@ -1429,26 +1429,26 @@
           <div class="menu-card-name">Pollo Queso</div>
           <div class="menu-card-footer">
             <div class="pupusa-prices">
-              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
-              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+              <div class="pp-item"><span class="pp-label">PequeÃ±a</span><span class="pp-val">2,50â‚¬</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00â‚¬</span></div>
             </div>
-            <span class="menu-tag">Carnívoras</span>
+            <span class="menu-tag">CarnÃ­voras</span>
           </div>
         </div>
       </div>
 
       <div class="menu-card reveal" data-cat="pupusas" data-subcat="carnivotas">
         <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Jamón Queso" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa JamÃ³n Queso" loading="lazy">
         </div>
         <div class="menu-card-body">
-          <div class="menu-card-name">Jamón Queso</div>
+          <div class="menu-card-name">JamÃ³n Queso</div>
           <div class="menu-card-footer">
             <div class="pupusa-prices">
-              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
-              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+              <div class="pp-item"><span class="pp-label">PequeÃ±a</span><span class="pp-val">2,50â‚¬</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00â‚¬</span></div>
             </div>
-            <span class="menu-tag">Carnívoras</span>
+            <span class="menu-tag">CarnÃ­voras</span>
           </div>
         </div>
       </div>
@@ -1461,10 +1461,10 @@
           <div class="menu-card-name">Gambas Queso</div>
           <div class="menu-card-footer">
             <div class="pupusa-prices">
-              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
-              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+              <div class="pp-item"><span class="pp-label">PequeÃ±a</span><span class="pp-val">2,50â‚¬</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00â‚¬</span></div>
             </div>
-            <span class="menu-tag">Carnívoras</span>
+            <span class="menu-tag">CarnÃ­voras</span>
           </div>
         </div>
       </div>
@@ -1477,10 +1477,10 @@
           <div class="menu-card-name">Cochinita Queso</div>
           <div class="menu-card-footer">
             <div class="pupusa-prices">
-              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
-              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+              <div class="pp-item"><span class="pp-label">PequeÃ±a</span><span class="pp-val">2,50â‚¬</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00â‚¬</span></div>
             </div>
-            <span class="menu-tag">Carnívoras</span>
+            <span class="menu-tag">CarnÃ­voras</span>
           </div>
         </div>
       </div>
@@ -1493,26 +1493,26 @@
           <div class="menu-card-name">Ternera con Queso</div>
           <div class="menu-card-footer">
             <div class="pupusa-prices">
-              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
-              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+              <div class="pp-item"><span class="pp-label">PequeÃ±a</span><span class="pp-val">2,50â‚¬</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00â‚¬</span></div>
             </div>
-            <span class="menu-tag">Carnívoras</span>
+            <span class="menu-tag">CarnÃ­voras</span>
           </div>
         </div>
       </div>
 
       <div class="menu-card reveal" data-cat="pupusas" data-subcat="carnivotas">
         <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Solo Chicharrón" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Solo ChicharrÃ³n" loading="lazy">
         </div>
         <div class="menu-card-body">
-          <div class="menu-card-name">Solo Chicharrón</div>
+          <div class="menu-card-name">Solo ChicharrÃ³n</div>
           <div class="menu-card-footer">
             <div class="pupusa-prices">
-              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
-              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+              <div class="pp-item"><span class="pp-label">PequeÃ±a</span><span class="pp-val">2,50â‚¬</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00â‚¬</span></div>
             </div>
-            <span class="menu-tag">Carnívoras</span>
+            <span class="menu-tag">CarnÃ­voras</span>
           </div>
         </div>
       </div>
@@ -1525,10 +1525,10 @@
           <div class="menu-card-name">Solo Cochinita</div>
           <div class="menu-card-footer">
             <div class="pupusa-prices">
-              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
-              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+              <div class="pp-item"><span class="pp-label">PequeÃ±a</span><span class="pp-val">2,50â‚¬</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00â‚¬</span></div>
             </div>
-            <span class="menu-tag">Carnívoras</span>
+            <span class="menu-tag">CarnÃ­voras</span>
           </div>
         </div>
       </div>
@@ -1541,10 +1541,10 @@
           <div class="menu-card-name">Solo Ternera</div>
           <div class="menu-card-footer">
             <div class="pupusa-prices">
-              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
-              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+              <div class="pp-item"><span class="pp-label">PequeÃ±a</span><span class="pp-val">2,50â‚¬</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00â‚¬</span></div>
             </div>
-            <span class="menu-tag">Carnívoras</span>
+            <span class="menu-tag">CarnÃ­voras</span>
           </div>
         </div>
       </div>
@@ -1557,26 +1557,26 @@
           <div class="menu-card-name">Solo Gambas</div>
           <div class="menu-card-footer">
             <div class="pupusa-prices">
-              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
-              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+              <div class="pp-item"><span class="pp-label">PequeÃ±a</span><span class="pp-val">2,50â‚¬</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00â‚¬</span></div>
             </div>
-            <span class="menu-tag">Carnívoras</span>
+            <span class="menu-tag">CarnÃ­voras</span>
           </div>
         </div>
       </div>
 
       <div class="menu-card reveal" data-cat="pupusas" data-subcat="carnivotas">
         <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Solo Jamón" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Pupusa Solo JamÃ³n" loading="lazy">
         </div>
         <div class="menu-card-body">
-          <div class="menu-card-name">Solo Jamón</div>
+          <div class="menu-card-name">Solo JamÃ³n</div>
           <div class="menu-card-footer">
             <div class="pupusa-prices">
-              <div class="pp-item"><span class="pp-label">Pequeña</span><span class="pp-val">2,50€</span></div>
-              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00€</span></div>
+              <div class="pp-item"><span class="pp-label">PequeÃ±a</span><span class="pp-val">2,50â‚¬</span></div>
+              <div class="pp-item"><span class="pp-label">Grande</span><span class="pp-val">5,00â‚¬</span></div>
             </div>
-            <span class="menu-tag">Carnívoras</span>
+            <span class="menu-tag">CarnÃ­voras</span>
           </div>
         </div>
       </div>
@@ -1588,7 +1588,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Carne Asada</div>
           <div class="menu-card-footer">
-            <span class="menu-price">15,00€</span>
+            <span class="menu-price">15,00â‚¬</span>
             <span class="menu-tag">Principales</span>
           </div>
         </div>
@@ -1601,7 +1601,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Pollo Chuco</div>
           <div class="menu-card-footer">
-            <span class="menu-price">15,00€</span>
+            <span class="menu-price">15,00â‚¬</span>
             <span class="menu-tag">Principales</span>
           </div>
         </div>
@@ -1614,7 +1614,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Pollo Estilo Campero</div>
           <div class="menu-card-footer">
-            <span class="menu-price">15,00€</span>
+            <span class="menu-price">15,00â‚¬</span>
             <span class="menu-tag">Principales</span>
           </div>
         </div>
@@ -1627,7 +1627,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Sopa de Res</div>
           <div class="menu-card-footer">
-            <span class="menu-price">15,00€</span>
+            <span class="menu-price">15,00â‚¬</span>
             <span class="menu-tag">Principales</span>
           </div>
         </div>
@@ -1640,7 +1640,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Sopa de Pata</div>
           <div class="menu-card-footer">
-            <span class="menu-price">15,00€</span>
+            <span class="menu-price">15,00â‚¬</span>
             <span class="menu-tag">Principales</span>
           </div>
         </div>
@@ -1653,7 +1653,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Pechuga de Pollo a la Plancha</div>
           <div class="menu-card-footer">
-            <span class="menu-price">13,00€</span>
+            <span class="menu-price">13,00â‚¬</span>
             <span class="menu-tag">Principales</span>
           </div>
         </div>
@@ -1666,7 +1666,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Dorada Frita con Arroz, Ensalada o Tajada</div>
           <div class="menu-card-footer">
-            <span class="menu-price">15,00€</span>
+            <span class="menu-price">15,00â‚¬</span>
             <span class="menu-tag">Principales</span>
           </div>
         </div>
@@ -1679,7 +1679,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Bisteck Encebollado</div>
           <div class="menu-card-footer">
-            <span class="menu-price">15,00€</span>
+            <span class="menu-price">15,00â‚¬</span>
             <span class="menu-tag">Principales</span>
           </div>
         </div>
@@ -1692,7 +1692,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Carne Mechada con Arroz</div>
           <div class="menu-card-footer">
-            <span class="menu-price">15,00€</span>
+            <span class="menu-price">15,00â‚¬</span>
             <span class="menu-tag">Principales</span>
           </div>
         </div>
@@ -1700,12 +1700,12 @@
 
       <div class="menu-card reveal" data-cat="desayuno">
         <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600&q=80" alt="Desayuno Típico" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600&q=80" alt="Desayuno TÃ­pico" loading="lazy">
         </div>
         <div class="menu-card-body">
-          <div class="menu-card-name">Típico</div>
+          <div class="menu-card-name">TÃ­pico</div>
           <div class="menu-card-footer">
-            <span class="menu-price">12,00€</span>
+            <span class="menu-price">12,00â‚¬</span>
             <span class="menu-tag">Desayuno</span>
           </div>
         </div>
@@ -1718,7 +1718,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Ranchero</div>
           <div class="menu-card-footer">
-            <span class="menu-price">10,00€</span>
+            <span class="menu-price">10,00â‚¬</span>
             <span class="menu-tag">Desayuno</span>
           </div>
         </div>
@@ -1731,7 +1731,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Tradicional</div>
           <div class="menu-card-footer">
-            <span class="menu-price">7,50€</span>
+            <span class="menu-price">7,50â‚¬</span>
             <span class="menu-tag">Desayuno</span>
           </div>
         </div>
@@ -1744,7 +1744,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Nachos Guanacos</div>
           <div class="menu-card-footer">
-            <span class="menu-price">15,00€</span>
+            <span class="menu-price">15,00â‚¬</span>
             <span class="menu-tag">Entrantes</span>
           </div>
         </div>
@@ -1757,7 +1757,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Enchiladas de Carne</div>
           <div class="menu-card-footer">
-            <span class="menu-price">5,00€</span>
+            <span class="menu-price">5,00â‚¬</span>
             <span class="menu-tag">Entrantes</span>
           </div>
         </div>
@@ -1770,7 +1770,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Enchiladas de Pollo</div>
           <div class="menu-card-footer">
-            <span class="menu-price">5,00€</span>
+            <span class="menu-price">5,00â‚¬</span>
             <span class="menu-tag">Entrantes</span>
           </div>
         </div>
@@ -1778,12 +1778,12 @@
 
       <div class="menu-card reveal" data-cat="entrantes">
         <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Yuca con Chicharrón" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="Yuca con ChicharrÃ³n" loading="lazy">
         </div>
         <div class="menu-card-body">
-          <div class="menu-card-name">Yuca con Chicharrón</div>
+          <div class="menu-card-name">Yuca con ChicharrÃ³n</div>
           <div class="menu-card-footer">
-            <span class="menu-price">15,00€</span>
+            <span class="menu-price">15,00â‚¬</span>
             <span class="menu-tag">Entrantes</span>
           </div>
         </div>
@@ -1796,7 +1796,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Salchipapa con Pollo</div>
           <div class="menu-card-footer">
-            <span class="menu-price">10,00€</span>
+            <span class="menu-price">10,00â‚¬</span>
             <span class="menu-tag">Entrantes</span>
           </div>
         </div>
@@ -1809,7 +1809,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Pastelitos de Carne</div>
           <div class="menu-card-footer">
-            <span class="menu-price">9,00€</span>
+            <span class="menu-price">9,00â‚¬</span>
             <span class="menu-tag">Entrantes</span>
           </div>
         </div>
@@ -1822,7 +1822,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Baleada Tradicional</div>
           <div class="menu-card-footer">
-            <span class="menu-price">7,50€</span>
+            <span class="menu-price">7,50â‚¬</span>
             <span class="menu-tag">Entrantes</span>
           </div>
         </div>
@@ -1835,7 +1835,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Baleada de Pollo, Carne o Cochinita</div>
           <div class="menu-card-footer">
-            <span class="menu-price">8,50€</span>
+            <span class="menu-price">8,50â‚¬</span>
             <span class="menu-tag">Entrantes</span>
           </div>
         </div>
@@ -1848,7 +1848,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Tamal de Elote, Pollo o Pisque</div>
           <div class="menu-card-footer">
-            <span class="menu-price">5,00€</span>
+            <span class="menu-price">5,00â‚¬</span>
             <span class="menu-tag">Entrantes</span>
           </div>
         </div>
@@ -1861,7 +1861,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Taquitos Flauta</div>
           <div class="menu-card-footer">
-            <span class="menu-price">12,00€</span>
+            <span class="menu-price">12,00â‚¬</span>
             <span class="menu-tag">Entrantes</span>
           </div>
         </div>
@@ -1874,7 +1874,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Empanada Especialidad</div>
           <div class="menu-card-footer">
-            <span class="menu-price">3,00€</span>
+            <span class="menu-price">3,00â‚¬</span>
             <span class="menu-tag">Entrantes</span>
           </div>
         </div>
@@ -1887,7 +1887,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Papa Rellena</div>
           <div class="menu-card-footer">
-            <span class="menu-price">5,00€</span>
+            <span class="menu-price">5,00â‚¬</span>
             <span class="menu-tag">Entrantes</span>
           </div>
         </div>
@@ -1900,7 +1900,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Nachos Mexicanos</div>
           <div class="menu-card-footer">
-            <span class="menu-price">15,00€</span>
+            <span class="menu-price">15,00â‚¬</span>
             <span class="menu-tag">Mexicanos</span>
           </div>
         </div>
@@ -1913,7 +1913,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Taquitos Mexicanos x 3 Unidades</div>
           <div class="menu-card-footer">
-            <span class="menu-price">10,00€</span>
+            <span class="menu-price">10,00â‚¬</span>
             <span class="menu-tag">Mexicanos</span>
           </div>
         </div>
@@ -1926,7 +1926,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Quesadilla Mexicana</div>
           <div class="menu-card-footer">
-            <span class="menu-price">8,00€</span>
+            <span class="menu-price">8,00â‚¬</span>
             <span class="menu-tag">Mexicanos</span>
           </div>
         </div>
@@ -1939,7 +1939,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Burrito Mexicano</div>
           <div class="menu-card-footer">
-            <span class="menu-price">10,00€</span>
+            <span class="menu-price">10,00â‚¬</span>
             <span class="menu-tag">Mexicanos</span>
           </div>
         </div>
@@ -1952,7 +1952,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Coca Cola</div>
           <div class="menu-card-footer">
-            <span class="menu-price">2,75€</span>
+            <span class="menu-price">2,75â‚¬</span>
             <span class="menu-tag">Bebidas</span>
           </div>
         </div>
@@ -1965,7 +1965,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Aquarius</div>
           <div class="menu-card-footer">
-            <span class="menu-price">2,75€</span>
+            <span class="menu-price">2,75â‚¬</span>
             <span class="menu-tag">Bebidas</span>
           </div>
         </div>
@@ -1978,7 +1978,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Nestea</div>
           <div class="menu-card-footer">
-            <span class="menu-price">2,75€</span>
+            <span class="menu-price">2,75â‚¬</span>
             <span class="menu-tag">Bebidas</span>
           </div>
         </div>
@@ -1991,7 +1991,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Sprite</div>
           <div class="menu-card-footer">
-            <span class="menu-price">2,75€</span>
+            <span class="menu-price">2,75â‚¬</span>
             <span class="menu-tag">Bebidas</span>
           </div>
         </div>
@@ -2004,7 +2004,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Fanta</div>
           <div class="menu-card-footer">
-            <span class="menu-price">2,75€</span>
+            <span class="menu-price">2,75â‚¬</span>
             <span class="menu-tag">Bebidas</span>
           </div>
         </div>
@@ -2017,7 +2017,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Agua con Gas y Sin Gas</div>
           <div class="menu-card-footer">
-            <span class="menu-price">2,75€</span>
+            <span class="menu-price">2,75â‚¬</span>
             <span class="menu-tag">Bebidas</span>
           </div>
         </div>
@@ -2030,7 +2030,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Refrescos Internacionales</div>
           <div class="menu-card-footer">
-            <span class="menu-price">4,50€</span>
+            <span class="menu-price">4,50â‚¬</span>
             <span class="menu-tag">Bebidas</span>
           </div>
         </div>
@@ -2043,7 +2043,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Michelada</div>
           <div class="menu-card-footer">
-            <span class="menu-price">7,00€</span>
+            <span class="menu-price">7,00â‚¬</span>
             <span class="menu-tag">Bebidas</span>
           </div>
         </div>
@@ -2056,7 +2056,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Limonada</div>
           <div class="menu-card-footer">
-            <span class="menu-price">5,00€</span>
+            <span class="menu-price">5,00â‚¬</span>
             <span class="menu-tag">Bebidas</span>
           </div>
         </div>
@@ -2064,12 +2064,12 @@
 
       <div class="menu-card reveal" data-cat="bebidas-calientes">
         <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80" alt="Café Variedad" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80" alt="CafÃ© Variedad" loading="lazy">
         </div>
         <div class="menu-card-body">
-          <div class="menu-card-name">Café Variedad</div>
+          <div class="menu-card-name">CafÃ© Variedad</div>
           <div class="menu-card-footer">
-            <span class="menu-price">1,90€</span>
+            <span class="menu-price">1,90â‚¬</span>
             <span class="menu-tag">Bebidas Calientes</span>
           </div>
         </div>
@@ -2082,7 +2082,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Infusiones</div>
           <div class="menu-card-footer">
-            <span class="menu-price">1,90€</span>
+            <span class="menu-price">1,90â‚¬</span>
             <span class="menu-tag">Bebidas Calientes</span>
           </div>
         </div>
@@ -2095,7 +2095,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Leche Caliente</div>
           <div class="menu-card-footer">
-            <span class="menu-price">2,25€</span>
+            <span class="menu-price">2,25â‚¬</span>
             <span class="menu-tag">Bebidas Calientes</span>
           </div>
         </div>
@@ -2108,7 +2108,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Colacao</div>
           <div class="menu-card-footer">
-            <span class="menu-price">2,25€</span>
+            <span class="menu-price">2,25â‚¬</span>
             <span class="menu-tag">Bebidas Calientes</span>
           </div>
         </div>
@@ -2121,7 +2121,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Mahou, Estrella Galicia, Corona, entre otras</div>
           <div class="menu-card-footer">
-            <span class="menu-price">3,50€</span>
+            <span class="menu-price">3,50â‚¬</span>
             <span class="menu-tag">Cervezas Tercio</span>
           </div>
         </div>
@@ -2134,7 +2134,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Cerveza Internacional</div>
           <div class="menu-card-footer">
-            <span class="menu-price">4,50€</span>
+            <span class="menu-price">4,50â‚¬</span>
             <span class="menu-tag">Cervezas Tercio</span>
           </div>
         </div>
@@ -2147,7 +2147,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Jarra</div>
           <div class="menu-card-footer">
-            <span class="menu-price">4,75€</span>
+            <span class="menu-price">4,75â‚¬</span>
             <span class="menu-tag">Cervezas de Grifo</span>
           </div>
         </div>
@@ -2160,7 +2160,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Doble</div>
           <div class="menu-card-footer">
-            <span class="menu-price">3,50€</span>
+            <span class="menu-price">3,50â‚¬</span>
             <span class="menu-tag">Cervezas de Grifo</span>
           </div>
         </div>
@@ -2168,12 +2168,12 @@
 
       <div class="menu-card reveal" data-cat="cervezas-grifo">
         <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1608270586620-248524c67de9?w=600&q=80" alt="Cañita" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1608270586620-248524c67de9?w=600&q=80" alt="CaÃ±ita" loading="lazy">
         </div>
         <div class="menu-card-body">
-          <div class="menu-card-name">Cañita</div>
+          <div class="menu-card-name">CaÃ±ita</div>
           <div class="menu-card-footer">
-            <span class="menu-price">2,00€</span>
+            <span class="menu-price">2,00â‚¬</span>
             <span class="menu-tag">Cervezas de Grifo</span>
           </div>
         </div>
@@ -2186,7 +2186,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Mora</div>
           <div class="menu-card-footer">
-            <span class="menu-price">3,75€</span>
+            <span class="menu-price">3,75â‚¬</span>
             <span class="menu-tag">Zumos Naturales</span>
           </div>
         </div>
@@ -2199,7 +2199,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Tamarindo</div>
           <div class="menu-card-footer">
-            <span class="menu-price">3,75€</span>
+            <span class="menu-price">3,75â‚¬</span>
             <span class="menu-tag">Zumos Naturales</span>
           </div>
         </div>
@@ -2207,12 +2207,12 @@
 
       <div class="menu-card reveal" data-cat="zumos">
         <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1546173159-315724a31696?w=600&q=80" alt="Maracuyá" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1546173159-315724a31696?w=600&q=80" alt="MaracuyÃ¡" loading="lazy">
         </div>
         <div class="menu-card-body">
-          <div class="menu-card-name">Maracuyá</div>
+          <div class="menu-card-name">MaracuyÃ¡</div>
           <div class="menu-card-footer">
-            <span class="menu-price">3,75€</span>
+            <span class="menu-price">3,75â‚¬</span>
             <span class="menu-tag">Zumos Naturales</span>
           </div>
         </div>
@@ -2225,7 +2225,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Horchata</div>
           <div class="menu-card-footer">
-            <span class="menu-price">4,75€</span>
+            <span class="menu-price">4,75â‚¬</span>
             <span class="menu-tag">Zumos Naturales</span>
           </div>
         </div>
@@ -2238,7 +2238,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Cebada</div>
           <div class="menu-card-footer">
-            <span class="menu-price">4,75€</span>
+            <span class="menu-price">4,75â‚¬</span>
             <span class="menu-tag">Zumos Naturales</span>
           </div>
         </div>
@@ -2251,7 +2251,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Banano en Leche</div>
           <div class="menu-card-footer">
-            <span class="menu-price">4,95€</span>
+            <span class="menu-price">4,95â‚¬</span>
             <span class="menu-tag">Batidos</span>
           </div>
         </div>
@@ -2264,7 +2264,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Fresa en Leche</div>
           <div class="menu-card-footer">
-            <span class="menu-price">4,95€</span>
+            <span class="menu-price">4,95â‚¬</span>
             <span class="menu-tag">Batidos</span>
           </div>
         </div>
@@ -2277,7 +2277,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Mora en Leche</div>
           <div class="menu-card-footer">
-            <span class="menu-price">4,95€</span>
+            <span class="menu-price">4,95â‚¬</span>
             <span class="menu-tag">Batidos</span>
           </div>
         </div>
@@ -2285,12 +2285,12 @@
 
       <div class="menu-card reveal" data-cat="batidos">
         <div class="menu-card-img">
-          <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80" alt="Guanábana en Leche" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80" alt="GuanÃ¡bana en Leche" loading="lazy">
         </div>
         <div class="menu-card-body">
-          <div class="menu-card-name">Guanábana en Leche</div>
+          <div class="menu-card-name">GuanÃ¡bana en Leche</div>
           <div class="menu-card-footer">
-            <span class="menu-price">4,95€</span>
+            <span class="menu-price">4,95â‚¬</span>
             <span class="menu-tag">Batidos</span>
           </div>
         </div>
@@ -2303,7 +2303,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Tres Leches</div>
           <div class="menu-card-footer">
-            <span class="menu-price">3,50€</span>
+            <span class="menu-price">3,50â‚¬</span>
             <span class="menu-tag">Postres</span>
           </div>
         </div>
@@ -2316,7 +2316,7 @@
         <div class="menu-card-body">
           <div class="menu-card-name">Selva Negra</div>
           <div class="menu-card-footer">
-            <span class="menu-price">3,50€</span>
+            <span class="menu-price">3,50â‚¬</span>
             <span class="menu-tag">Postres</span>
           </div>
         </div>
@@ -2324,14 +2324,14 @@
 
       <!-- OFERTA ESPECIAL -->
       <div class="menu-card reveal" data-cat="oferta-especial">
-        <div class="menu-badge">⭐ Oferta</div>
+        <div class="menu-badge">â­ Oferta</div>
         <div class="menu-card-img">
           <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80" alt="3 Pupusas + Oferta Especial" loading="lazy">
         </div>
         <div class="menu-card-body">
           <div class="menu-card-name">3 Pupusas + <em style="color:var(--dorado);font-style:normal;">(info pendiente)</em></div>
           <div class="menu-card-footer">
-            <span class="menu-price">10,00€</span>
+            <span class="menu-price">10,00â‚¬</span>
             <span class="menu-tag">Oferta Especial</span>
           </div>
         </div>
@@ -2339,7 +2339,7 @@
 
     </div>
 
-    <!-- BOTÓN VER TODOS -->
+    <!-- BOTÃ“N VER TODOS -->
     <div id="verTodosBtn" style="display:none; justify-content:center; margin-top:36px;">
       <button class="ver-todos-btn" onclick="verTodosPlatos()">
         Ver todos los platos &nbsp;<span class="ver-todos-count"></span>
@@ -2359,34 +2359,34 @@
   <div class="parallax-corner parallax-corner-tr"></div>
   <div class="parallax-corner parallax-corner-bl"></div>
   <div class="parallax-corner parallax-corner-br"></div>
-  <!-- Líneas laterales -->
+  <!-- LÃ­neas laterales -->
   <div class="parallax-deco-line left"></div>
   <div class="parallax-deco-line right"></div>
 
   <div class="parallax-content reveal-scale">
     <!-- Eyebrow -->
-    <div class="parallax-eyebrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="22" height="15" style="border-radius:2px;vertical-align:middle;margin-right:6px;box-shadow:0 1px 4px rgba(0,0,0,0.3);display:inline-block;"><rect width="900" height="200" y="0" fill="#003DA5"/><rect width="900" height="200" y="200" fill="#FFFFFF"/><rect width="900" height="200" y="400" fill="#003DA5"/></svg>Orgullo Salvadoreño</div>
+    <div class="parallax-eyebrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="22" height="15" style="border-radius:2px;vertical-align:middle;margin-right:6px;box-shadow:0 1px 4px rgba(0,0,0,0.3);display:inline-block;"><rect width="900" height="200" y="0" fill="#003DA5"/><rect width="900" height="200" y="200" fill="#FFFFFF"/><rect width="900" height="200" y="400" fill="#003DA5"/></svg>Orgullo SalvadoreÃ±o</div>
     <!-- Comilla decorativa -->
     <span class="parallax-big-quote">"</span>
-    <!-- Título -->
+    <!-- TÃ­tulo -->
     <h2>Donde cada bocado<br>es un abrazo de <span>El Salvador</span>"</h2>
-    <!-- Subtítulo -->
-    <p>Ingredientes frescos · Recetas de familia · Servicio express</p>
+    <!-- SubtÃ­tulo -->
+    <p>Ingredientes frescos Â· Recetas de familia Â· Servicio express</p>
     <!-- Pills -->
     <div class="parallax-pills">
-      <span class="parallax-pill">🫓 Pupusas</span>
-      <span class="parallax-pill">🍗 Pollo Express</span>
-      <span class="parallax-pill">🫘 Frijoles</span>
-      <span class="parallax-pill">🌽 Yuca Frita</span>
-      <span class="parallax-pill">🥤 Horchata</span>
+      <span class="parallax-pill">ðŸ«“ Pupusas</span>
+      <span class="parallax-pill">ðŸ— Pollo Express</span>
+      <span class="parallax-pill">ðŸ«˜ Frijoles</span>
+      <span class="parallax-pill">ðŸŒ½ Yuca Frita</span>
+      <span class="parallax-pill">ðŸ¥¤ Horchata</span>
     </div>
     <!-- CTA -->
-    <a href="#menu" class="parallax-cta">Ver el Menú Completo →</a>
+    <a href="#menu" class="parallax-cta">Ver el MenÃº Completo â†’</a>
     <!-- Stats -->
     <div class="parallax-stats">
       <div class="parallax-stat">
-        <span class="parallax-stat-num">4.9 ⭐</span>
-        <span class="parallax-stat-lbl">Valoración</span>
+        <span class="parallax-stat-num">4.9 â­</span>
+        <span class="parallax-stat-lbl">ValoraciÃ³n</span>
       </div>
       <div class="parallax-stat-div"></div>
       <div class="parallax-stat">
@@ -2396,7 +2396,7 @@
       <div class="parallax-stat-div"></div>
       <div class="parallax-stat">
         <span class="parallax-stat-num">20+</span>
-        <span class="parallax-stat-lbl">Platos típicos</span>
+        <span class="parallax-stat-lbl">Platos tÃ­picos</span>
       </div>
     </div>
   </div>
@@ -2409,45 +2409,45 @@
 <section class="specialty" id="especialidades">
   <div class="specialty-inner">
     <div class="specialty-header">
-      <div class="section-label reveal" style="justify-content:center">Lo que nos hace únicos</div>
+      <div class="section-label reveal" style="justify-content:center">Lo que nos hace Ãºnicos</div>
       <h2 class="section-title reveal">Nuestras <em>Especialidades</em></h2>
     </div>
     <div class="specialty-cards">
       <div class="spec-card reveal">
         <span class="spec-num">01</span>
-        <span class="spec-icon">🫓</span>
+        <span class="spec-icon">ðŸ«“</span>
         <div class="spec-name">Pupusas Artesanales</div>
-        <div class="spec-desc">Preparadas a mano cada día con masa fresca. Rellenos variados: queso, frijoles, loroco y chicharrón. Servidas con curtido y salsa roja.</div>
+        <div class="spec-desc">Preparadas a mano cada dÃ­a con masa fresca. Rellenos variados: queso, frijoles, loroco y chicharrÃ³n. Servidas con curtido y salsa roja.</div>
       </div>
       <div class="spec-card reveal" style="transition-delay:.1s">
         <span class="spec-num">02</span>
-        <span class="spec-icon">🍗</span>
+        <span class="spec-icon">ðŸ—</span>
         <div class="spec-name">Pollo Express</div>
-        <div class="spec-desc">Pollo marinado en especias salvadoreñas, frito o guisado al momento. Servido con arroz, frijoles y ensalada en minutos.</div>
+        <div class="spec-desc">Pollo marinado en especias salvadoreÃ±as, frito o guisado al momento. Servido con arroz, frijoles y ensalada en minutos.</div>
       </div>
       <div class="spec-card reveal" style="transition-delay:.2s">
         <span class="spec-num">03</span>
-        <span class="spec-icon">🥘</span>
-        <div class="spec-name">Platos del Día</div>
-        <div class="spec-desc">Menú diario con los mejores guisos salvadoreños. Frescos, abundantes y al precio justo para alimentar bien a toda la familia.</div>
+        <span class="spec-icon">ðŸ¥˜</span>
+        <div class="spec-name">Platos del DÃ­a</div>
+        <div class="spec-desc">MenÃº diario con los mejores guisos salvadoreÃ±os. Frescos, abundantes y al precio justo para alimentar bien a toda la familia.</div>
       </div>
       <div class="spec-card reveal" style="transition-delay:.3s">
         <span class="spec-num">04</span>
-        <span class="spec-icon">🌽</span>
-        <div class="spec-name">Antojitos Típicos</div>
-        <div class="spec-desc">Yuca frita, riguas, tamales de elote y tostadas. Los antojitos que hacen especial cualquier momento del día.</div>
+        <span class="spec-icon">ðŸŒ½</span>
+        <div class="spec-name">Antojitos TÃ­picos</div>
+        <div class="spec-desc">Yuca frita, riguas, tamales de elote y tostadas. Los antojitos que hacen especial cualquier momento del dÃ­a.</div>
       </div>
       <div class="spec-card reveal" style="transition-delay:.4s">
         <span class="spec-num">05</span>
-        <span class="spec-icon">🥤</span>
+        <span class="spec-icon">ðŸ¥¤</span>
         <div class="spec-name">Bebidas Artesanales</div>
         <div class="spec-desc">Horchata, fresco de tamarindo, ensalada de frutas y jugos naturales. Refrescantes y preparadas al momento.</div>
       </div>
       <div class="spec-card reveal" style="transition-delay:.5s">
         <span class="spec-num">06</span>
-        <span class="spec-icon">⚡</span>
+        <span class="spec-icon">âš¡</span>
         <div class="spec-name">Pedidos Express</div>
-        <div class="spec-desc">Servicio rápido para llevar. Tu comida favorita lista en minutos, sin perder el sabor casero que nos caracteriza.</div>
+        <div class="spec-desc">Servicio rÃ¡pido para llevar. Tu comida favorita lista en minutos, sin perder el sabor casero que nos caracteriza.</div>
       </div>
     </div>
   </div>
@@ -2456,10 +2456,10 @@
 <!-- GALLERY -->
 <section class="gallery" id="galeria">
 
-  <!-- Ola superior: oscuro → crema (3 capas) -->
+  <!-- Ola superior: oscuro â†’ crema (3 capas) -->
   <div class="gallery-wave gallery-wave-top">
     <svg viewBox="0 0 1440 130" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- Capa trasera – acento azul -->
+      <!-- Capa trasera â€“ acento azul -->
       <path d="M0,0 L1440,0 L1440,75
                C1300,130 1100,40 900,80
                C700,120 500,40 300,85
@@ -2471,7 +2471,7 @@
                C560,111 320,28 120,72
                C60,88 20,70 0,68 Z"
             fill="rgba(0,26,110,0.65)"/>
-      <!-- Capa frontal sólida -->
+      <!-- Capa frontal sÃ³lida -->
       <path d="M0,0 L1440,0 L1440,45
                C1200,100 950,10 720,55
                C490,100 240,12 0,52 Z"
@@ -2481,7 +2481,7 @@
 
   <div style="max-width:1300px;margin:0 auto;">
     <div class="section-label reveal">Nuestro Espacio</div>
-    <h2 class="section-title reveal">Galería de<br><em>Sabores</em></h2>
+    <h2 class="section-title reveal">GalerÃ­a de<br><em>Sabores</em></h2>
     <div class="gallery-grid">
       <div class="gal-item reveal">
         <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80" alt="Ambiente Irra's Express" loading="lazy">
@@ -2492,16 +2492,16 @@
         <div class="gal-overlay"><span>Pupusas Frescas</span><small>Receta de la abuela</small></div>
       </div>
       <div class="gal-item reveal" style="transition-delay:.2s">
-        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="Platos del Día" loading="lazy">
-        <div class="gal-overlay"><span>Plato del Día</span><small>Recién cocinado</small></div>
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="Platos del DÃ­a" loading="lazy">
+        <div class="gal-overlay"><span>Plato del DÃ­a</span><small>ReciÃ©n cocinado</small></div>
       </div>
       <div class="gal-item reveal" style="transition-delay:.3s">
         <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=600&q=80" alt="Carne Asada" loading="lazy">
-        <div class="gal-overlay"><span>Carne Asada</span><small>Al carbón</small></div>
+        <div class="gal-overlay"><span>Carne Asada</span><small>Al carbÃ³n</small></div>
       </div>
       <div class="gal-item reveal" style="transition-delay:.1s">
         <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80" alt="Ingredientes Frescos" loading="lazy">
-        <div class="gal-overlay"><span>Ingredientes Frescos</span><small>Selección diaria</small></div>
+        <div class="gal-overlay"><span>Ingredientes Frescos</span><small>SelecciÃ³n diaria</small></div>
       </div>
       <div class="gal-item reveal" style="transition-delay:.2s">
         <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Noches Especiales" loading="lazy">
@@ -2510,10 +2510,10 @@
     </div>
   </div>
 
-  <!-- Ola inferior: crema → oscuro (3 capas) -->
+  <!-- Ola inferior: crema â†’ oscuro (3 capas) -->
   <div class="gallery-wave gallery-wave-bot">
     <svg viewBox="0 0 1440 130" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- Capa trasera – acento azul -->
+      <!-- Capa trasera â€“ acento azul -->
       <path d="M0,130 L1440,130 L1440,55
                C1300,0 1100,90 900,50
                C700,10 500,90 300,45
@@ -2525,7 +2525,7 @@
                C560,19 320,102 120,58
                C60,42 20,60 0,62 Z"
             fill="rgba(0,26,110,0.65)"/>
-      <!-- Capa frontal sólida -->
+      <!-- Capa frontal sÃ³lida -->
       <path d="M0,130 L1440,130 L1440,85
                C1200,30 950,120 720,75
                C490,30 240,118 0,78 Z"
@@ -2538,7 +2538,7 @@
 <!-- TESTIMONIALS / REVIEWS -->
 <section class="testimonials">
   <div class="testimonials-header">
-    <div class="section-label reveal" style="justify-content:center">Reseñas Google</div>
+    <div class="section-label reveal" style="justify-content:center">ReseÃ±as Google</div>
     <h2 class="section-title reveal">Voces de nuestros<br><em>clientes</em></h2>
   </div>
 
@@ -2546,78 +2546,78 @@
     <!-- Panel izquierdo -->
     <div class="reviews-summary-panel reveal-left">
       <div class="rvw-score">4.9</div>
-      <div class="rvw-stars">★★★★★</div>
-      <p class="rvw-label">Basado en <strong>200+</strong> reseñas<br>en Google</p>
+      <div class="rvw-stars">â˜…â˜…â˜…â˜…â˜…</div>
+      <p class="rvw-label">Basado en <strong>200+</strong> reseÃ±as<br>en Google</p>
       <div class="rvw-google-row">
         <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" loading="lazy">
         <span>Google Reviews</span>
       </div>
-      <a href="https://maps.app.goo.gl/Gq9myTSypGxKxAjL9" target="_blank" rel="noopener noreferrer" class="rvw-btn">⭐ Deja tu reseña</a>
+      <a href="https://maps.app.goo.gl/Gq9myTSypGxKxAjL9" target="_blank" rel="noopener noreferrer" class="rvw-btn">â­ Deja tu reseÃ±a</a>
     </div>
 
     <!-- Carrusel -->
     <div class="rvw-carousel-outer">
       <div class="rvw-track" id="rvwTrack">
 
-        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">María José Ramos</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Las pupusas revueltas de Irra's Express son las mejores que he probado. El chicharrón molido con queso es perfecto. ¡Auténtico sabor salvadoreño!</p><div class="rvw-footer"><span class="rvw-stars-sm">★★★★★</span><span class="rvw-date">2026-04-15</span></div></div>
+        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">MarÃ­a JosÃ© Ramos</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Las pupusas revueltas de Irra's Express son las mejores que he probado. El chicharrÃ³n molido con queso es perfecto. Â¡AutÃ©ntico sabor salvadoreÃ±o!</p><div class="rvw-footer"><span class="rvw-stars-sm">â˜…â˜…â˜…â˜…â˜…</span><span class="rvw-date">2026-04-15</span></div></div>
 
-        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Carlos Antonio Hernández</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">El pollo guisado express me dejó sin palabras. Servicio rapidísimo y las porciones son generosas. Ya vengo aquí todos los viernes sin falta.</p><div class="rvw-footer"><span class="rvw-stars-sm">★★★★★</span><span class="rvw-date">2026-05-02</span></div></div>
+        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Carlos Antonio HernÃ¡ndez</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">El pollo guisado express me dejÃ³ sin palabras. Servicio rapidÃ­simo y las porciones son generosas. Ya vengo aquÃ­ todos los viernes sin falta.</p><div class="rvw-footer"><span class="rvw-stars-sm">â˜…â˜…â˜…â˜…â˜…</span><span class="rvw-date">2026-05-02</span></div></div>
 
-        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Rosa Elena Martínez</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">La horchata salvadoreña es refrescante y natural, se nota que la hacen con amor. El ambiente del local es muy acogedor y familiar. ¡Regresaré pronto!</p><div class="rvw-footer"><span class="rvw-stars-sm">★★★★★</span><span class="rvw-date">2026-03-28</span></div></div>
+        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Rosa Elena MartÃ­nez</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">La horchata salvadoreÃ±a es refrescante y natural, se nota que la hacen con amor. El ambiente del local es muy acogedor y familiar. Â¡RegresarÃ© pronto!</p><div class="rvw-footer"><span class="rvw-stars-sm">â˜…â˜…â˜…â˜…â˜…</span><span class="rvw-date">2026-03-28</span></div></div>
 
-        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Pedro Alvarado</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">La yuca frita con chicharrón es simplemente espectacular. El curtido que sirven con todo está perfectamente sazonado. Precios muy justos para tanta calidad.</p><div class="rvw-footer"><span class="rvw-stars-sm">★★★★★</span><span class="rvw-date">2026-04-20</span></div></div>
+        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Pedro Alvarado</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">La yuca frita con chicharrÃ³n es simplemente espectacular. El curtido que sirven con todo estÃ¡ perfectamente sazonado. Precios muy justos para tanta calidad.</p><div class="rvw-footer"><span class="rvw-stars-sm">â˜…â˜…â˜…â˜…â˜…</span><span class="rvw-date">2026-04-20</span></div></div>
 
-        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Ana Sofía García</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Pedí la sopa de pata y me recordó exactamente a la de mi abuela en Santa Ana. Eso no tiene precio. Gracias Irra's Express por ese sabor de hogar.</p><div class="rvw-footer"><span class="rvw-stars-sm">★★★★★</span><span class="rvw-date">2026-05-10</span></div></div>
+        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Ana SofÃ­a GarcÃ­a</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">PedÃ­ la sopa de pata y me recordÃ³ exactamente a la de mi abuela en Santa Ana. Eso no tiene precio. Gracias Irra's Express por ese sabor de hogar.</p><div class="rvw-footer"><span class="rvw-stars-sm">â˜…â˜…â˜…â˜…â˜…</span><span class="rvw-date">2026-05-10</span></div></div>
 
-        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Luis Fernando Romero</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">La pupusa de loroco con queso es mi favorita. Se nota que los ingredientes son frescos y de calidad. El local siempre limpio y bien organizado.</p><div class="rvw-footer"><span class="rvw-stars-sm">★★★★★</span><span class="rvw-date">2026-04-05</span></div></div>
+        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Luis Fernando Romero</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">La pupusa de loroco con queso es mi favorita. Se nota que los ingredientes son frescos y de calidad. El local siempre limpio y bien organizado.</p><div class="rvw-footer"><span class="rvw-stars-sm">â˜…â˜…â˜…â˜…â˜…</span><span class="rvw-date">2026-04-05</span></div></div>
 
-        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Carmen Beatriz López</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">La quesadilla salvadoreña de postre es una joya. Dulce, suave y con el ajonjolí perfecto. No la encontraba en ningún otro lado de la ciudad.</p><div class="rvw-footer"><span class="rvw-stars-sm">★★★★★</span><span class="rvw-date">2026-03-18</span></div></div>
+        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Carmen Beatriz LÃ³pez</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">La quesadilla salvadoreÃ±a de postre es una joya. Dulce, suave y con el ajonjolÃ­ perfecto. No la encontraba en ningÃºn otro lado de la ciudad.</p><div class="rvw-footer"><span class="rvw-stars-sm">â˜…â˜…â˜…â˜…â˜…</span><span class="rvw-date">2026-03-18</span></div></div>
 
-        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">José Alberto Pérez</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Pido delivery casi todas las semanas y siempre llega caliente y a tiempo. El servicio express de verdad es express. 100% recomendado a todos.</p><div class="rvw-footer"><span class="rvw-stars-sm">★★★★★</span><span class="rvw-date">2026-05-15</span></div></div>
+        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">JosÃ© Alberto PÃ©rez</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Pido delivery casi todas las semanas y siempre llega caliente y a tiempo. El servicio express de verdad es express. 100% recomendado a todos.</p><div class="rvw-footer"><span class="rvw-stars-sm">â˜…â˜…â˜…â˜…â˜…</span><span class="rvw-date">2026-05-15</span></div></div>
 
-        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Sandra Marisol Flores</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Los tamales de Irra's Express son increíbles. La masa perfecta y el relleno bien abundante. Ojalá los vendieran todo el año, no solo en temporada.</p><div class="rvw-footer"><span class="rvw-stars-sm">★★★★★</span><span class="rvw-date">2026-04-30</span></div></div>
+        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Sandra Marisol Flores</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Los tamales de Irra's Express son increÃ­bles. La masa perfecta y el relleno bien abundante. OjalÃ¡ los vendieran todo el aÃ±o, no solo en temporada.</p><div class="rvw-footer"><span class="rvw-stars-sm">â˜…â˜…â˜…â˜…â˜…</span><span class="rvw-date">2026-04-30</span></div></div>
 
-        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Roberto Carlos Díaz</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Probé varios platos del menú y todos estaban deliciosos. El arroz, los frijoles, el pollo... todo tiene ese sazón especial salvadoreño inconfundible.</p><div class="rvw-footer"><span class="rvw-stars-sm">★★★★★</span><span class="rvw-date">2026-04-12</span></div></div>
+        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Roberto Carlos DÃ­az</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">ProbÃ© varios platos del menÃº y todos estaban deliciosos. El arroz, los frijoles, el pollo... todo tiene ese sazÃ³n especial salvadoreÃ±o inconfundible.</p><div class="rvw-footer"><span class="rvw-stars-sm">â˜…â˜…â˜…â˜…â˜…</span><span class="rvw-date">2026-04-12</span></div></div>
 
-        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Gabriela Alejandra Torres</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Vine con toda mi familia y quedamos encantados. Las pupusas recién hechas en el comal, crujientes por fuera y suaves por dentro. ¡Simplemente perfectas!</p><div class="rvw-footer"><span class="rvw-stars-sm">★★★★★</span><span class="rvw-date">2026-05-08</span></div></div>
+        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Gabriela Alejandra Torres</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Vine con toda mi familia y quedamos encantados. Las pupusas reciÃ©n hechas en el comal, crujientes por fuera y suaves por dentro. Â¡Simplemente perfectas!</p><div class="rvw-footer"><span class="rvw-stars-sm">â˜…â˜…â˜…â˜…â˜…</span><span class="rvw-date">2026-05-08</span></div></div>
 
-        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Miguel Ángel Reyes</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">El combo de pollo express con arroz y frijoles es lo mejor del menú. Rápido, sabroso y a buen precio. Es mi almuerzo favorito entre semana sin duda.</p><div class="rvw-footer"><span class="rvw-stars-sm">★★★★★</span><span class="rvw-date">2026-04-25</span></div></div>
+        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Miguel Ãngel Reyes</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">El combo de pollo express con arroz y frijoles es lo mejor del menÃº. RÃ¡pido, sabroso y a buen precio. Es mi almuerzo favorito entre semana sin duda.</p><div class="rvw-footer"><span class="rvw-stars-sm">â˜…â˜…â˜…â˜…â˜…</span><span class="rvw-date">2026-04-25</span></div></div>
 
-        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Lourdes Esperanza Cruz</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Pedí por primera vez a domicilio y superó todas mis expectativas. Todo llegó bien empacado y caliente. Definitivamente pediré de nuevo esta misma semana.</p><div class="rvw-footer"><span class="rvw-stars-sm">★★★★★</span><span class="rvw-date">2026-05-18</span></div></div>
+        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Lourdes Esperanza Cruz</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">PedÃ­ por primera vez a domicilio y superÃ³ todas mis expectativas. Todo llegÃ³ bien empacado y caliente. Definitivamente pedirÃ© de nuevo esta misma semana.</p><div class="rvw-footer"><span class="rvw-stars-sm">â˜…â˜…â˜…â˜…â˜…</span><span class="rvw-date">2026-05-18</span></div></div>
 
-        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Francisco Javier Mejía</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Los precios son muy accesibles para la calidad que ofrecen. Una familia puede comer muy bien sin gastar mucho. Eso es un regalo en estos tiempos.</p><div class="rvw-footer"><span class="rvw-stars-sm">★★★★★</span><span class="rvw-date">2026-03-22</span></div></div>
+        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Francisco Javier MejÃ­a</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Los precios son muy accesibles para la calidad que ofrecen. Una familia puede comer muy bien sin gastar mucho. Eso es un regalo en estos tiempos.</p><div class="rvw-footer"><span class="rvw-stars-sm">â˜…â˜…â˜…â˜…â˜…</span><span class="rvw-date">2026-03-22</span></div></div>
 
-        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Patricia Elena Morales</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Entras y el olor te transporta directo a El Salvador. La sazón es auténtica y casera. Se nota que hay mucho amor puesto en cada plato que preparan.</p><div class="rvw-footer"><span class="rvw-stars-sm">★★★★★</span><span class="rvw-date">2026-04-18</span></div></div>
+        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Patricia Elena Morales</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Entras y el olor te transporta directo a El Salvador. La sazÃ³n es autÃ©ntica y casera. Se nota que hay mucho amor puesto en cada plato que preparan.</p><div class="rvw-footer"><span class="rvw-stars-sm">â˜…â˜…â˜…â˜…â˜…</span><span class="rvw-date">2026-04-18</span></div></div>
 
-        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Diego Ernesto Vásquez</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Los frijoles refritos que sirven con todo son de otro nivel. Cremosos y bien sazonados. El arroz tampoco se queda atrás. Todo tiene el punto exacto.</p><div class="rvw-footer"><span class="rvw-stars-sm">★★★★★</span><span class="rvw-date">2026-05-05</span></div></div>
+        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Diego Ernesto VÃ¡squez</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Los frijoles refritos que sirven con todo son de otro nivel. Cremosos y bien sazonados. El arroz tampoco se queda atrÃ¡s. Todo tiene el punto exacto.</p><div class="rvw-footer"><span class="rvw-stars-sm">â˜…â˜…â˜…â˜…â˜…</span><span class="rvw-date">2026-05-05</span></div></div>
 
-        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Isabel Cristina Orellana</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">La atención es excelente, te hacen sentir como en casa. El personal siempre con una sonrisa genuina. Eso hace que quieras volver una y otra vez.</p><div class="rvw-footer"><span class="rvw-stars-sm">★★★★★</span><span class="rvw-date">2026-04-08</span></div></div>
+        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Isabel Cristina Orellana</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">La atenciÃ³n es excelente, te hacen sentir como en casa. El personal siempre con una sonrisa genuina. Eso hace que quieras volver una y otra vez.</p><div class="rvw-footer"><span class="rvw-stars-sm">â˜…â˜…â˜…â˜…â˜…</span><span class="rvw-date">2026-04-08</span></div></div>
 
-        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Eduardo José Chávez</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">El chicharrón crujiente que sirven con la yuca es adictivo. Ya no puedo comer yuca de ningún otro lugar. Irra's Express arruinó todo lo demás jajaja.</p><div class="rvw-footer"><span class="rvw-stars-sm">★★★★★</span><span class="rvw-date">2026-03-30</span></div></div>
+        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Eduardo JosÃ© ChÃ¡vez</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">El chicharrÃ³n crujiente que sirven con la yuca es adictivo. Ya no puedo comer yuca de ningÃºn otro lugar. Irra's Express arruinÃ³ todo lo demÃ¡s jajaja.</p><div class="rvw-footer"><span class="rvw-stars-sm">â˜…â˜…â˜…â˜…â˜…</span><span class="rvw-date">2026-03-30</span></div></div>
 
-        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Laura Viviana Rivas</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Todo lo que he probado ha sido delicioso. Las pupusas, el pollo, los jugos naturales... Es difícil elegir porque todo está increíble en este lugar.</p><div class="rvw-footer"><span class="rvw-stars-sm">★★★★★</span><span class="rvw-date">2026-05-12</span></div></div>
+        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Laura Viviana Rivas</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Todo lo que he probado ha sido delicioso. Las pupusas, el pollo, los jugos naturales... Es difÃ­cil elegir porque todo estÃ¡ increÃ­ble en este lugar.</p><div class="rvw-footer"><span class="rvw-stars-sm">â˜…â˜…â˜…â˜…â˜…</span><span class="rvw-date">2026-05-12</span></div></div>
 
-        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Alejandro Enrique Bonilla</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">El local está siempre limpio e impecable. La comida llega rápido y la calidad es constante. Eso es exactamente lo que uno busca al salir a comer.</p><div class="rvw-footer"><span class="rvw-stars-sm">★★★★★</span><span class="rvw-date">2026-04-22</span></div></div>
+        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Alejandro Enrique Bonilla</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">El local estÃ¡ siempre limpio e impecable. La comida llega rÃ¡pido y la calidad es constante. Eso es exactamente lo que uno busca al salir a comer.</p><div class="rvw-footer"><span class="rvw-stars-sm">â˜…â˜…â˜…â˜…â˜…</span><span class="rvw-date">2026-04-22</span></div></div>
 
-        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Verónica Guadalupe Sánchez</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Las pupusas de queso son sencillas pero perfectas. La masa bien cocinada y el queso derretido en su punto. Una cosa simple pero ejecutada de maravilla.</p><div class="rvw-footer"><span class="rvw-stars-sm">★★★★★</span><span class="rvw-date">2026-05-01</span></div></div>
+        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">VerÃ³nica Guadalupe SÃ¡nchez</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Las pupusas de queso son sencillas pero perfectas. La masa bien cocinada y el queso derretido en su punto. Una cosa simple pero ejecutada de maravilla.</p><div class="rvw-footer"><span class="rvw-stars-sm">â˜…â˜…â˜…â˜…â˜…</span><span class="rvw-date">2026-05-01</span></div></div>
 
-        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Arturo Humberto Mendoza</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">La horchata artesanal y el fresco de tamarindo son bebidas que no encuentras en cualquier lugar. Acompañan perfectamente cualquier plato del menú.</p><div class="rvw-footer"><span class="rvw-stars-sm">★★★★★</span><span class="rvw-date">2026-04-14</span></div></div>
+        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Arturo Humberto Mendoza</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">La horchata artesanal y el fresco de tamarindo son bebidas que no encuentras en cualquier lugar. AcompaÃ±an perfectamente cualquier plato del menÃº.</p><div class="rvw-footer"><span class="rvw-stars-sm">â˜…â˜…â˜…â˜…â˜…</span><span class="rvw-date">2026-04-14</span></div></div>
 
-        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Silvia Beatriz Zelaya</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">El fresco de tamarindo me trajo de vuelta a mi infancia en Sonsonate. Frío, dulce y ácido al mismo tiempo. Simplemente perfecto e inigualable.</p><div class="rvw-footer"><span class="rvw-stars-sm">★★★★★</span><span class="rvw-date">2026-03-25</span></div></div>
+        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Silvia Beatriz Zelaya</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">El fresco de tamarindo me trajo de vuelta a mi infancia en Sonsonate. FrÃ­o, dulce y Ã¡cido al mismo tiempo. Simplemente perfecto e inigualable.</p><div class="rvw-footer"><span class="rvw-stars-sm">â˜…â˜…â˜…â˜…â˜…</span><span class="rvw-date">2026-03-25</span></div></div>
 
-        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Julio César Montes</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Las porciones son muy generosas. Llegué con mucha hambre y salí completamente satisfecho. Para el precio que cobran la relación calidad-precio es excelente.</p><div class="rvw-footer"><span class="rvw-stars-sm">★★★★★</span><span class="rvw-date">2026-05-07</span></div></div>
+        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Julio CÃ©sar Montes</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Las porciones son muy generosas. LleguÃ© con mucha hambre y salÃ­ completamente satisfecho. Para el precio que cobran la relaciÃ³n calidad-precio es excelente.</p><div class="rvw-footer"><span class="rvw-stars-sm">â˜…â˜…â˜…â˜…â˜…</span><span class="rvw-date">2026-05-07</span></div></div>
 
-        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Nora Esperanza Guzmán</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Lugar ideal para llevar a la familia. Los niños amaron las pupusas y los adultos quedamos muy satisfechos. Ambiente tranquilo, limpio y muy familiar.</p><div class="rvw-footer"><span class="rvw-stars-sm">★★★★★</span><span class="rvw-date">2026-04-28</span></div></div>
+        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Nora Esperanza GuzmÃ¡n</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Lugar ideal para llevar a la familia. Los niÃ±os amaron las pupusas y los adultos quedamos muy satisfechos. Ambiente tranquilo, limpio y muy familiar.</p><div class="rvw-footer"><span class="rvw-stars-sm">â˜…â˜…â˜…â˜…â˜…</span><span class="rvw-date">2026-04-28</span></div></div>
 
-        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">David Ernesto Aguilar</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Pedí para llevar y en menos de 15 minutos ya estaba listo. Comida rápida sin sacrificar el sabor casero. Eso es exactamente lo que siempre buscaba.</p><div class="rvw-footer"><span class="rvw-stars-sm">★★★★★</span><span class="rvw-date">2026-05-16</span></div></div>
+        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">David Ernesto Aguilar</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">PedÃ­ para llevar y en menos de 15 minutos ya estaba listo. Comida rÃ¡pida sin sacrificar el sabor casero. Eso es exactamente lo que siempre buscaba.</p><div class="rvw-footer"><span class="rvw-stars-sm">â˜…â˜…â˜…â˜…â˜…</span><span class="rvw-date">2026-05-16</span></div></div>
 
-        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Marcela Alejandra Fuentes</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Sin duda el mejor restaurante salvadoreño que he visitado. La calidad y el sabor son consistentes cada vez que vengo. ¡Por favor no cambien nada!</p><div class="rvw-footer"><span class="rvw-stars-sm">★★★★★</span><span class="rvw-date">2026-04-03</span></div></div>
+        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Marcela Alejandra Fuentes</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Sin duda el mejor restaurante salvadoreÃ±o que he visitado. La calidad y el sabor son consistentes cada vez que vengo. Â¡Por favor no cambien nada!</p><div class="rvw-footer"><span class="rvw-stars-sm">â˜…â˜…â˜…â˜…â˜…</span><span class="rvw-date">2026-04-03</span></div></div>
 
-        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Óscar René Castillo</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Los antojitos típicos son mi debilidad. Las riguas, los tostones, la yuca... todo auténtico y bien preparado. Una delicia total cada visita.</p><div class="rvw-footer"><span class="rvw-stars-sm">★★★★★</span><span class="rvw-date">2026-03-15</span></div></div>
+        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Ã“scar RenÃ© Castillo</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Los antojitos tÃ­picos son mi debilidad. Las riguas, los tostones, la yuca... todo autÃ©ntico y bien preparado. Una delicia total cada visita.</p><div class="rvw-footer"><span class="rvw-stars-sm">â˜…â˜…â˜…â˜…â˜…</span><span class="rvw-date">2026-03-15</span></div></div>
 
-        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Claudia Noemí Herrera</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Irra's Express conserva las recetas tradicionales de una forma que pocas pupuserías logran. Es una tradición familiar que se siente en cada bocado.</p><div class="rvw-footer"><span class="rvw-stars-sm">★★★★★</span><span class="rvw-date">2026-05-20</span></div></div>
+        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Claudia NoemÃ­ Herrera</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Irra's Express conserva las recetas tradicionales de una forma que pocas pupuserÃ­as logran. Es una tradiciÃ³n familiar que se siente en cada bocado.</p><div class="rvw-footer"><span class="rvw-stars-sm">â˜…â˜…â˜…â˜…â˜…</span><span class="rvw-date">2026-05-20</span></div></div>
 
-        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">Héctor Mauricio Leiva</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Llevo más de un año viniendo y nunca me ha decepcionado. Calidad constante, trato excelente y precio siempre justo. Volvería 100 veces más sin dudar.</p><div class="rvw-footer"><span class="rvw-stars-sm">★★★★★</span><span class="rvw-date">2026-04-17</span></div></div>
+        <div class="rvw-card"><div class="rvw-card-header"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="rvw-google-icon" alt="G"><div><span class="rvw-author-name">HÃ©ctor Mauricio Leiva</span><span class="rvw-source">En Google</span></div></div><p class="rvw-text">Llevo mÃ¡s de un aÃ±o viniendo y nunca me ha decepcionado. Calidad constante, trato excelente y precio siempre justo. VolverÃ­a 100 veces mÃ¡s sin dudar.</p><div class="rvw-footer"><span class="rvw-stars-sm">â˜…â˜…â˜…â˜…â˜…</span><span class="rvw-date">2026-04-17</span></div></div>
 
       </div>
     </div>
@@ -2627,7 +2627,7 @@
 <!-- RESERVATION -->
 <section class="reservation" id="reservas">
 
-  <!-- Ola superior: oscuro → crema (3 capas) -->
+  <!-- Ola superior: oscuro â†’ crema (3 capas) -->
   <div class="gallery-wave gallery-wave-top">
     <svg viewBox="0 0 1440 130" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0,0 L1440,0 L1440,75
@@ -2649,33 +2649,33 @@
 
   <div class="reservation-inner">
     <div class="res-info">
-      <div class="section-label reveal">Contáctanos</div>
+      <div class="section-label reveal">ContÃ¡ctanos</div>
       <h2 class="section-title reveal">Haz tu<br><em>Reserva</em></h2>
-      <p class="reveal">¿Quieres comer aquí o llevarte tu comida favorita? Escríbenos y te atendemos con el servicio express que nos caracteriza.</p>
+      <p class="reveal">Â¿Quieres comer aquÃ­ o llevarte tu comida favorita? EscrÃ­benos y te atendemos con el servicio express que nos caracteriza.</p>
       <div class="contact-items reveal">
         <div class="contact-item">
-          <div class="contact-icon">📍</div>
+          <div class="contact-icon">ðŸ“</div>
           <div>
-            <div class="contact-label">Dirección</div>
-            <div class="contact-val">C/ Martínez de la Riva 4, 28 Exterior · Puente de Vallecas</div>
+            <div class="contact-label">DirecciÃ³n</div>
+            <div class="contact-val">C/ MartÃ­nez de la Riva 4, 28 Exterior Â· Puente de Vallecas</div>
           </div>
         </div>
         <div class="contact-item">
-          <div class="contact-icon">📞</div>
+          <div class="contact-icon">ðŸ“ž</div>
           <div>
-            <div class="contact-label">Teléfono / WhatsApp</div>
+            <div class="contact-label">TelÃ©fono / WhatsApp</div>
             <div class="contact-val">668 51 60 64</div>
           </div>
         </div>
         <div class="contact-item">
-          <div class="contact-icon">⏰</div>
+          <div class="contact-icon">â°</div>
           <div>
             <div class="contact-label">Horario</div>
-            <div class="contact-val">Mar–Vie: 9:00–23:30 · Sáb–Dom: 10:00–0:00 · Lun: 12:00–23:30</div>
+            <div class="contact-val">Marâ€“Vie: 9:00â€“23:30 Â· SÃ¡bâ€“Dom: 10:00â€“0:00 Â· Lun: 12:00â€“23:30</div>
           </div>
         </div>
         <div class="contact-item">
-          <div class="contact-icon">📸</div>
+          <div class="contact-icon">ðŸ“¸</div>
           <div>
             <div class="contact-label">Instagram</div>
             <div class="contact-val">@irrasexpress</div>
@@ -2684,14 +2684,14 @@
       </div>
     </div>
     <div class="res-form reveal-right">
-      <div class="form-title">¿Cuándo nos visitas?</div>
+      <div class="form-title">Â¿CuÃ¡ndo nos visitas?</div>
       <div class="form-row">
         <div class="form-group">
           <label>Nombre</label>
           <input type="text" id="res-nombre" placeholder="Tu nombre">
         </div>
         <div class="form-group">
-          <label>Teléfono</label>
+          <label>TelÃ©fono</label>
           <input type="tel" id="res-telefono" placeholder="+503 0000 0000">
         </div>
       </div>
@@ -2706,12 +2706,12 @@
         </div>
       </div>
       <div class="form-group">
-        <label>Número de personas</label>
+        <label>NÃºmero de personas</label>
         <select id="res-personas">
-          <option>1–2 personas</option>
-          <option>3–4 personas</option>
-          <option>5–6 personas</option>
-          <option>7–10 personas</option>
+          <option>1â€“2 personas</option>
+          <option>3â€“4 personas</option>
+          <option>5â€“6 personas</option>
+          <option>7â€“10 personas</option>
           <option>Reserva para llevar</option>
         </select>
       </div>
@@ -2719,16 +2719,16 @@
         <label>Tipo de reserva</label>
         <select id="res-tipo">
           <option>Comer en el local</option>
-          <option>Para llevar 🥡</option>
-          <option>Delivery a domicilio 🛵</option>
-          <option>Evento especial 🎉</option>
+          <option>Para llevar ðŸ¥¡</option>
+          <option>Delivery a domicilio ðŸ›µ</option>
+          <option>Evento especial ðŸŽ‰</option>
         </select>
       </div>
-      <button class="btn-form" onclick="submitReservation()">Confirmar Reserva 🇸🇻</button>
+      <button class="btn-form" onclick="submitReservation()">Confirmar Reserva ðŸ‡¸ðŸ‡»</button>
     </div>
   </div>
 
-  <!-- Ola inferior: crema → oscuro (3 capas) -->
+  <!-- Ola inferior: crema â†’ oscuro (3 capas) -->
   <div class="gallery-wave gallery-wave-bot">
     <svg viewBox="0 0 1440 130" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0,130 L1440,130 L1440,55
@@ -2760,7 +2760,7 @@
       <a href="#inicio" class="logo">
         <img src="IMG_1286.PNG" alt="Irra's Express" style="height:110px;width:auto;object-fit:contain;" loading="lazy">
       </a>
-      <p>Sabor salvadoreño auténtico con el servicio rápido que mereces. Una familia, una pasión, una tradición.</p>
+      <p>Sabor salvadoreÃ±o autÃ©ntico con el servicio rÃ¡pido que mereces. Una familia, una pasiÃ³n, una tradiciÃ³n.</p>
       <div class="social-links">
         <!-- Facebook -->
         <a href="https://www.facebook.com/share/1DFG7Xggor/?mibextid=wwXIfr" class="social-link" title="Facebook" target="_blank" rel="noopener noreferrer">
@@ -2785,17 +2785,17 @@
       </div>
     </div>
     <div class="footer-col">
-      <h4>Navegación</h4>
+      <h4>NavegaciÃ³n</h4>
       <ul>
         <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#menu">Menú</a></li>
+        <li><a href="#menu">MenÃº</a></li>
         <li><a href="#especialidades">Especialidades</a></li>
-        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#galeria">GalerÃ­a</a></li>
         <li><a href="#reservas">Reservas</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Menú Rápido</h4>
+      <h4>MenÃº RÃ¡pido</h4>
       <ul>
         <li><a href="#menu">Pupusas</a></li>
         <li><a href="#menu">Pollo Express</a></li>
@@ -2807,20 +2807,20 @@
     <div class="footer-col">
       <h4>Horario</h4>
       <ul class="footer-hours">
-        <li>Martes <span>9:00–23:30</span></li>
-        <li>Miércoles <span>9:00–23:30</span></li>
-        <li>Jueves <span>9:00–23:30</span></li>
-        <li>Viernes <span>9:00–23:30</span></li>
-        <li>Sábado <span>10:00–0:00</span></li>
-        <li>Domingo <span>10:00–0:00</span></li>
-        <li>Lunes <span>12:00–23:30</span></li>
+        <li>Martes <span>9:00â€“23:30</span></li>
+        <li>MiÃ©rcoles <span>9:00â€“23:30</span></li>
+        <li>Jueves <span>9:00â€“23:30</span></li>
+        <li>Viernes <span>9:00â€“23:30</span></li>
+        <li>SÃ¡bado <span>10:00â€“0:00</span></li>
+        <li>Domingo <span>10:00â€“0:00</span></li>
+        <li>Lunes <span>12:00â€“23:30</span></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 Irra's Express. Todos los derechos reservados.</p>
+    <p>Â© 2026 Irra's Express. Todos los derechos reservados.</p>
     <span class="footer-flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="30" height="20" style="border-radius:3px;box-shadow:0 1px 5px rgba(0,0,0,0.4);display:block;"><rect width="900" height="200" y="0" fill="#003DA5"/><rect width="900" height="200" y="200" fill="#FFFFFF"/><rect width="900" height="200" y="400" fill="#003DA5"/><ellipse cx="450" cy="300" rx="90" ry="82" fill="#3a9e3a"/><polygon points="450,240 410,310 490,310" fill="#2a6e2a"/><path d="M368,295 Q450,225 532,295" fill="none" stroke="#F5C518" stroke-width="7"/><ellipse cx="450" cy="300" rx="90" ry="82" fill="none" stroke="#FFFFFF" stroke-width="5"/></svg></span>
-    <p>Hecho con ❤️ y sazón salvadoreña</p>
+    <p>Hecho con â¤ï¸ y sazÃ³n salvadoreÃ±a</p>
   </div>
 </footer>
 
@@ -2905,7 +2905,7 @@
       }
     });
 
-    // Botón ver todos
+    // BotÃ³n ver todos
     const verBtn = document.getElementById('verTodosBtn');
     if(cat !== 'pupusas' && matchCount > PREVIEW_LIMIT){
       verBtn.style.display = 'flex';
@@ -2941,7 +2941,7 @@
     verBtn.style.display = 'none';
   }
 
-  // IMÁGENES VARIADAS PARA PUPUSAS
+  // IMÃGENES VARIADAS PARA PUPUSAS
   (function variarImagenesPupusas(){
     const imgs = [
       'https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80',
@@ -2976,7 +2976,7 @@
 
   // FOOD FLOATERS
   const ff = document.getElementById('foodFloaters');
-  const foods = ['🫓','🍗','🌽','🥘','🥡','🫘','🍖','🥑','🥤','🎉'];
+  const foods = ['ðŸ«“','ðŸ—','ðŸŒ½','ðŸ¥˜','ðŸ¥¡','ðŸ«˜','ðŸ–','ðŸ¥‘','ðŸ¥¤','ðŸŽ‰'];
   for(let i=0;i<15;i++){
     const f=document.createElement('div');
     f.className='food-floater';
@@ -3019,7 +3019,7 @@
     const tipo     = document.getElementById('res-tipo').value;
 
     if(!nombre || !fecha || !hora){
-      alert('Por favor completa al menos tu nombre, fecha y hora 😊');
+      alert('Por favor completa al menos tu nombre, fecha y hora ðŸ˜Š');
       return;
     }
 
@@ -3027,14 +3027,14 @@
     const fechaObj = new Date(fecha + 'T12:00:00');
     const fechaStr = fechaObj.toLocaleDateString('es-ES',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
 
-    // ── 1. WhatsApp al RESTAURANTE ──────────────────────────────
+    // â”€â”€ 1. WhatsApp al RESTAURANTE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
     const msgRestaurante =
-`⭐ *NUEVA RESERVA — Irra's Express*
+`â­ *NUEVA RESERVA â€” Irra's Express*
 
 \u{1F464} *Nombre:* ${nombre}
-\u{1F4F1} *Teléfono:* ${telefono || '—'}
+\u{1F4F1} *TelÃ©fono:* ${telefono || 'â€”'}
 \u{1F4C5} *Fecha:* ${fechaStr}
-⏰ *Hora:* ${hora}
+â° *Hora:* ${hora}
 \u{1F465} *Personas:* ${personas}
 \u{1F4CB} *Tipo:* ${tipo}
 
@@ -3044,22 +3044,22 @@ _Enviado desde irraexpress.vercel.app_`;
 
     // Rellenar detalles en el modal
     document.getElementById('resModalDetails').innerHTML = `
-      <p><strong>👤</strong> ${nombre}</p>
-      <p><strong>📅</strong> ${fechaStr}</p>
-      <p><strong>🕐</strong> ${hora}</p>
-      <p><strong>👥</strong> ${personas}</p>
-      <p><strong>📋</strong> ${tipo}</p>
+      <p><strong>ðŸ‘¤</strong> ${nombre}</p>
+      <p><strong>ðŸ“…</strong> ${fechaStr}</p>
+      <p><strong>ðŸ•</strong> ${hora}</p>
+      <p><strong>ðŸ‘¥</strong> ${personas}</p>
+      <p><strong>ðŸ“‹</strong> ${tipo}</p>
     `;
 
     // Mostrar modal
     document.getElementById('resModal').classList.add('show');
 
-    // Reset botón
+    // Reset botÃ³n
     const btn = document.querySelector('.btn-form');
-    btn.textContent = '✓ ¡Reserva enviada! 🎉';
+    btn.textContent = 'âœ“ Â¡Reserva enviada! ðŸŽ‰';
     btn.style.background = 'linear-gradient(135deg,#2DB84B,#1a8c38)';
     btn.style.borderColor = '#2DB84B';
-    setTimeout(()=>{ btn.textContent='Confirmar Reserva 🇸🇻'; btn.style.background=''; btn.style.borderColor=''; }, 4000);
+    setTimeout(()=>{ btn.textContent='Confirmar Reserva ðŸ‡¸ðŸ‡»'; btn.style.background=''; btn.style.borderColor=''; }, 4000);
   }
 
   function closeResModal(){
@@ -3071,14 +3071,14 @@ _Enviado desde irraexpress.vercel.app_`;
   });
 </script>
 
-<!-- MODAL CONFIRMACIÓN RESERVA -->
+<!-- MODAL CONFIRMACIÃ“N RESERVA -->
 <div class="res-modal-overlay" id="resModal">
   <div class="res-modal">
-    <button class="res-modal-close" onclick="closeResModal()">✕</button>
+    <button class="res-modal-close" onclick="closeResModal()">âœ•</button>
     <img src="IMG_1286.PNG" alt="Irra's Express" class="res-modal-logo" loading="lazy">
-    <div class="res-modal-check">✓</div>
-    <div class="res-modal-title">¡Reserva Enviada!</div>
-    <div class="res-modal-sub">En breves te confirmaremos tu reserva vía WhatsApp</div>
+    <div class="res-modal-check">âœ“</div>
+    <div class="res-modal-title">Â¡Reserva Enviada!</div>
+    <div class="res-modal-sub">En breves te confirmaremos tu reserva vÃ­a WhatsApp</div>
     <div class="res-modal-details" id="resModalDetails"></div>
     <div class="res-modal-btns">
       <button class="res-modal-btn-close" onclick="closeResModal()">Cerrar</button>
@@ -3086,5 +3086,6 @@ _Enviado desde irraexpress.vercel.app_`;
   </div>
 </div>
 
+<div style="text-align:center;padding:14px 10px;font:500 13px/1.45 system-ui,-apple-system,sans-serif;background:#0a0a18;color:#9aa0b5;border-top:1px solid rgba(255,255,255,.08)">Dise&#241;ado por <a href="https://www.losvisionarioscompany.com" target="_blank" rel="noopener" style="color:#9f67ff;text-decoration:none">Los Visionarios Company</a></div>
 </body>
 </html>
